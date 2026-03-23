@@ -1,1 +1,1083 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cayetano Soriano Gallego - CTO & Software Architect</title>
+    <meta name="description" content="Portfolio of Cayetano Soriano Gallego - Chief Technology Officer, Backend Engineer & DevOps specialist based in Madrid, Spain.">
+    <meta name="keywords" content="CTO, Software Architect, Backend Engineer, DevOps, AWS, Terraform, Microservices">
+    <meta property="og:title" content="Cayetano Soriano Gallego - CTO">
+    <meta property="og:description" content="Chief Technology Officer | Backend Engineer | DevOps">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-primary: #0a0f1a;
+            --bg-secondary: #111827;
+            --bg-card: rgba(17, 24, 39, 0.7);
+            --bg-card-hover: rgba(23, 33, 54, 0.85);
+            --border-card: rgba(56, 189, 248, 0.12);
+            --border-card-hover: rgba(56, 189, 248, 0.3);
+            --accent: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            --accent-secondary: #818cf8;
+            --accent-tertiary: #34d399;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --gradient-1: linear-gradient(135deg, #38bdf8, #818cf8);
+            --gradient-2: linear-gradient(135deg, #818cf8, #c084fc);
+            --gradient-3: linear-gradient(135deg, #34d399, #38bdf8);
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --radius: 16px;
+            --radius-sm: 8px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Background */
+        .bg-grid {
+            position: fixed; inset: 0; z-index: 0; pointer-events: none;
+            background-image: radial-gradient(circle at 1px 1px, rgba(56, 189, 248, 0.03) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+        .bg-glow { position: fixed; z-index: 0; pointer-events: none; }
+        .bg-glow-1 {
+            top: -20%; right: -10%; width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, transparent 70%);
+            animation: float 15s ease-in-out infinite;
+        }
+        .bg-glow-2 {
+            bottom: -10%; left: -10%; width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(129, 140, 248, 0.06) 0%, transparent 70%);
+            animation: float 20s ease-in-out infinite reverse;
+        }
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.05); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;
+            backdrop-filter: blur(20px); background: rgba(10, 15, 26, 0.8);
+            border-bottom: 1px solid rgba(56, 189, 248, 0.08); transition: var(--transition);
+        }
+        .navbar.scrolled { padding: 0.6rem 2rem; background: rgba(10, 15, 26, 0.95); }
+        .nav-logo {
+            font-weight: 700; font-size: 1.1rem;
+            background: var(--gradient-1); -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: -0.02em;
+        }
+        .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+        .nav-links a {
+            color: var(--text-secondary); text-decoration: none; font-size: 0.875rem;
+            font-weight: 500; transition: var(--transition); position: relative;
+        }
+        .nav-links a:hover { color: var(--accent); }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+            background: var(--gradient-1); border-radius: 2px; transition: var(--transition);
+        }
+        .nav-links a:hover::after { width: 100%; }
+
+        .lang-toggle {
+            display: flex; background: rgba(56, 189, 248, 0.08);
+            border: 1px solid var(--border-card); border-radius: 20px; overflow: hidden;
+        }
+        .lang-btn {
+            padding: 0.35rem 0.85rem; border: none; background: transparent;
+            color: var(--text-muted); font-family: var(--font-mono); font-size: 0.75rem;
+            font-weight: 500; cursor: pointer; transition: var(--transition); letter-spacing: 0.05em;
+        }
+        .lang-btn.active { background: var(--accent); color: var(--bg-primary); }
+
+        .nav-hamburger {
+            display: none; flex-direction: column; gap: 5px; cursor: pointer;
+            background: none; border: none; padding: 4px;
+        }
+        .nav-hamburger span {
+            display: block; width: 24px; height: 2px; background: var(--text-secondary);
+            border-radius: 2px; transition: var(--transition);
+        }
+
+        /* Sections */
+        .section {
+            position: relative; z-index: 1; max-width: 1100px;
+            margin: 0 auto; padding: 5rem 2rem;
+        }
+        .section-label {
+            font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent);
+            text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.5rem;
+            display: flex; align-items: center; gap: 0.75rem;
+        }
+        .section-label::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
+        .section-title { font-size: 2rem; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 2.5rem; }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; position: relative; z-index: 1; padding: 2rem;
+        }
+        .hero-content { max-width: 800px; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1.25rem;
+            background: rgba(56, 189, 248, 0.08); border: 1px solid var(--border-card);
+            border-radius: 50px; font-size: 0.8rem; color: var(--accent); font-weight: 500;
+            margin-bottom: 2rem; animation: fadeInUp 0.8s ease-out;
+        }
+        .hero-badge .dot {
+            width: 6px; height: 6px; background: var(--accent-tertiary);
+            border-radius: 50%; animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800;
+            letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease-out 0.1s both;
+        }
+        .hero h1 .gradient-text {
+            background: var(--gradient-1); -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero-subtitle {
+            font-size: 1.15rem; color: var(--text-secondary); max-width: 600px;
+            margin: 0 auto 2rem; line-height: 1.8; animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        .hero-cta {
+            display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+        .btn {
+            display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.75rem;
+            border-radius: 50px; font-size: 0.9rem; font-weight: 600; text-decoration: none;
+            transition: var(--transition); cursor: pointer; border: none; font-family: var(--font-sans);
+        }
+        .btn-primary { background: var(--gradient-1); color: var(--bg-primary); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(56, 189, 248, 0.3); }
+        .btn-outline { background: transparent; color: var(--text-primary); border: 1px solid var(--border-card-hover); }
+        .btn-outline:hover { border-color: var(--accent); background: var(--accent-glow); transform: translateY(-2px); }
+
+        .hero-stats {
+            display: flex; justify-content: center; gap: 3rem; margin-top: 4rem;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+        .hero-stat-value {
+            font-size: 2rem; font-weight: 800;
+            background: var(--gradient-1); -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .hero-stat-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Reveal */
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* About */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .glass-card {
+            background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid var(--border-card);
+            border-radius: var(--radius); padding: 2rem; transition: var(--transition);
+        }
+        .glass-card:hover {
+            background: var(--bg-card-hover); border-color: var(--border-card-hover);
+            transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        .about-text { color: var(--text-secondary); font-size: 1rem; line-height: 1.9; }
+        .about-text strong { color: var(--text-primary); font-weight: 600; }
+        .about-info-grid { display: flex; flex-direction: column; gap: 1rem; }
+        .about-info-item {
+            display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem;
+            background: rgba(56, 189, 248, 0.04); border: 1px solid var(--border-card);
+            border-radius: var(--radius-sm); transition: var(--transition);
+        }
+        .about-info-item:hover { border-color: var(--border-card-hover); background: rgba(56, 189, 248, 0.08); }
+        .about-info-icon {
+            width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
+            border-radius: 10px; font-size: 1.1rem; flex-shrink: 0;
+        }
+        .icon-email { background: rgba(56, 189, 248, 0.12); }
+        .icon-linkedin { background: rgba(56, 99, 248, 0.12); }
+        .icon-github { background: rgba(129, 140, 248, 0.12); }
+        .icon-location { background: rgba(52, 211, 153, 0.12); }
+        .about-info-text { font-size: 0.9rem; color: var(--text-secondary); }
+        .about-info-text a { color: var(--text-primary); text-decoration: none; transition: var(--transition); }
+        .about-info-text a:hover { color: var(--accent); }
+        .about-info-label { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 2px; }
+
+        /* Timeline */
+        .timeline { position: relative; padding-left: 40px; }
+        .timeline::before {
+            content: ''; position: absolute; left: 7px; top: 0; bottom: 0; width: 2px;
+            background: linear-gradient(to bottom, var(--accent), var(--accent-secondary), transparent);
+            border-radius: 2px;
+        }
+        .timeline-item { position: relative; margin-bottom: 2.5rem; }
+        .timeline-item::before {
+            content: ''; position: absolute; left: -40px; top: 8px; width: 16px; height: 16px;
+            border-radius: 50%; background: var(--bg-primary); border: 3px solid var(--accent); z-index: 2;
+            transition: var(--transition);
+        }
+        .timeline-item:hover::before { background: var(--accent); box-shadow: 0 0 20px rgba(56, 189, 248, 0.4); }
+        .timeline-card {
+            background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid var(--border-card);
+            border-radius: var(--radius); padding: 1.75rem; transition: var(--transition);
+        }
+        .timeline-card:hover {
+            background: var(--bg-card-hover); border-color: var(--border-card-hover);
+            transform: translateX(8px); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+        .timeline-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+        .timeline-company { font-size: 1.2rem; font-weight: 700; color: var(--text-primary); }
+        .timeline-date {
+            font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent);
+            background: rgba(56, 189, 248, 0.08); padding: 0.3rem 0.8rem; border-radius: 20px; white-space: nowrap;
+        }
+        .timeline-role { font-size: 1rem; font-weight: 600; color: var(--accent-secondary); margin-bottom: 0.25rem; }
+        .timeline-location { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.75rem; }
+        .timeline-desc { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1rem; }
+        .timeline-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+        .tag { padding: 0.25rem 0.65rem; font-size: 0.7rem; font-family: var(--font-mono); font-weight: 500; border-radius: 6px; letter-spacing: 0.02em; }
+        .tag-cloud { background: rgba(56, 189, 248, 0.1); color: var(--accent); }
+        .tag-backend { background: rgba(129, 140, 248, 0.1); color: var(--accent-secondary); }
+        .tag-devops { background: rgba(52, 211, 153, 0.1); color: var(--accent-tertiary); }
+        .tag-data { background: rgba(251, 191, 36, 0.1); color: #fbbf24; }
+        .tag-other { background: rgba(244, 114, 182, 0.1); color: #f472b6; }
+
+        /* Skills */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+        .skill-category {
+            background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid var(--border-card);
+            border-radius: var(--radius); padding: 1.75rem; transition: var(--transition);
+        }
+        .skill-category:hover { border-color: var(--border-card-hover); transform: translateY(-4px); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); }
+        .skill-cat-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
+        .skill-cat-icon { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 10px; font-size: 1.1rem; }
+        .skill-cat-name { font-weight: 700; font-size: 1rem; }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .skill-tag {
+            padding: 0.4rem 0.85rem; font-size: 0.8rem; font-family: var(--font-mono); font-weight: 500;
+            border-radius: 8px; background: rgba(56, 189, 248, 0.06); border: 1px solid var(--border-card);
+            color: var(--text-secondary); transition: var(--transition);
+        }
+        .skill-tag:hover { background: rgba(56, 189, 248, 0.12); border-color: var(--accent); color: var(--text-primary); transform: translateY(-2px); }
+
+        /* Certs */
+        .certs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.25rem; }
+        .cert-card {
+            background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid var(--border-card);
+            border-radius: var(--radius); padding: 1.5rem; text-align: center; transition: var(--transition);
+            position: relative; overflow: hidden;
+        }
+        .cert-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: var(--gradient-1); opacity: 0; transition: var(--transition);
+        }
+        .cert-card:hover { border-color: var(--border-card-hover); transform: translateY(-4px); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); }
+        .cert-card:hover::before { opacity: 1; }
+        .cert-icon { width: 48px; height: 48px; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; border-radius: 14px; font-size: 1.4rem; }
+        .cert-name { font-weight: 600; font-size: 0.95rem; color: var(--text-primary); }
+
+        /* Education */
+        .edu-card {
+            background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid var(--border-card);
+            border-radius: var(--radius); padding: 2rem; display: flex; align-items: center; gap: 2rem;
+            transition: var(--transition);
+        }
+        .edu-card:hover { border-color: var(--border-card-hover); transform: translateY(-4px); }
+        .edu-icon {
+            width: 64px; height: 64px; display: flex; align-items: center; justify-content: center;
+            border-radius: 16px; background: rgba(129, 140, 248, 0.1); font-size: 1.8rem; flex-shrink: 0;
+        }
+        .edu-info h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.25rem; }
+        .edu-info p { color: var(--text-secondary); font-size: 0.95rem; }
+        .edu-info .edu-date { font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent); margin-top: 0.5rem; }
+
+        /* Footer */
+        .footer { position: relative; z-index: 1; border-top: 1px solid var(--border-card); padding: 3rem 2rem; text-align: center; }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; list-style: none; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; transition: var(--transition); }
+        .footer-links a:hover { color: var(--accent); }
+        .footer-copy { font-size: 0.8rem; color: var(--text-muted); }
+
+        /* Scroll top */
+        .scroll-top {
+            position: fixed; bottom: 2rem; right: 2rem; z-index: 99; width: 44px; height: 44px;
+            border-radius: 50%; background: var(--bg-card); border: 1px solid var(--border-card);
+            backdrop-filter: blur(20px); color: var(--accent); font-size: 1.2rem; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; transform: translateY(20px); transition: var(--transition); pointer-events: none;
+        }
+        .scroll-top.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+        .scroll-top:hover { background: var(--accent); color: var(--bg-primary); border-color: var(--accent); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-hamburger { display: flex; }
+            .nav-links.open {
+                display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0;
+                background: rgba(10, 15, 26, 0.98); backdrop-filter: blur(20px); padding: 1.5rem 2rem;
+                border-bottom: 1px solid var(--border-card); gap: 1.25rem;
+            }
+            .about-grid { grid-template-columns: 1fr; }
+            .hero-stats { gap: 1.5rem; }
+            .hero h1 { font-size: clamp(2rem, 8vw, 3rem); }
+            .section { padding: 3rem 1.25rem; }
+            .timeline { padding-left: 30px; }
+            .timeline-item::before { left: -30px; width: 12px; height: 12px; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .certs-grid { grid-template-columns: 1fr 1fr; }
+            .edu-card { flex-direction: column; text-align: center; }
+        }
+        @media (max-width: 480px) {
+            .certs-grid { grid-template-columns: 1fr; }
+            .hero-stats { flex-direction: column; gap: 1rem; }
+        }
+
+        /* Print / PDF Styles */
+        @media print {
+            *, *::before, *::after { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+            body { background: #fff !important; color: #1a1a2e !important; font-size: 11px; line-height: 1.5; }
+            .bg-grid, .bg-glow, .bg-glow-1, .bg-glow-2, .navbar, .scroll-top, .print-hide { display: none !important; }
+            .hero { min-height: auto; padding: 2rem 0 1rem; }
+            .hero h1 { font-size: 2.2rem; background: none; -webkit-text-fill-color: #1a1a2e; color: #1a1a2e; }
+            .hero h1 .gradient-text { background: none; -webkit-text-fill-color: #2563eb; color: #2563eb; }
+            .hero-subtitle { color: #444; font-size: 0.95rem; }
+            .hero-badge { border-color: #2563eb; color: #2563eb; background: #eef2ff; }
+            .hero-badge .dot { background: #22c55e; }
+            .hero-stats { margin-top: 1.5rem; }
+            .hero-stat-value { background: none; -webkit-text-fill-color: #2563eb; color: #2563eb; font-size: 1.5rem; }
+            .hero-stat-label { color: #666; }
+            .hero-cta { display: none; }
+            .section { padding: 1.5rem 0; page-break-inside: avoid; }
+            .section-label { color: #2563eb; }
+            .section-label::before { background: #2563eb; }
+            .section-title { color: #1a1a2e; font-size: 1.4rem; margin-bottom: 1rem; }
+            .glass-card, .timeline-card, .skill-category, .cert-card, .edu-card {
+                background: #f8fafc !important; border: 1px solid #e2e8f0 !important;
+                backdrop-filter: none; box-shadow: none !important; transform: none !important;
+            }
+            .about-text, .timeline-desc { color: #333; }
+            .about-text strong { color: #111; }
+            .about-grid { gap: 1rem; }
+            .about-info-item { background: #f1f5f9 !important; border-color: #e2e8f0 !important; }
+            .about-info-text a { color: #2563eb; }
+            .timeline { padding-left: 25px; }
+            .timeline::before { background: #cbd5e1; }
+            .timeline-item { margin-bottom: 1.25rem; page-break-inside: avoid; }
+            .timeline-item::before { border-color: #2563eb; left: -25px; width: 10px; height: 10px; }
+            .timeline-card { padding: 1rem; }
+            .timeline-company { color: #111; }
+            .timeline-role { color: #4f46e5; }
+            .timeline-date { color: #2563eb; background: #eef2ff; }
+            .timeline-location { color: #666; }
+            .tag { border: 1px solid #e2e8f0; background: #f1f5f9 !important; color: #374151 !important; }
+            .skill-tag { background: #f1f5f9 !important; border-color: #e2e8f0 !important; color: #374151 !important; }
+            .skill-cat-name { color: #111; }
+            .cert-card::before { display: none; }
+            .cert-name { color: #111; }
+            .edu-info h3 { color: #111; }
+            .edu-info p { color: #444; }
+            .edu-date { color: #2563eb !important; }
+            .footer { border-color: #e2e8f0; }
+            .footer-copy, .footer-links a { color: #666; }
+            .reveal { opacity: 1 !important; transform: none !important; }
+            a[href]::after { content: none !important; }
+            /* Print header with contact info */
+            .hero::after {
+                content: "linkedin.com/in/csorianogallego | github.com/neoshadybeat | Madrid, Spain";
+                display: block; font-size: 0.8rem; color: #666; margin-top: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="bg-grid"></div>
+<div class="bg-glow bg-glow-1"></div>
+<div class="bg-glow bg-glow-2"></div>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+    <span class="nav-logo">CSG</span>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#about" data-i18n="nav.about">About</a></li>
+        <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+        <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+        <li><a href="#certs" data-i18n="nav.certs">Certifications</a></li>
+        <li><a href="#education" data-i18n="nav.education">Education</a></li>
+        <li>
+            <div class="lang-toggle">
+                <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+                <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
+            </div>
+        </li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+    <div class="hero-content">
+        <div class="hero-badge">
+            <span class="dot"></span>
+            <span data-i18n="hero.badge">Available for new challenges</span>
+        </div>
+        <h1>Cayetano<br><span class="gradient-text">Soriano Gallego</span></h1>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">
+            CTO &amp; hands-on technologist with 15+ years scaling platforms, designing microservice architectures on AWS, and now integrating AI-powered agents and LLM orchestration into production systems.
+        </p>
+        <div class="hero-cta">
+            <a href="#" class="btn btn-primary" id="emailBtn" onclick="sendEmail(event)">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <span data-i18n="hero.contact">Get in touch</span>
+            </a>
+            <a href="https://github.com/neoshadybeat" target="_blank" rel="noopener" class="btn btn-outline">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/csorianogallego" target="_blank" rel="noopener" class="btn btn-outline">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+                LinkedIn
+            </a>
+            <button onclick="window.print()" class="btn btn-outline print-hide">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+                <span data-i18n="hero.download">Download CV</span>
+            </button>
+        </div>
+        <div class="hero-stats">
+            <div>
+                <div class="hero-stat-value">15+</div>
+                <div class="hero-stat-label" data-i18n="hero.years">Years in Tech</div>
+            </div>
+            <div>
+                <div class="hero-stat-value">7+</div>
+                <div class="hero-stat-label" data-i18n="hero.cto_years">Years as CTO</div>
+            </div>
+            <div>
+                <div class="hero-stat-value">4</div>
+                <div class="hero-stat-label" data-i18n="hero.certs">Certifications</div>
+            </div>
+            <div>
+                <div class="hero-stat-value">2</div>
+                <div class="hero-stat-label" data-i18n="hero.languages">Languages</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About -->
+<section class="section" id="about">
+    <div class="reveal">
+        <div class="section-label" data-i18n="about.label">About me</div>
+        <h2 class="section-title" data-i18n="about.title">Who I Am</h2>
+    </div>
+    <div class="about-grid">
+        <div class="glass-card reveal">
+            <p class="about-text" data-i18n="about.text">
+                I'm a <strong>CTO and hands-on engineering leader</strong> with 15+ years building mission-critical platforms. I've taken companies from monolithic legacy systems to <strong>cloud-native microservice architectures on AWS</strong>, always owning the full stack: from Terraform infrastructure to Kubernetes orchestration to CI/CD pipelines.<br><br>
+                Currently, I'm deep into the <strong>AI &amp; LLM revolution</strong> &mdash; designing autonomous agent systems, building RAG pipelines, integrating large language models into production workflows, and leveraging AI-assisted development tools (Cursor, Claude Code, Copilot) to multiply engineering output. I combine battle-tested DevOps and backend expertise with a forward-looking AI-first mindset.
+            </p>
+        </div>
+        <div class="about-info-grid reveal">
+            <div class="about-info-item">
+                <div class="about-info-icon icon-email">&#9993;</div>
+                <div class="about-info-text">
+                    <span class="about-info-label">Email</span>
+                    <a href="#" id="aboutEmail" onclick="sendEmail(event)">[click to reveal]</a>
+                </div>
+            </div>
+            <div class="about-info-item">
+                <div class="about-info-icon icon-linkedin">&#128279;</div>
+                <div class="about-info-text">
+                    <span class="about-info-label">LinkedIn</span>
+                    <a href="https://www.linkedin.com/in/csorianogallego" target="_blank" rel="noopener">linkedin.com/in/csorianogallego</a>
+                </div>
+            </div>
+            <div class="about-info-item">
+                <div class="about-info-icon icon-github">&#128187;</div>
+                <div class="about-info-text">
+                    <span class="about-info-label">GitHub</span>
+                    <a href="https://github.com/neoshadybeat" target="_blank" rel="noopener">github.com/neoshadybeat</a>
+                </div>
+            </div>
+            <div class="about-info-item">
+                <div class="about-info-icon icon-location">&#128205;</div>
+                <div class="about-info-text">
+                    <span class="about-info-label" data-i18n="about.location_label">Location</span>
+                    <span data-i18n="about.location">Madrid, Spain</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Experience -->
+<section class="section" id="experience">
+    <div class="reveal">
+        <div class="section-label" data-i18n="exp.label">Career path</div>
+        <h2 class="section-title" data-i18n="exp.title">Experience</h2>
+    </div>
+    <div class="timeline">
+        <!-- ShareTech CTO -->
+        <div class="timeline-item reveal">
+            <div class="timeline-card">
+                <div class="timeline-header">
+                    <span class="timeline-company">ShareTech</span>
+                    <span class="timeline-date">2023 &mdash; Present</span>
+                </div>
+                <div class="timeline-role">Chief Technology Officer</div>
+                <div class="timeline-location">Madrid, Spain</div>
+                <p class="timeline-desc" data-i18n="exp.sharetech_cto">
+                    Driving the full technology vision and roadmap for the company. Owning cloud architecture decisions, orchestrating cross-functional engineering squads, and establishing best practices for platform reliability and developer experience. Hands-on leadership across infrastructure automation, microservices governance, and cost optimization on AWS.
+                </p>
+                <div class="timeline-tags">
+                    <span class="tag tag-cloud">AWS</span>
+                    <span class="tag tag-cloud">Terraform</span>
+                    <span class="tag tag-cloud">EKS</span>
+                    <span class="tag tag-devops">Docker</span>
+                    <span class="tag tag-backend">Golang</span>
+                    <span class="tag tag-backend">Kotlin</span>
+                    <span class="tag tag-backend">SpringBoot</span>
+                    <span class="tag tag-other">Sentry</span>
+                    <span class="tag tag-other">PagerDuty</span>
+                </div>
+            </div>
+        </div>
+        <!-- Ride On CTO -->
+        <div class="timeline-item reveal">
+            <div class="timeline-card">
+                <div class="timeline-header">
+                    <span class="timeline-company">Ride On</span>
+                    <span class="timeline-date">2019 &mdash; 2023</span>
+                </div>
+                <div class="timeline-role">Chief Technology Officer</div>
+                <div class="timeline-location">Madrid, Spain</div>
+                <p class="timeline-desc" data-i18n="exp.rideon_cto">
+                    Promoted from Architect to CTO to own the entire technology strategy for the eSharing mobility platform. Scaled the engineering organization, implemented OKRs for the tech department, drove the adoption of event-driven architecture with AWS Kinesis, and reduced infrastructure costs by optimizing container orchestration with EKS. Directly accountable for platform uptime, security, and technical due diligence with investors.
+                </p>
+                <div class="timeline-tags">
+                    <span class="tag tag-cloud">AWS</span>
+                    <span class="tag tag-cloud">Terraform</span>
+                    <span class="tag tag-cloud">EKS</span>
+                    <span class="tag tag-cloud">Kinesis</span>
+                    <span class="tag tag-devops">Docker</span>
+                    <span class="tag tag-backend">Golang</span>
+                    <span class="tag tag-backend">Kotlin</span>
+                    <span class="tag tag-other">PagerDuty</span>
+                </div>
+            </div>
+        </div>
+        <!-- Ride On Architect -->
+        <div class="timeline-item reveal">
+            <div class="timeline-card">
+                <div class="timeline-header">
+                    <span class="timeline-company">Ride On</span>
+                    <span class="timeline-date">2018 &mdash; 2019</span>
+                </div>
+                <div class="timeline-role">Software Architect</div>
+                <div class="timeline-location">Madrid, Spain</div>
+                <p class="timeline-desc" data-i18n="exp.rideon_arch">
+                    Spearheaded the complete platform re-architecture: decomposed a legacy PHP monolith into 20+ containerized microservices running on AWS ECS. Authored the entire Infrastructure-as-Code layer with Terraform, built automated CI/CD pipelines with Jenkins, and established observability with Sentry and PagerDuty. This transformation eliminated critical bottlenecks and enabled the platform to scale for city-wide operations.
+                </p>
+                <div class="timeline-tags">
+                    <span class="tag tag-cloud">ECS</span>
+                    <span class="tag tag-cloud">Terraform</span>
+                    <span class="tag tag-data">DynamoDB</span>
+                    <span class="tag tag-data">ElasticSearch</span>
+                    <span class="tag tag-devops">Jenkins</span>
+                    <span class="tag tag-devops">Ansible</span>
+                    <span class="tag tag-devops">Packer</span>
+                    <span class="tag tag-other">Sentry</span>
+                </div>
+            </div>
+        </div>
+        <!-- Kimia -->
+        <div class="timeline-item reveal">
+            <div class="timeline-card">
+                <div class="timeline-header">
+                    <span class="timeline-company">Kimia</span>
+                    <span class="timeline-date">2017</span>
+                </div>
+                <div class="timeline-role">Software Architect</div>
+                <div class="timeline-location">Madrid, Spain</div>
+                <p class="timeline-desc" data-i18n="exp.kimia">
+                    Designed and delivered high-throughput backend services in Go, implementing real-time monitoring and alerting pipelines that improved incident response times and system reliability.
+                </p>
+                <div class="timeline-tags">
+                    <span class="tag tag-backend">Golang</span>
+                    <span class="tag tag-other">Monitoring</span>
+                    <span class="tag tag-other">Alerting</span>
+                    <span class="tag tag-other">High Availability</span>
+                </div>
+            </div>
+        </div>
+        <!-- PackLink -->
+        <div class="timeline-item reveal">
+            <div class="timeline-card">
+                <div class="timeline-header">
+                    <span class="timeline-company">PackLink.com</span>
+                    <span class="timeline-date">2015 &mdash; 2017</span>
+                </div>
+                <div class="timeline-role">Software Developer</div>
+                <div class="timeline-location">Madrid, Spain</div>
+                <p class="timeline-desc" data-i18n="exp.packlink">
+                    Key contributor to the Packlink Pro and eBay shipping integration backend. Drove the strategic migration from a monolithic PHP codebase to a polyglot microservices architecture (Java, Scala, Python), leveraging event-driven patterns with RabbitMQ and distributed storage with Cassandra and Redis. Ensured zero-downtime deployments across high-traffic e-commerce operations.
+                </p>
+                <div class="timeline-tags">
+                    <span class="tag tag-backend">PHP</span>
+                    <span class="tag tag-backend">Java</span>
+                    <span class="tag tag-backend">Scala</span>
+                    <span class="tag tag-backend">Python</span>
+                    <span class="tag tag-backend">SpringBoot</span>
+                    <span class="tag tag-data">Cassandra</span>
+                    <span class="tag tag-data">MongoDB</span>
+                    <span class="tag tag-data">Redis</span>
+                    <span class="tag tag-devops">Docker</span>
+                    <span class="tag tag-other">RabbitMQ</span>
+                </div>
+            </div>
+        </div>
+        <!-- Betabeers -->
+        <div class="timeline-item reveal">
+            <div class="timeline-card">
+                <div class="timeline-header">
+                    <span class="timeline-company">Betabeers</span>
+                    <span class="timeline-date">2012 &mdash; 2015</span>
+                </div>
+                <div class="timeline-role" data-i18n="exp.betabeers_role">Community Organizer &amp; Speaker</div>
+                <div class="timeline-location" data-i18n="exp.betabeers_loc">Barcelona &amp; C&aacute;diz, Spain</div>
+                <p class="timeline-desc" data-i18n="exp.betabeers">
+                    Co-founded and led the Betabeers chapters in C&aacute;diz and Barcelona, curating monthly meetups for 50-100+ developers and entrepreneurs. Built a vibrant local tech community connecting startups, engineers, and investors.
+                </p>
+                <div class="timeline-tags">
+                    <span class="tag tag-other">Community Leadership</span>
+                    <span class="tag tag-other">Tech Events</span>
+                    <span class="tag tag-other">Public Speaking</span>
+                    <span class="tag tag-other">Startups</span>
+                </div>
+            </div>
+        </div>
+        <!-- Softonic -->
+        <div class="timeline-item reveal">
+            <div class="timeline-card">
+                <div class="timeline-header">
+                    <span class="timeline-company">Softonic</span>
+                    <span class="timeline-date">2013 &mdash; 2014</span>
+                </div>
+                <div class="timeline-role">Backend Developer</div>
+                <div class="timeline-location">Barcelona, Spain</div>
+                <p class="timeline-desc" data-i18n="exp.softonic">
+                    Engineered backend systems for the Softonic Downloader serving millions of daily downloads. Built data processing pipelines with the Hadoop ecosystem (Hive, Oozie) and applied TDD practices with PHPUnit. Gained deep expertise in operating high-traffic platforms at scale.
+                </p>
+                <div class="timeline-tags">
+                    <span class="tag tag-backend">PHP</span>
+                    <span class="tag tag-data">MySQL</span>
+                    <span class="tag tag-data">Hadoop</span>
+                    <span class="tag tag-data">Hive</span>
+                    <span class="tag tag-other">RabbitMQ</span>
+                    <span class="tag tag-other">PHPUnit</span>
+                    <span class="tag tag-other">TDD</span>
+                </div>
+            </div>
+        </div>
+        <!-- Crononauta -->
+        <div class="timeline-item reveal">
+            <div class="timeline-card">
+                <div class="timeline-header">
+                    <span class="timeline-company">Crononauta</span>
+                    <span class="timeline-date">2012 &mdash; 2013</span>
+                </div>
+                <div class="timeline-role">Web Developer</div>
+                <div class="timeline-location" data-i18n="exp.crononauta_loc">Spain</div>
+                <p class="timeline-desc" data-i18n="exp.crononauta">
+                    Built and maintained content-driven web applications using PHP and Drupal 7, delivering end-to-end solutions from requirements gathering to production deployment.
+                </p>
+                <div class="timeline-tags">
+                    <span class="tag tag-backend">PHP</span>
+                    <span class="tag tag-other">Drupal 7</span>
+                </div>
+            </div>
+        </div>
+        <!-- Soluciones DTV -->
+        <div class="timeline-item reveal">
+            <div class="timeline-card">
+                <div class="timeline-header">
+                    <span class="timeline-company">Soluciones DTV</span>
+                    <span class="timeline-date">2011</span>
+                </div>
+                <div class="timeline-role">Team Lead</div>
+                <div class="timeline-location" data-i18n="exp.dtv_loc">Spain</div>
+                <p class="timeline-desc" data-i18n="exp.dtv">
+                    First leadership role: managed a development team to architect and ship a social networking platform from scratch. Owned the full product lifecycle from technical design to production launch.
+                </p>
+                <div class="timeline-tags">
+                    <span class="tag tag-other">Team Leadership</span>
+                    <span class="tag tag-other">Product Development</span>
+                    <span class="tag tag-other">Full Lifecycle</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills -->
+<section class="section" id="skills">
+    <div class="reveal">
+        <div class="section-label" data-i18n="skills.label">Tech stack</div>
+        <h2 class="section-title" data-i18n="skills.title">Skills &amp; Technologies</h2>
+    </div>
+    <div class="skills-grid">
+        <div class="skill-category reveal" style="border-color: rgba(168,85,247,0.3); grid-column: 1 / -1;">
+            <div class="skill-cat-header">
+                <div class="skill-cat-icon" style="background:rgba(168,85,247,0.15)">&#129302;</div>
+                <span class="skill-cat-name" data-i18n="skills.ai">AI, Agents &amp; LLMs</span>
+            </div>
+            <div class="skill-tags">
+                <span class="skill-tag">LLM Orchestration</span><span class="skill-tag">AI Agents</span>
+                <span class="skill-tag">RAG Pipelines</span><span class="skill-tag">Prompt Engineering</span>
+                <span class="skill-tag">Claude / Anthropic API</span><span class="skill-tag">OpenAI API</span>
+                <span class="skill-tag">LangChain</span><span class="skill-tag">Vector Databases</span>
+                <span class="skill-tag">MCP (Model Context Protocol)</span><span class="skill-tag">Claude Code</span>
+                <span class="skill-tag">Cursor</span><span class="skill-tag">GitHub Copilot</span>
+                <span class="skill-tag">AI-Assisted Development</span>
+            </div>
+        </div>
+        <div class="skill-category reveal">
+            <div class="skill-cat-header">
+                <div class="skill-cat-icon" style="background:rgba(56,189,248,0.12)">&#9729;</div>
+                <span class="skill-cat-name" data-i18n="skills.cloud">Cloud &amp; Infrastructure</span>
+            </div>
+            <div class="skill-tags">
+                <span class="skill-tag">AWS</span><span class="skill-tag">Terraform</span>
+                <span class="skill-tag">ECS</span><span class="skill-tag">EKS</span>
+                <span class="skill-tag">Serverless</span><span class="skill-tag">Kong</span>
+                <span class="skill-tag">Kinesis</span><span class="skill-tag">SNS</span>
+                <span class="skill-tag">SQS</span>
+            </div>
+        </div>
+        <div class="skill-category reveal">
+            <div class="skill-cat-header">
+                <div class="skill-cat-icon" style="background:rgba(129,140,248,0.12)">&#10094;/&#10095;</div>
+                <span class="skill-cat-name" data-i18n="skills.backend">Backend Languages</span>
+            </div>
+            <div class="skill-tags">
+                <span class="skill-tag">Golang</span><span class="skill-tag">PHP</span>
+                <span class="skill-tag">Kotlin</span><span class="skill-tag">Java</span>
+                <span class="skill-tag">Python</span><span class="skill-tag">Scala</span>
+                <span class="skill-tag">SpringBoot</span>
+            </div>
+        </div>
+        <div class="skill-category reveal">
+            <div class="skill-cat-header">
+                <div class="skill-cat-icon" style="background:rgba(251,191,36,0.12)">&#128450;</div>
+                <span class="skill-cat-name" data-i18n="skills.data">Databases &amp; Data</span>
+            </div>
+            <div class="skill-tags">
+                <span class="skill-tag">DynamoDB</span><span class="skill-tag">ElasticSearch</span>
+                <span class="skill-tag">MongoDB</span><span class="skill-tag">MySQL</span>
+                <span class="skill-tag">Redis</span><span class="skill-tag">Cassandra</span>
+                <span class="skill-tag">Hadoop</span><span class="skill-tag">ElastiCache</span>
+            </div>
+        </div>
+        <div class="skill-category reveal">
+            <div class="skill-cat-header">
+                <div class="skill-cat-icon" style="background:rgba(52,211,153,0.12)">&#9881;</div>
+                <span class="skill-cat-name">DevOps &amp; CI/CD</span>
+            </div>
+            <div class="skill-tags">
+                <span class="skill-tag">Docker</span><span class="skill-tag">Jenkins</span>
+                <span class="skill-tag">Ansible</span><span class="skill-tag">Packer</span>
+                <span class="skill-tag">Git</span><span class="skill-tag">Consul</span>
+            </div>
+        </div>
+        <div class="skill-category reveal">
+            <div class="skill-cat-header">
+                <div class="skill-cat-icon" style="background:rgba(244,114,182,0.12)">&#128232;</div>
+                <span class="skill-cat-name" data-i18n="skills.messaging">Messaging &amp; Queues</span>
+            </div>
+            <div class="skill-tags">
+                <span class="skill-tag">RabbitMQ</span><span class="skill-tag">Kinesis</span>
+                <span class="skill-tag">SNS</span><span class="skill-tag">SQS</span>
+            </div>
+        </div>
+        <div class="skill-category reveal">
+            <div class="skill-cat-header">
+                <div class="skill-cat-icon" style="background:rgba(251,113,133,0.12)">&#128200;</div>
+                <span class="skill-cat-name" data-i18n="skills.monitoring">Monitoring &amp; Observability</span>
+            </div>
+            <div class="skill-tags">
+                <span class="skill-tag">Sentry</span><span class="skill-tag">PagerDuty</span>
+                <span class="skill-tag">Tableau</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Certifications -->
+<section class="section" id="certs">
+    <div class="reveal">
+        <div class="section-label" data-i18n="certs.label">Credentials</div>
+        <h2 class="section-title" data-i18n="certs.title">Certifications</h2>
+    </div>
+    <div class="certs-grid">
+        <div class="cert-card reveal">
+            <div class="cert-icon" style="background:rgba(129,140,248,0.1)">&#128220;</div>
+            <div class="cert-name">Zend Certified PHP Engineer</div>
+        </div>
+        <div class="cert-card reveal">
+            <div class="cert-icon" style="background:rgba(52,211,153,0.1)">&#128220;</div>
+            <div class="cert-name">MongoDB DBA</div>
+        </div>
+        <div class="cert-card reveal">
+            <div class="cert-icon" style="background:rgba(56,189,248,0.1)">&#128220;</div>
+            <div class="cert-name">MongoDB Developer</div>
+        </div>
+        <div class="cert-card reveal">
+            <div class="cert-icon" style="background:rgba(251,191,36,0.1)">&#128220;</div>
+            <div class="cert-name">MySQL 5.6 Developer</div>
+        </div>
+    </div>
+</section>
+
+<!-- Education -->
+<section class="section" id="education">
+    <div class="reveal">
+        <div class="section-label" data-i18n="edu.label">Education</div>
+        <h2 class="section-title" data-i18n="edu.title">Academic Background</h2>
+    </div>
+    <div class="edu-card reveal">
+        <div class="edu-icon">&#127891;</div>
+        <div class="edu-info">
+            <h3>Universidad de C&aacute;diz</h3>
+            <p data-i18n="edu.degree">Computer Systems Engineering</p>
+            <div class="edu-date">2007 &mdash; 2014</div>
+        </div>
+    </div>
+</section>
+
+<!-- Awards -->
+<section class="section" id="awards">
+    <div class="reveal">
+        <div class="section-label" data-i18n="awards.label">Recognition</div>
+        <h2 class="section-title" data-i18n="awards.title">Awards</h2>
+    </div>
+    <div class="cert-card reveal" style="max-width:300px;">
+        <div class="cert-icon" style="background:rgba(251,191,36,0.1)">&#127942;</div>
+        <div class="cert-name">Megathon W8 C&aacute;diz</div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <ul class="footer-links">
+        <li><a href="#" id="footerEmail" onclick="sendEmail(event)">Email</a></li>
+        <li><a href="https://www.linkedin.com/in/csorianogallego" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/neoshadybeat" target="_blank" rel="noopener">GitHub</a></li>
+    </ul>
+    <p class="footer-copy">&copy; 2025 Cayetano Soriano Gallego. <span data-i18n="footer.rights">All rights reserved.</span></p>
+</footer>
+
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0})" aria-label="Scroll to top">&#8593;</button>
+
+<script>
+const translations = {
+    en: {
+        "nav.about": "About",
+        "nav.experience": "Experience",
+        "nav.skills": "Skills",
+        "nav.certs": "Certifications",
+        "nav.education": "Education",
+        "hero.badge": "Open to opportunities",
+        "hero.subtitle": "CTO & hands-on technologist with 15+ years scaling platforms, designing microservice architectures on AWS, and now integrating AI-powered agents and LLM orchestration into production systems.",
+        "hero.contact": "Get in touch",
+        "hero.download": "Download CV",
+        "hero.years": "Years in Tech",
+        "hero.cto_years": "Years as CTO",
+        "hero.certs": "Certifications",
+        "hero.languages": "Languages",
+        "about.label": "About me",
+        "about.title": "Who I Am",
+        "about.text": "I'm a <strong>CTO and hands-on engineering leader</strong> with 15+ years building mission-critical platforms. I've taken companies from monolithic legacy systems to <strong>cloud-native microservice architectures on AWS</strong>, always owning the full stack: from Terraform infrastructure to Kubernetes orchestration to CI/CD pipelines.<br><br>Currently, I'm deep into the <strong>AI & LLM revolution</strong> \u2014 designing autonomous agent systems, building RAG pipelines, integrating large language models into production workflows, and leveraging AI-assisted development tools (Cursor, Claude Code, Copilot) to multiply engineering output. I combine battle-tested DevOps and backend expertise with a forward-looking AI-first mindset.",
+        "about.location_label": "Location",
+        "about.location": "Madrid, Spain",
+        "exp.label": "Career path",
+        "exp.title": "Experience",
+        "exp.sharetech_cto": "Driving the full technology vision and roadmap for the company. Owning cloud architecture decisions, orchestrating cross-functional engineering squads, and establishing best practices for platform reliability and developer experience. Hands-on leadership across infrastructure automation, microservices governance, and cost optimization on AWS.",
+        "exp.rideon_cto": "Promoted from Architect to CTO to own the entire technology strategy for the eSharing mobility platform. Scaled the engineering organization, implemented OKRs for the tech department, drove the adoption of event-driven architecture with AWS Kinesis, and reduced infrastructure costs by optimizing container orchestration with EKS. Directly accountable for platform uptime, security, and technical due diligence with investors.",
+        "exp.rideon_arch": "Spearheaded the complete platform re-architecture: decomposed a legacy PHP monolith into 20+ containerized microservices running on AWS ECS. Authored the entire Infrastructure-as-Code layer with Terraform, built automated CI/CD pipelines with Jenkins, and established observability with Sentry and PagerDuty. This transformation eliminated critical bottlenecks and enabled the platform to scale for city-wide operations.",
+        "exp.kimia": "Designed and delivered high-throughput backend services in Go, implementing real-time monitoring and alerting pipelines that improved incident response times and system reliability.",
+        "exp.packlink": "Key contributor to the Packlink Pro and eBay shipping integration backend. Drove the strategic migration from a monolithic PHP codebase to a polyglot microservices architecture (Java, Scala, Python), leveraging event-driven patterns with RabbitMQ and distributed storage with Cassandra and Redis. Ensured zero-downtime deployments across high-traffic e-commerce operations.",
+        "exp.betabeers_role": "Community Organizer & Speaker",
+        "exp.betabeers_loc": "Barcelona & C\u00e1diz, Spain",
+        "exp.betabeers": "Co-founded and led the Betabeers chapters in C\u00e1diz and Barcelona, curating monthly meetups for 50-100+ developers and entrepreneurs. Built a vibrant local tech community connecting startups, engineers, and investors.",
+        "exp.softonic": "Engineered backend systems for the Softonic Downloader serving millions of daily downloads. Built data processing pipelines with the Hadoop ecosystem (Hive, Oozie) and applied TDD practices with PHPUnit. Gained deep expertise in operating high-traffic platforms at scale.",
+        "exp.crononauta_loc": "Spain",
+        "exp.crononauta": "Built and maintained content-driven web applications using PHP and Drupal 7, delivering end-to-end solutions from requirements gathering to production deployment.",
+        "exp.dtv_loc": "Spain",
+        "exp.dtv": "First leadership role: managed a development team to architect and ship a social networking platform from scratch. Owned the full product lifecycle from technical design to production launch.",
+        "skills.label": "Tech stack",
+        "skills.title": "Skills & Technologies",
+        "skills.ai": "AI, Agents & LLMs",
+        "skills.cloud": "Cloud & Infrastructure",
+        "skills.backend": "Backend Languages",
+        "skills.data": "Databases & Data",
+        "skills.messaging": "Messaging & Queues",
+        "skills.monitoring": "Monitoring & Observability",
+        "certs.label": "Credentials",
+        "certs.title": "Certifications",
+        "edu.label": "Education",
+        "edu.title": "Academic Background",
+        "edu.degree": "Computer Systems Engineering",
+        "awards.label": "Recognition",
+        "awards.title": "Awards",
+        "footer.rights": "All rights reserved."
+    },
+    es: {
+        "nav.about": "Sobre m\u00ed",
+        "nav.experience": "Experiencia",
+        "nav.skills": "Tecnolog\u00edas",
+        "nav.certs": "Certificaciones",
+        "nav.education": "Educaci\u00f3n",
+        "hero.badge": "Abierto a oportunidades",
+        "hero.subtitle": "CTO y tecn\u00f3logo hands-on con m\u00e1s de 15 a\u00f1os escalando plataformas, dise\u00f1ando arquitecturas de microservicios en AWS, e integrando agentes de IA y orquestaci\u00f3n de LLMs en sistemas en producci\u00f3n.",
+        "hero.contact": "Contactar",
+        "hero.download": "Descargar CV",
+        "hero.years": "A\u00f1os en Tech",
+        "hero.cto_years": "A\u00f1os como CTO",
+        "hero.certs": "Certificaciones",
+        "hero.languages": "Idiomas",
+        "about.label": "Sobre m\u00ed",
+        "about.title": "Qui\u00e9n soy",
+        "about.text": "Soy un <strong>CTO e ingeniero l\u00edder hands-on</strong> con m\u00e1s de 15 a\u00f1os construyendo plataformas de misi\u00f3n cr\u00edtica. He llevado empresas desde sistemas monol\u00edticos legacy hasta <strong>arquitecturas cloud-native de microservicios en AWS</strong>, siempre como due\u00f1o del stack completo: desde infraestructura con Terraform hasta orquestaci\u00f3n con Kubernetes y pipelines CI/CD.<br><br>Actualmente estoy inmerso en la <strong>revoluci\u00f3n de IA y LLMs</strong> \u2014 dise\u00f1ando sistemas de agentes aut\u00f3nomos, construyendo pipelines RAG, integrando modelos de lenguaje en flujos de trabajo en producci\u00f3n, y utilizando herramientas de desarrollo asistido por IA (Cursor, Claude Code, Copilot) para multiplicar la productividad del equipo. Combino experiencia s\u00f3lida en DevOps y backend con una mentalidad AI-first orientada al futuro.",
+        "about.location_label": "Ubicaci\u00f3n",
+        "about.location": "Madrid, Espa\u00f1a",
+        "exp.label": "Trayectoria",
+        "exp.title": "Experiencia",
+        "exp.sharetech_cto": "Definiendo la visi\u00f3n tecnol\u00f3gica completa y la hoja de ruta de la empresa. Responsable de las decisiones de arquitectura cloud, orquestando squads de ingenier\u00eda multifuncionales y estableciendo mejores pr\u00e1cticas para la fiabilidad de la plataforma y la experiencia de desarrollo. Liderazgo hands-on en automatizaci\u00f3n de infraestructura, gobernanza de microservicios y optimizaci\u00f3n de costes en AWS.",
+        "exp.rideon_cto": "Promoci\u00f3n de Arquitecto a CTO para liderar toda la estrategia tecnol\u00f3gica de la plataforma de movilidad eSharing. Escal\u00e9 la organizaci\u00f3n de ingenier\u00eda, implement\u00e9 OKRs para el departamento t\u00e9cnico, impuls\u00e9 la adopci\u00f3n de arquitectura event-driven con AWS Kinesis y reduje costes de infraestructura optimizando la orquestaci\u00f3n de contenedores con EKS. Responsable directo del uptime de la plataforma, seguridad y due diligence t\u00e9cnica con inversores.",
+        "exp.rideon_arch": "Lider\u00e9 la re-arquitectura completa de la plataforma: descomposici\u00f3n de un monolito PHP legacy en m\u00e1s de 20 microservicios containerizados en AWS ECS. Autor de toda la capa de Infraestructura como C\u00f3digo con Terraform, construcci\u00f3n de pipelines CI/CD automatizados con Jenkins, y establecimiento de observabilidad con Sentry y PagerDuty. Esta transformaci\u00f3n elimin\u00f3 cuellos de botella cr\u00edticos y permiti\u00f3 escalar la plataforma a operaciones a nivel de ciudad.",
+        "exp.kimia": "Dise\u00f1o y entrega de servicios backend de alto rendimiento en Go, implementando pipelines de monitorizaci\u00f3n y alertas en tiempo real que mejoraron los tiempos de respuesta a incidentes y la fiabilidad del sistema.",
+        "exp.packlink": "Contribuidor clave en el backend de Packlink Pro y la integraci\u00f3n de env\u00edos de eBay. Impuls\u00e9 la migraci\u00f3n estrat\u00e9gica de un c\u00f3digo monol\u00edtico PHP a una arquitectura pol\u00edglota de microservicios (Java, Scala, Python), aprovechando patrones event-driven con RabbitMQ y almacenamiento distribuido con Cassandra y Redis. Despliegues zero-downtime en operaciones e-commerce de alto tr\u00e1fico.",
+        "exp.betabeers_role": "Organizador y ponente",
+        "exp.betabeers_loc": "Barcelona y C\u00e1diz, Espa\u00f1a",
+        "exp.betabeers": "Co-fund\u00e9 y lider\u00e9 los cap\u00edtulos de Betabeers en C\u00e1diz y Barcelona, organizando meetups mensuales para 50-100+ desarrolladores y emprendedores. Constru\u00ed una comunidad tech local vibrante conectando startups, ingenieros e inversores.",
+        "exp.softonic": "Ingenier\u00eda de sistemas backend para Softonic Downloader sirviendo millones de descargas diarias. Construcci\u00f3n de pipelines de procesamiento de datos con el ecosistema Hadoop (Hive, Oozie) y aplicaci\u00f3n de pr\u00e1cticas TDD con PHPUnit. Experiencia profunda operando plataformas de alto tr\u00e1fico a escala.",
+        "exp.crononauta_loc": "Espa\u00f1a",
+        "exp.crononauta": "Construcci\u00f3n y mantenimiento de aplicaciones web orientadas a contenido con PHP y Drupal 7, entregando soluciones end-to-end desde la toma de requisitos hasta el despliegue en producci\u00f3n.",
+        "exp.dtv_loc": "Espa\u00f1a",
+        "exp.dtv": "Primer rol de liderazgo: gestion\u00e9 un equipo de desarrollo para arquitecturar y lanzar una plataforma de red social desde cero. Due\u00f1o del ciclo de vida completo del producto desde el dise\u00f1o t\u00e9cnico hasta el lanzamiento en producci\u00f3n.",
+        "skills.label": "Stack tecnol\u00f3gico",
+        "skills.title": "Tecnolog\u00edas y habilidades",
+        "skills.ai": "IA, Agentes y LLMs",
+        "skills.cloud": "Cloud e Infraestructura",
+        "skills.backend": "Lenguajes Backend",
+        "skills.data": "Bases de datos y datos",
+        "skills.messaging": "Mensajer\u00eda y colas",
+        "skills.monitoring": "Monitorizaci\u00f3n y observabilidad",
+        "certs.label": "Credenciales",
+        "certs.title": "Certificaciones",
+        "edu.label": "Educaci\u00f3n",
+        "edu.title": "Formaci\u00f3n acad\u00e9mica",
+        "edu.degree": "Ingenier\u00eda T\u00e9cnica en Inform\u00e1tica de Sistemas",
+        "awards.label": "Reconocimientos",
+        "awards.title": "Premios",
+        "footer.rights": "Todos los derechos reservados."
+    }
+};
+
+function setLang(lang) {
+    document.documentElement.setAttribute('data-lang', lang);
+    document.documentElement.setAttribute('lang', lang);
+    localStorage.setItem('lang', lang);
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            el.innerHTML = translations[lang][key];
+        }
+    });
+}
+
+const savedLang = localStorage.getItem('lang') || 'en';
+setLang(savedLang);
+
+window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    const scrollTop = document.getElementById('scrollTop');
+    const y = window.scrollY;
+    navbar.classList.toggle('scrolled', y > 50);
+    scrollTop.classList.toggle('visible', y > 400);
+});
+
+function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+}
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('open');
+    });
+});
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Email anti-bot protection
+function getEmail() {
+    const p = ['cayetano.soriano.gallego', 'gmail', 'com'];
+    return p[0] + '@' + p[1] + '.' + p[2];
+}
+
+function sendEmail(e) {
+    e.preventDefault();
+    window.location.href = 'mailto:' + getEmail();
+}
+
+// Reveal email on about section after small delay (human interaction)
+document.addEventListener('DOMContentLoaded', function() {
+    const aboutEl = document.getElementById('aboutEmail');
+    if (aboutEl) {
+        setTimeout(function() {
+            aboutEl.textContent = getEmail();
+            aboutEl.href = 'mailto:' + getEmail();
+            aboutEl.onclick = null;
+        }, 1500);
+    }
+});
+</script>
+
+</body>
+</html>
