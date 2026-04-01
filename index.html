@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cayetano Soriano Gallego - CTO & Software Architect</title>
     <meta name="description" content="Portfolio of Cayetano Soriano Gallego - Chief Technology Officer, Backend Engineer & DevOps specialist based in Madrid, Spain.">
-    <meta name="keywords" content="CTO, Software Architect, Backend Engineer, DevOps, AWS, Terraform, Microservices">
+    <meta name="keywords" content="CTO, Software Architect, Backend Engineer, DevOps, AWS, Terraform, Microservices, AI, LLM">
     <meta property="og:title" content="Cayetano Soriano Gallego - CTO">
-    <meta property="og:description" content="Chief Technology Officer | Backend Engineer | DevOps">
+    <meta property="og:description" content="Chief Technology Officer | Backend Engineer | DevOps | AI & LLMs">
     <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Sora:wght@600;700;800&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -20,21 +20,23 @@
             --bg-secondary: #111827;
             --bg-card: rgba(17, 24, 39, 0.7);
             --bg-card-hover: rgba(23, 33, 54, 0.85);
-            --border-card: rgba(56, 189, 248, 0.12);
-            --border-card-hover: rgba(56, 189, 248, 0.3);
-            --accent: #38bdf8;
-            --accent-glow: rgba(56, 189, 248, 0.15);
-            --accent-secondary: #818cf8;
-            --accent-tertiary: #34d399;
+            --border-card: rgba(99, 102, 241, 0.12);
+            --border-card-hover: rgba(99, 102, 241, 0.3);
+            --accent: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --accent-secondary: #06b6d4;
+            --accent-tertiary: #10b981;
             --text-primary: #f1f5f9;
             --text-secondary: #94a3b8;
             --text-muted: #64748b;
-            --gradient-1: linear-gradient(135deg, #38bdf8, #818cf8);
-            --gradient-2: linear-gradient(135deg, #818cf8, #c084fc);
-            --gradient-3: linear-gradient(135deg, #34d399, #38bdf8);
+            --gradient-1: linear-gradient(135deg, #6366f1, #06b6d4);
+            --gradient-2: linear-gradient(135deg, #6366f1, #c084fc);
+            --gradient-3: linear-gradient(135deg, #10b981, #06b6d4);
+            --font-headline: 'Sora', sans-serif;
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-label: 'Space Grotesk', sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
-            --radius: 16px;
+            --radius: 12px;
             --radius-sm: 8px;
             --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -52,19 +54,24 @@
         /* Background */
         .bg-grid {
             position: fixed; inset: 0; z-index: 0; pointer-events: none;
-            background-image: radial-gradient(circle at 1px 1px, rgba(56, 189, 248, 0.03) 1px, transparent 0);
+            background-image: radial-gradient(circle at 1px 1px, rgba(99, 102, 241, 0.03) 1px, transparent 0);
             background-size: 40px 40px;
         }
-        .bg-glow { position: fixed; z-index: 0; pointer-events: none; }
+        .bg-glow { position: fixed; z-index: 0; pointer-events: none; border-radius: 50%; }
         .bg-glow-1 {
             top: -20%; right: -10%; width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
             animation: float 15s ease-in-out infinite;
         }
         .bg-glow-2 {
             bottom: -10%; left: -10%; width: 500px; height: 500px;
-            background: radial-gradient(circle, rgba(129, 140, 248, 0.06) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.06) 0%, transparent 70%);
             animation: float 20s ease-in-out infinite reverse;
+        }
+        .bg-glow-3 {
+            top: 40%; left: 50%; width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
+            animation: float 18s ease-in-out infinite 3s;
         }
         @keyframes float {
             0%, 100% { transform: translate(0, 0) scale(1); }
@@ -77,11 +84,11 @@
             position: fixed; top: 0; left: 0; right: 0; z-index: 100;
             padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;
             backdrop-filter: blur(20px); background: rgba(10, 15, 26, 0.8);
-            border-bottom: 1px solid rgba(56, 189, 248, 0.08); transition: var(--transition);
+            border-bottom: 1px solid rgba(99, 102, 241, 0.08); transition: var(--transition);
         }
         .navbar.scrolled { padding: 0.6rem 2rem; background: rgba(10, 15, 26, 0.95); }
         .nav-logo {
-            font-weight: 700; font-size: 1.1rem;
+            font-family: var(--font-headline); font-weight: 700; font-size: 1.1rem;
             background: var(--gradient-1); -webkit-background-clip: text;
             -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: -0.02em;
         }
@@ -98,7 +105,7 @@
         .nav-links a:hover::after { width: 100%; }
 
         .lang-toggle {
-            display: flex; background: rgba(56, 189, 248, 0.08);
+            display: flex; background: rgba(99, 102, 241, 0.08);
             border: 1px solid var(--border-card); border-radius: 20px; overflow: hidden;
         }
         .lang-btn {
@@ -123,32 +130,41 @@
             margin: 0 auto; padding: 5rem 2rem;
         }
         .section-label {
-            font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent);
+            font-family: var(--font-label); font-size: 0.8rem; color: var(--accent);
             text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.5rem;
             display: flex; align-items: center; gap: 0.75rem;
         }
         .section-label::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
-        .section-title { font-size: 2rem; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 2.5rem; }
+        .section-title {
+            font-family: var(--font-headline); font-size: 2rem; font-weight: 700;
+            letter-spacing: -0.03em; margin-bottom: 2.5rem;
+        }
 
         /* Hero */
         .hero {
             min-height: 100vh; display: flex; align-items: center; justify-content: center;
             text-align: center; position: relative; z-index: 1; padding: 2rem;
         }
-        .hero-content { max-width: 800px; }
+        .hero-content { max-width: 850px; }
         .hero-badge {
             display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1.25rem;
-            background: rgba(56, 189, 248, 0.08); border: 1px solid var(--border-card);
-            border-radius: 50px; font-size: 0.8rem; color: var(--accent); font-weight: 500;
+            background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 50px; font-size: 0.8rem; color: var(--accent-tertiary);
+            font-family: var(--font-label); font-weight: 500;
             margin-bottom: 2rem; animation: fadeInUp 0.8s ease-out;
         }
         .hero-badge .dot {
-            width: 6px; height: 6px; background: var(--accent-tertiary);
+            width: 8px; height: 8px; background: var(--accent-tertiary);
             border-radius: 50%; animation: pulse 2s ease-in-out infinite;
+            box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
         }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.85); }
+        }
 
         .hero h1 {
+            font-family: var(--font-headline);
             font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800;
             letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 1.5rem;
             animation: fadeInUp 0.8s ease-out 0.1s both;
@@ -158,8 +174,8 @@
             -webkit-text-fill-color: transparent; background-clip: text;
         }
         .hero-subtitle {
-            font-size: 1.15rem; color: var(--text-secondary); max-width: 600px;
-            margin: 0 auto 2rem; line-height: 1.8; animation: fadeInUp 0.8s ease-out 0.2s both;
+            font-size: 1.15rem; color: var(--text-secondary); max-width: 650px;
+            margin: 0 auto 2.5rem; line-height: 1.8; animation: fadeInUp 0.8s ease-out 0.2s both;
         }
         .hero-cta {
             display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
@@ -170,8 +186,11 @@
             border-radius: 50px; font-size: 0.9rem; font-weight: 600; text-decoration: none;
             transition: var(--transition); cursor: pointer; border: none; font-family: var(--font-sans);
         }
-        .btn-primary { background: var(--gradient-1); color: var(--bg-primary); }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(56, 189, 248, 0.3); }
+        .btn-primary {
+            background: var(--gradient-1); color: #fff;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99, 102, 241, 0.4); }
         .btn-outline { background: transparent; color: var(--text-primary); border: 1px solid var(--border-card-hover); }
         .btn-outline:hover { border-color: var(--accent); background: var(--accent-glow); transform: translateY(-2px); }
 
@@ -180,11 +199,14 @@
             animation: fadeInUp 0.8s ease-out 0.4s both;
         }
         .hero-stat-value {
-            font-size: 2rem; font-weight: 800;
+            font-family: var(--font-headline); font-size: 2rem; font-weight: 800;
             background: var(--gradient-1); -webkit-background-clip: text;
             -webkit-text-fill-color: transparent; background-clip: text;
         }
-        .hero-stat-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; }
+        .hero-stat-label {
+            font-family: var(--font-label); font-size: 0.75rem; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 0.1em;
+        }
 
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(20px); }
@@ -194,6 +216,74 @@
         /* Reveal */
         .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
         .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* Impact Cards */
+        .impact-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+        }
+        .impact-card {
+            background: var(--bg-card); backdrop-filter: blur(20px);
+            border: 1px solid var(--border-card); border-radius: var(--radius);
+            padding: 2rem; transition: var(--transition); position: relative; overflow: hidden;
+        }
+        .impact-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            border-radius: var(--radius) var(--radius) 0 0;
+            transition: var(--transition);
+        }
+        .impact-card:nth-child(1)::before { background: var(--gradient-1); }
+        .impact-card:nth-child(2)::before { background: var(--gradient-2); }
+        .impact-card:nth-child(3)::before { background: var(--gradient-3); }
+        .impact-card:hover {
+            background: var(--bg-card-hover); border-color: var(--border-card-hover);
+            transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        .impact-card-icon {
+            width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;
+            border-radius: 12px; font-size: 1.4rem; margin-bottom: 1.25rem;
+        }
+        .impact-card h3 {
+            font-family: var(--font-headline); font-size: 1.1rem; font-weight: 700;
+            margin-bottom: 0.75rem; letter-spacing: -0.02em;
+        }
+        .impact-card p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; }
+
+        /* Metrics Section */
+        .metrics-section {
+            position: relative; z-index: 1; padding: 4rem 2rem;
+        }
+        .metrics-inner {
+            max-width: 1100px; margin: 0 auto;
+            background: var(--bg-card); backdrop-filter: blur(20px);
+            border: 1px solid var(--border-card); border-radius: var(--radius);
+            padding: 3rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;
+            position: relative; overflow: hidden;
+        }
+        .metrics-inner::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+            background: var(--gradient-1);
+        }
+        .metric-item { text-align: center; }
+        .metric-value {
+            font-family: var(--font-headline); font-size: 2.5rem; font-weight: 800;
+            background: var(--gradient-1); -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; background-clip: text;
+            line-height: 1.2; margin-bottom: 0.5rem;
+        }
+        .metric-item:nth-child(2) .metric-value {
+            background: var(--gradient-2); -webkit-background-clip: text; background-clip: text;
+        }
+        .metric-item:nth-child(3) .metric-value {
+            background: var(--gradient-3); -webkit-background-clip: text; background-clip: text;
+        }
+        .metric-item:nth-child(4) .metric-value {
+            background: linear-gradient(135deg, #c084fc, #f472b6);
+            -webkit-background-clip: text; background-clip: text;
+        }
+        .metric-label {
+            font-family: var(--font-label); font-size: 0.8rem; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 0.1em;
+        }
 
         /* About */
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
@@ -210,22 +300,22 @@
         .about-info-grid { display: flex; flex-direction: column; gap: 1rem; }
         .about-info-item {
             display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem;
-            background: rgba(56, 189, 248, 0.04); border: 1px solid var(--border-card);
+            background: rgba(99, 102, 241, 0.04); border: 1px solid var(--border-card);
             border-radius: var(--radius-sm); transition: var(--transition);
         }
-        .about-info-item:hover { border-color: var(--border-card-hover); background: rgba(56, 189, 248, 0.08); }
+        .about-info-item:hover { border-color: var(--border-card-hover); background: rgba(99, 102, 241, 0.08); }
         .about-info-icon {
             width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
             border-radius: 10px; font-size: 1.1rem; flex-shrink: 0;
         }
-        .icon-email { background: rgba(56, 189, 248, 0.12); }
-        .icon-linkedin { background: rgba(56, 99, 248, 0.12); }
-        .icon-github { background: rgba(129, 140, 248, 0.12); }
-        .icon-location { background: rgba(52, 211, 153, 0.12); }
+        .icon-email { background: rgba(99, 102, 241, 0.12); }
+        .icon-linkedin { background: rgba(6, 182, 212, 0.12); }
+        .icon-github { background: rgba(99, 102, 241, 0.12); }
+        .icon-location { background: rgba(16, 185, 129, 0.12); }
         .about-info-text { font-size: 0.9rem; color: var(--text-secondary); }
         .about-info-text a { color: var(--text-primary); text-decoration: none; transition: var(--transition); }
         .about-info-text a:hover { color: var(--accent); }
-        .about-info-label { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 2px; }
+        .about-info-label { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 2px; font-family: var(--font-label); }
 
         /* Timeline */
         .timeline { position: relative; padding-left: 40px; }
@@ -240,7 +330,7 @@
             border-radius: 50%; background: var(--bg-primary); border: 3px solid var(--accent); z-index: 2;
             transition: var(--transition);
         }
-        .timeline-item:hover::before { background: var(--accent); box-shadow: 0 0 20px rgba(56, 189, 248, 0.4); }
+        .timeline-item:hover::before { background: var(--accent); box-shadow: 0 0 20px rgba(99, 102, 241, 0.4); }
         .timeline-card {
             background: var(--bg-card); backdrop-filter: blur(20px); border: 1px solid var(--border-card);
             border-radius: var(--radius); padding: 1.75rem; transition: var(--transition);
@@ -250,19 +340,22 @@
             transform: translateX(8px); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
         }
         .timeline-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
-        .timeline-company { font-size: 1.2rem; font-weight: 700; color: var(--text-primary); }
+        .timeline-company { font-family: var(--font-headline); font-size: 1.2rem; font-weight: 700; color: var(--text-primary); }
         .timeline-date {
             font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent);
-            background: rgba(56, 189, 248, 0.08); padding: 0.3rem 0.8rem; border-radius: 20px; white-space: nowrap;
+            background: rgba(99, 102, 241, 0.08); padding: 0.3rem 0.8rem; border-radius: 20px; white-space: nowrap;
         }
         .timeline-role { font-size: 1rem; font-weight: 600; color: var(--accent-secondary); margin-bottom: 0.25rem; }
         .timeline-location { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.75rem; }
         .timeline-desc { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1rem; }
         .timeline-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-        .tag { padding: 0.25rem 0.65rem; font-size: 0.7rem; font-family: var(--font-mono); font-weight: 500; border-radius: 6px; letter-spacing: 0.02em; }
-        .tag-cloud { background: rgba(56, 189, 248, 0.1); color: var(--accent); }
-        .tag-backend { background: rgba(129, 140, 248, 0.1); color: var(--accent-secondary); }
-        .tag-devops { background: rgba(52, 211, 153, 0.1); color: var(--accent-tertiary); }
+        .tag {
+            padding: 0.25rem 0.65rem; font-size: 0.7rem; font-family: var(--font-mono);
+            font-weight: 500; border-radius: 6px; letter-spacing: 0.02em;
+        }
+        .tag-cloud { background: rgba(99, 102, 241, 0.1); color: var(--accent); }
+        .tag-backend { background: rgba(6, 182, 212, 0.1); color: var(--accent-secondary); }
+        .tag-devops { background: rgba(16, 185, 129, 0.1); color: var(--accent-tertiary); }
         .tag-data { background: rgba(251, 191, 36, 0.1); color: #fbbf24; }
         .tag-other { background: rgba(244, 114, 182, 0.1); color: #f472b6; }
 
@@ -275,14 +368,14 @@
         .skill-category:hover { border-color: var(--border-card-hover); transform: translateY(-4px); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); }
         .skill-cat-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
         .skill-cat-icon { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 10px; font-size: 1.1rem; }
-        .skill-cat-name { font-weight: 700; font-size: 1rem; }
+        .skill-cat-name { font-family: var(--font-headline); font-weight: 700; font-size: 1rem; }
         .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
         .skill-tag {
             padding: 0.4rem 0.85rem; font-size: 0.8rem; font-family: var(--font-mono); font-weight: 500;
-            border-radius: 8px; background: rgba(56, 189, 248, 0.06); border: 1px solid var(--border-card);
+            border-radius: 8px; background: rgba(99, 102, 241, 0.06); border: 1px solid var(--border-card);
             color: var(--text-secondary); transition: var(--transition);
         }
-        .skill-tag:hover { background: rgba(56, 189, 248, 0.12); border-color: var(--accent); color: var(--text-primary); transform: translateY(-2px); }
+        .skill-tag:hover { background: rgba(99, 102, 241, 0.12); border-color: var(--accent); color: var(--text-primary); transform: translateY(-2px); }
 
         /* Certs */
         .certs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.25rem; }
@@ -309,11 +402,37 @@
         .edu-card:hover { border-color: var(--border-card-hover); transform: translateY(-4px); }
         .edu-icon {
             width: 64px; height: 64px; display: flex; align-items: center; justify-content: center;
-            border-radius: 16px; background: rgba(129, 140, 248, 0.1); font-size: 1.8rem; flex-shrink: 0;
+            border-radius: 16px; background: rgba(99, 102, 241, 0.1); font-size: 1.8rem; flex-shrink: 0;
         }
-        .edu-info h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.25rem; }
+        .edu-info h3 { font-family: var(--font-headline); font-size: 1.2rem; font-weight: 700; margin-bottom: 0.25rem; }
         .edu-info p { color: var(--text-secondary); font-size: 0.95rem; }
         .edu-info .edu-date { font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent); margin-top: 0.5rem; }
+
+        /* CTA Banner */
+        .cta-banner {
+            position: relative; z-index: 1; padding: 5rem 2rem;
+        }
+        .cta-banner-inner {
+            max-width: 900px; margin: 0 auto; text-align: center; padding: 4rem 3rem;
+            border-radius: var(--radius); position: relative; overflow: hidden;
+            background: var(--bg-card); border: 1px solid var(--border-card);
+            backdrop-filter: blur(20px);
+        }
+        .cta-banner-inner::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: var(--gradient-1);
+        }
+        .cta-banner-inner::after {
+            content: ''; position: absolute; inset: 0; z-index: 0;
+            background: radial-gradient(ellipse at center, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .cta-banner h2 {
+            font-family: var(--font-headline); font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-weight: 700; letter-spacing: -0.03em; margin-bottom: 1.5rem;
+            position: relative; z-index: 1;
+        }
+        .cta-banner .btn { position: relative; z-index: 1; }
 
         /* Footer */
         .footer { position: relative; z-index: 1; border-top: 1px solid var(--border-card); padding: 3rem 2rem; text-align: center; }
@@ -344,7 +463,8 @@
             }
             .hero { min-height: 100vh; padding-top: 5rem; }
             .about-grid { grid-template-columns: 1fr; }
-            .hero-stats { gap: 1.5rem; }
+            .impact-grid { grid-template-columns: 1fr; }
+            .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
             .hero h1 { font-size: clamp(2rem, 8vw, 3rem); }
             .section { padding: 3rem 1.25rem; }
             .timeline { padding-left: 30px; }
@@ -352,62 +472,71 @@
             .skills-grid { grid-template-columns: 1fr; }
             .certs-grid { grid-template-columns: 1fr 1fr; }
             .edu-card { flex-direction: column; text-align: center; }
+            .metrics-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; padding: 2rem; }
+            .cta-banner-inner { padding: 3rem 1.5rem; }
         }
         @media (max-width: 480px) {
             .certs-grid { grid-template-columns: 1fr; }
             .hero-stats { flex-direction: column; gap: 1rem; }
+            .metrics-inner { grid-template-columns: 1fr 1fr; }
         }
 
         /* Print / PDF Styles */
         @media print {
             *, *::before, *::after { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
             body { background: #fff !important; color: #1a1a2e !important; font-size: 11px; line-height: 1.5; }
-            .bg-grid, .bg-glow, .bg-glow-1, .bg-glow-2, .navbar, .scroll-top, .print-hide { display: none !important; }
+            .bg-grid, .bg-glow, .bg-glow-1, .bg-glow-2, .bg-glow-3, .navbar, .scroll-top, .print-hide, .cta-banner { display: none !important; }
             .hero { min-height: auto; padding: 2rem 0 1rem; }
             .hero h1 { font-size: 2.2rem; background: none; -webkit-text-fill-color: #1a1a2e; color: #1a1a2e; }
-            .hero h1 .gradient-text { background: none; -webkit-text-fill-color: #2563eb; color: #2563eb; }
+            .hero h1 .gradient-text { background: none; -webkit-text-fill-color: #4f46e5; color: #4f46e5; }
             .hero-subtitle { color: #444; font-size: 0.95rem; }
-            .hero-badge { border-color: #2563eb; color: #2563eb; background: #eef2ff; }
-            .hero-badge .dot { background: #22c55e; }
+            .hero-badge { border-color: #10b981; color: #10b981; background: #ecfdf5; }
+            .hero-badge .dot { background: #10b981; }
             .hero-stats { margin-top: 1.5rem; }
-            .hero-stat-value { background: none; -webkit-text-fill-color: #2563eb; color: #2563eb; font-size: 1.5rem; }
+            .hero-stat-value { background: none; -webkit-text-fill-color: #4f46e5; color: #4f46e5; font-size: 1.5rem; }
             .hero-stat-label { color: #666; }
             .hero-cta { display: none; }
             .section { padding: 1.5rem 0; page-break-inside: avoid; }
-            .section-label { color: #2563eb; }
-            .section-label::before { background: #2563eb; }
+            .section-label { color: #4f46e5; }
+            .section-label::before { background: #4f46e5; }
             .section-title { color: #1a1a2e; font-size: 1.4rem; margin-bottom: 1rem; }
-            .glass-card, .timeline-card, .skill-category, .cert-card, .edu-card {
+            .glass-card, .timeline-card, .skill-category, .cert-card, .edu-card, .impact-card, .metrics-inner {
                 background: #f8fafc !important; border: 1px solid #e2e8f0 !important;
                 backdrop-filter: none; box-shadow: none !important; transform: none !important;
             }
+            .impact-card::before, .metrics-inner::before, .cert-card::before { display: none; }
+            .impact-card h3 { color: #111; }
+            .impact-card p { color: #444; }
             .about-text, .timeline-desc { color: #333; }
             .about-text strong { color: #111; }
             .about-grid { gap: 1rem; }
             .about-info-item { background: #f1f5f9 !important; border-color: #e2e8f0 !important; }
-            .about-info-text a { color: #2563eb; }
+            .about-info-text a { color: #4f46e5; }
             .timeline { padding-left: 25px; }
             .timeline::before { background: #cbd5e1; }
             .timeline-item { margin-bottom: 1.25rem; page-break-inside: avoid; }
-            .timeline-item::before { border-color: #2563eb; left: -25px; width: 10px; height: 10px; }
+            .timeline-item::before { border-color: #4f46e5; left: -25px; width: 10px; height: 10px; }
             .timeline-card { padding: 1rem; }
             .timeline-company { color: #111; }
-            .timeline-role { color: #4f46e5; }
-            .timeline-date { color: #2563eb; background: #eef2ff; }
+            .timeline-role { color: #0891b2; }
+            .timeline-date { color: #4f46e5; background: #eef2ff; }
             .timeline-location { color: #666; }
             .tag { border: 1px solid #e2e8f0; background: #f1f5f9 !important; color: #374151 !important; }
             .skill-tag { background: #f1f5f9 !important; border-color: #e2e8f0 !important; color: #374151 !important; }
             .skill-cat-name { color: #111; }
-            .cert-card::before { display: none; }
             .cert-name { color: #111; }
             .edu-info h3 { color: #111; }
             .edu-info p { color: #444; }
-            .edu-date { color: #2563eb !important; }
+            .edu-date { color: #4f46e5 !important; }
             .footer { border-color: #e2e8f0; }
             .footer-copy, .footer-links a { color: #666; }
             .reveal { opacity: 1 !important; transform: none !important; }
+            .impact-grid { gap: 0.75rem; }
+            .metrics-inner { gap: 1rem; }
+            .metric-value { background: none; -webkit-text-fill-color: #4f46e5; color: #4f46e5; font-size: 1.5rem; }
+            .metric-label { color: #666; }
+            .metrics-section { padding: 1rem 0; }
             a[href]::after { content: none !important; }
-            /* Print header with contact info */
             .hero::after {
                 content: "linkedin.com/in/csorianogallego | github.com/neoshadybeat | Madrid, Spain";
                 display: block; font-size: 0.8rem; color: #666; margin-top: 0.5rem;
@@ -420,11 +549,13 @@
 <div class="bg-grid"></div>
 <div class="bg-glow bg-glow-1"></div>
 <div class="bg-glow bg-glow-2"></div>
+<div class="bg-glow bg-glow-3"></div>
 
 <!-- Navbar -->
 <nav class="navbar" id="navbar">
     <span class="nav-logo">CSG</span>
     <ul class="nav-links" id="navLinks">
+        <li><a href="#impact" data-i18n="nav.impact">What I Bring</a></li>
         <li><a href="#about" data-i18n="nav.about">About</a></li>
         <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
         <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
@@ -447,17 +578,21 @@
     <div class="hero-content">
         <div class="hero-badge">
             <span class="dot"></span>
-            <span data-i18n="hero.badge">Available for new challenges</span>
+            <span data-i18n="hero.badge">Open to opportunities</span>
         </div>
-        <h1>Cayetano<br><span class="gradient-text">Soriano Gallego</span></h1>
+        <h1><span data-i18n="hero.headline_top">Architecting the</span><br><span class="gradient-text" data-i18n="hero.headline_gradient">Future of Scale.</span></h1>
         <p class="hero-subtitle" data-i18n="hero.subtitle">
-            CTO &amp; hands-on technologist with 15+ years scaling platforms, designing microservice architectures on AWS, and now integrating AI-powered agents and LLM orchestration into production systems.
+            CTO &amp; hands-on technologist with 15+ years scaling platforms, designing microservice architectures on AWS, and integrating AI-powered agents and LLM orchestration into production systems.
         </p>
         <div class="hero-cta">
             <a href="#" class="btn btn-primary" id="emailBtn" onclick="sendEmail(event)">
                 <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                 <span data-i18n="hero.contact">Get in touch</span>
             </a>
+            <button onclick="window.print()" class="btn btn-outline print-hide">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+                <span data-i18n="hero.download">Download CV</span>
+            </button>
             <a href="https://github.com/neoshadybeat" target="_blank" rel="noopener" class="btn btn-outline">
                 <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
                 GitHub
@@ -466,10 +601,6 @@
                 <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
                 LinkedIn
             </a>
-            <button onclick="window.print()" class="btn btn-outline print-hide">
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-                <span data-i18n="hero.download">Download CV</span>
-            </button>
         </div>
         <div class="hero-stats">
             <div>
@@ -482,7 +613,7 @@
             </div>
             <div>
                 <div class="hero-stat-value">4</div>
-                <div class="hero-stat-label" data-i18n="hero.certs">Certifications</div>
+                <div class="hero-stat-label" data-i18n="hero.certs_stat">Certifications</div>
             </div>
             <div>
                 <div class="hero-stat-value">2</div>
@@ -491,6 +622,53 @@
         </div>
     </div>
 </section>
+
+<!-- Impact Section -->
+<section class="section" id="impact">
+    <div class="reveal">
+        <div class="section-label" data-i18n="impact.label">What I bring</div>
+        <h2 class="section-title" data-i18n="impact.title">Strategic Leadership</h2>
+    </div>
+    <div class="impact-grid">
+        <div class="impact-card reveal">
+            <div class="impact-card-icon" style="background:rgba(99,102,241,0.12)">&#9881;</div>
+            <h3 data-i18n="impact.card1_title">Architecture &amp; Scale</h3>
+            <p data-i18n="impact.card1_text">Transformed monoliths into 20+ microservices on AWS, achieving 99.99% uptime across platforms serving millions.</p>
+        </div>
+        <div class="impact-card reveal">
+            <div class="impact-card-icon" style="background:rgba(6,182,212,0.12)">&#128101;</div>
+            <h3 data-i18n="impact.card2_title">Team &amp; Culture</h3>
+            <p data-i18n="impact.card2_text">Built and scaled engineering organizations, implemented OKRs, and established developer experience best practices.</p>
+        </div>
+        <div class="impact-card reveal">
+            <div class="impact-card-icon" style="background:rgba(16,185,129,0.12)">&#129302;</div>
+            <h3 data-i18n="impact.card3_title">AI-First Innovation</h3>
+            <p data-i18n="impact.card3_text">Designing autonomous agent systems, RAG pipelines, and integrating LLMs into production workflows.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Metrics Section -->
+<div class="metrics-section">
+    <div class="metrics-inner reveal">
+        <div class="metric-item">
+            <div class="metric-value">99.99%</div>
+            <div class="metric-label" data-i18n="metrics.uptime">Platform Uptime</div>
+        </div>
+        <div class="metric-item">
+            <div class="metric-value">20+</div>
+            <div class="metric-label" data-i18n="metrics.microservices">Microservices Deployed</div>
+        </div>
+        <div class="metric-item">
+            <div class="metric-value">30%</div>
+            <div class="metric-label" data-i18n="metrics.cost">Cost Reduction (AWS)</div>
+        </div>
+        <div class="metric-item">
+            <div class="metric-value">50-100+</div>
+            <div class="metric-label" data-i18n="metrics.events">Community Events Led</div>
+        </div>
+    </div>
+</div>
 
 <!-- About -->
 <section class="section" id="about">
@@ -502,7 +680,7 @@
         <div class="glass-card reveal">
             <p class="about-text" data-i18n="about.text">
                 I'm a <strong>CTO and hands-on engineering leader</strong> with 15+ years building mission-critical platforms. I've taken companies from monolithic legacy systems to <strong>cloud-native microservice architectures on AWS</strong>, always owning the full stack: from Terraform infrastructure to Kubernetes orchestration to CI/CD pipelines.<br><br>
-                Currently, I'm deep into the <strong>AI &amp; LLM revolution</strong> &mdash; designing autonomous agent systems, building RAG pipelines, integrating large language models into production workflows, and leveraging AI-assisted development tools (Cursor, Claude Code, Copilot) to multiply engineering output. I combine battle-tested DevOps and backend expertise with a forward-looking AI-first mindset.
+                I'm now deep into the <strong>AI &amp; LLM revolution</strong> &mdash; designing autonomous agent systems, building RAG pipelines, and integrating large language models into production workflows. I combine battle-tested DevOps and backend expertise with a forward-looking AI-first mindset.
             </p>
         </div>
         <div class="about-info-grid reveal">
@@ -550,12 +728,12 @@
             <div class="timeline-card">
                 <div class="timeline-header">
                     <span class="timeline-company">ShareTech</span>
-                    <span class="timeline-date">2023 &mdash; Present</span>
+                    <span class="timeline-date">2023 &mdash; 2026</span>
                 </div>
                 <div class="timeline-role">Chief Technology Officer</div>
                 <div class="timeline-location">Madrid, Spain</div>
                 <p class="timeline-desc" data-i18n="exp.sharetech_cto">
-                    Driving the full technology vision and roadmap for the company. Owning cloud architecture decisions, orchestrating cross-functional engineering squads, and establishing best practices for platform reliability and developer experience. Hands-on leadership across infrastructure automation, microservices governance, and cost optimization on AWS.
+                    Drove the full technology vision and roadmap for the company. Owned cloud architecture decisions, orchestrated cross-functional engineering squads, and established best practices for platform reliability and developer experience. Hands-on leadership across infrastructure automation, microservices governance, and cost optimization on AWS.
                 </p>
                 <div class="timeline-tags">
                     <span class="tag tag-cloud">AWS</span>
@@ -771,7 +949,7 @@
         </div>
         <div class="skill-category reveal">
             <div class="skill-cat-header">
-                <div class="skill-cat-icon" style="background:rgba(56,189,248,0.12)">&#9729;</div>
+                <div class="skill-cat-icon" style="background:rgba(99,102,241,0.12)">&#9729;</div>
                 <span class="skill-cat-name" data-i18n="skills.cloud">Cloud &amp; Infrastructure</span>
             </div>
             <div class="skill-tags">
@@ -784,7 +962,7 @@
         </div>
         <div class="skill-category reveal">
             <div class="skill-cat-header">
-                <div class="skill-cat-icon" style="background:rgba(129,140,248,0.12)">&#10094;/&#10095;</div>
+                <div class="skill-cat-icon" style="background:rgba(6,182,212,0.12)">&#10094;/&#10095;</div>
                 <span class="skill-cat-name" data-i18n="skills.backend">Backend Languages</span>
             </div>
             <div class="skill-tags">
@@ -808,7 +986,7 @@
         </div>
         <div class="skill-category reveal">
             <div class="skill-cat-header">
-                <div class="skill-cat-icon" style="background:rgba(52,211,153,0.12)">&#9881;</div>
+                <div class="skill-cat-icon" style="background:rgba(16,185,129,0.12)">&#9881;</div>
                 <span class="skill-cat-name">DevOps &amp; CI/CD</span>
             </div>
             <div class="skill-tags">
@@ -848,15 +1026,15 @@
     </div>
     <div class="certs-grid">
         <div class="cert-card reveal">
-            <div class="cert-icon" style="background:rgba(129,140,248,0.1)">&#128220;</div>
+            <div class="cert-icon" style="background:rgba(99,102,241,0.1)">&#128220;</div>
             <div class="cert-name">Zend Certified PHP Engineer</div>
         </div>
         <div class="cert-card reveal">
-            <div class="cert-icon" style="background:rgba(52,211,153,0.1)">&#128220;</div>
+            <div class="cert-icon" style="background:rgba(16,185,129,0.1)">&#128220;</div>
             <div class="cert-name">MongoDB DBA</div>
         </div>
         <div class="cert-card reveal">
-            <div class="cert-icon" style="background:rgba(56,189,248,0.1)">&#128220;</div>
+            <div class="cert-icon" style="background:rgba(6,182,212,0.1)">&#128220;</div>
             <div class="cert-name">MongoDB Developer</div>
         </div>
         <div class="cert-card reveal">
@@ -894,6 +1072,17 @@
     </div>
 </section>
 
+<!-- CTA Banner -->
+<div class="cta-banner">
+    <div class="cta-banner-inner reveal">
+        <h2 data-i18n="cta.title">Ready to build the next generational platform?</h2>
+        <a href="#" class="btn btn-primary" onclick="sendEmail(event)">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span data-i18n="cta.button">Get in touch</span>
+        </a>
+    </div>
+</div>
+
 <!-- Footer -->
 <footer class="footer">
     <ul class="footer-links">
@@ -901,7 +1090,7 @@
         <li><a href="https://www.linkedin.com/in/csorianogallego" target="_blank" rel="noopener">LinkedIn</a></li>
         <li><a href="https://github.com/neoshadybeat" target="_blank" rel="noopener">GitHub</a></li>
     </ul>
-    <p class="footer-copy">&copy; 2025 Cayetano Soriano Gallego. <span data-i18n="footer.rights">All rights reserved.</span></p>
+    <p class="footer-copy">&copy; 2026 Cayetano Soriano Gallego. <span data-i18n="footer.rights">All rights reserved.</span></p>
 </footer>
 
 <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0})" aria-label="Scroll to top">&#8593;</button>
@@ -909,27 +1098,42 @@
 <script>
 const translations = {
     en: {
+        "nav.impact": "What I Bring",
         "nav.about": "About",
         "nav.experience": "Experience",
         "nav.skills": "Skills",
         "nav.certs": "Certifications",
         "nav.education": "Education",
         "hero.badge": "Open to opportunities",
-        "hero.subtitle": "CTO & hands-on technologist with 15+ years scaling platforms, designing microservice architectures on AWS, and now integrating AI-powered agents and LLM orchestration into production systems.",
+        "hero.headline_top": "Architecting the",
+        "hero.headline_gradient": "Future of Scale.",
+        "hero.subtitle": "CTO & hands-on technologist with 15+ years scaling platforms, designing microservice architectures on AWS, and integrating AI-powered agents and LLM orchestration into production systems.",
         "hero.contact": "Get in touch",
         "hero.download": "Download CV",
         "hero.years": "Years in Tech",
         "hero.cto_years": "Years as CTO",
-        "hero.certs": "Certifications",
+        "hero.certs_stat": "Certifications",
         "hero.languages": "Languages",
+        "impact.label": "What I bring",
+        "impact.title": "Strategic Leadership",
+        "impact.card1_title": "Architecture & Scale",
+        "impact.card1_text": "Transformed monoliths into 20+ microservices on AWS, achieving 99.99% uptime across platforms serving millions.",
+        "impact.card2_title": "Team & Culture",
+        "impact.card2_text": "Built and scaled engineering organizations, implemented OKRs, and established developer experience best practices.",
+        "impact.card3_title": "AI-First Innovation",
+        "impact.card3_text": "Designing autonomous agent systems, RAG pipelines, and integrating LLMs into production workflows.",
+        "metrics.uptime": "Platform Uptime",
+        "metrics.microservices": "Microservices Deployed",
+        "metrics.cost": "Cost Reduction (AWS)",
+        "metrics.events": "Community Events Led",
         "about.label": "About me",
         "about.title": "Who I Am",
-        "about.text": "I'm a <strong>CTO and hands-on engineering leader</strong> with 15+ years building mission-critical platforms. I've taken companies from monolithic legacy systems to <strong>cloud-native microservice architectures on AWS</strong>, always owning the full stack: from Terraform infrastructure to Kubernetes orchestration to CI/CD pipelines.<br><br>Currently, I'm deep into the <strong>AI & LLM revolution</strong> \u2014 designing autonomous agent systems, building RAG pipelines, integrating large language models into production workflows, and leveraging AI-assisted development tools (Cursor, Claude Code, Copilot) to multiply engineering output. I combine battle-tested DevOps and backend expertise with a forward-looking AI-first mindset.",
+        "about.text": "I'm a <strong>CTO and hands-on engineering leader</strong> with 15+ years building mission-critical platforms. I've taken companies from monolithic legacy systems to <strong>cloud-native microservice architectures on AWS</strong>, always owning the full stack: from Terraform infrastructure to Kubernetes orchestration to CI/CD pipelines.<br><br>I'm now deep into the <strong>AI & LLM revolution</strong> \u2014 designing autonomous agent systems, building RAG pipelines, and integrating large language models into production workflows. I combine battle-tested DevOps and backend expertise with a forward-looking AI-first mindset.",
         "about.location_label": "Location",
         "about.location": "Madrid, Spain",
         "exp.label": "Career path",
         "exp.title": "Experience",
-        "exp.sharetech_cto": "Driving the full technology vision and roadmap for the company. Owning cloud architecture decisions, orchestrating cross-functional engineering squads, and establishing best practices for platform reliability and developer experience. Hands-on leadership across infrastructure automation, microservices governance, and cost optimization on AWS.",
+        "exp.sharetech_cto": "Drove the full technology vision and roadmap for the company. Owned cloud architecture decisions, orchestrated cross-functional engineering squads, and established best practices for platform reliability and developer experience. Hands-on leadership across infrastructure automation, microservices governance, and cost optimization on AWS.",
         "exp.rideon_cto": "Promoted from Architect to CTO to own the entire technology strategy for the eSharing mobility platform. Scaled the engineering organization, implemented OKRs for the tech department, drove the adoption of event-driven architecture with AWS Kinesis, and reduced infrastructure costs by optimizing container orchestration with EKS. Directly accountable for platform uptime, security, and technical due diligence with investors.",
         "exp.rideon_arch": "Spearheaded the complete platform re-architecture: decomposed a legacy PHP monolith into 20+ containerized microservices running on AWS ECS. Authored the entire Infrastructure-as-Code layer with Terraform, built automated CI/CD pipelines with Jenkins, and established observability with Sentry and PagerDuty. This transformation eliminated critical bottlenecks and enabled the platform to scale for city-wide operations.",
         "exp.kimia": "Designed and delivered high-throughput backend services in Go, implementing real-time monitoring and alerting pipelines that improved incident response times and system reliability.",
@@ -957,30 +1161,47 @@ const translations = {
         "edu.degree": "Computer Systems Engineering",
         "awards.label": "Recognition",
         "awards.title": "Awards",
+        "cta.title": "Ready to build the next generational platform?",
+        "cta.button": "Get in touch",
         "footer.rights": "All rights reserved."
     },
     es: {
+        "nav.impact": "Lo que aporto",
         "nav.about": "Sobre m\u00ed",
         "nav.experience": "Experiencia",
         "nav.skills": "Tecnolog\u00edas",
         "nav.certs": "Certificaciones",
         "nav.education": "Educaci\u00f3n",
         "hero.badge": "Abierto a oportunidades",
+        "hero.headline_top": "Arquitectando el",
+        "hero.headline_gradient": "Futuro a Escala.",
         "hero.subtitle": "CTO y tecn\u00f3logo hands-on con m\u00e1s de 15 a\u00f1os escalando plataformas, dise\u00f1ando arquitecturas de microservicios en AWS, e integrando agentes de IA y orquestaci\u00f3n de LLMs en sistemas en producci\u00f3n.",
         "hero.contact": "Contactar",
         "hero.download": "Descargar CV",
         "hero.years": "A\u00f1os en Tech",
         "hero.cto_years": "A\u00f1os como CTO",
-        "hero.certs": "Certificaciones",
+        "hero.certs_stat": "Certificaciones",
         "hero.languages": "Idiomas",
+        "impact.label": "Lo que aporto",
+        "impact.title": "Liderazgo Estrat\u00e9gico",
+        "impact.card1_title": "Arquitectura y Escala",
+        "impact.card1_text": "Transform\u00e9 monolitos en m\u00e1s de 20 microservicios en AWS, alcanzando un 99.99% de uptime en plataformas que sirven a millones.",
+        "impact.card2_title": "Equipo y Cultura",
+        "impact.card2_text": "Constru\u00ed y escal\u00e9 organizaciones de ingenier\u00eda, implement\u00e9 OKRs y establec\u00ed mejores pr\u00e1cticas de developer experience.",
+        "impact.card3_title": "Innovaci\u00f3n AI-First",
+        "impact.card3_text": "Dise\u00f1ando sistemas de agentes aut\u00f3nomos, pipelines RAG e integrando LLMs en flujos de trabajo en producci\u00f3n.",
+        "metrics.uptime": "Uptime de plataforma",
+        "metrics.microservices": "Microservicios desplegados",
+        "metrics.cost": "Reducci\u00f3n de costes (AWS)",
+        "metrics.events": "Eventos de comunidad liderados",
         "about.label": "Sobre m\u00ed",
         "about.title": "Qui\u00e9n soy",
-        "about.text": "Soy un <strong>CTO e ingeniero l\u00edder hands-on</strong> con m\u00e1s de 15 a\u00f1os construyendo plataformas de misi\u00f3n cr\u00edtica. He llevado empresas desde sistemas monol\u00edticos legacy hasta <strong>arquitecturas cloud-native de microservicios en AWS</strong>, siempre como due\u00f1o del stack completo: desde infraestructura con Terraform hasta orquestaci\u00f3n con Kubernetes y pipelines CI/CD.<br><br>Actualmente estoy inmerso en la <strong>revoluci\u00f3n de IA y LLMs</strong> \u2014 dise\u00f1ando sistemas de agentes aut\u00f3nomos, construyendo pipelines RAG, integrando modelos de lenguaje en flujos de trabajo en producci\u00f3n, y utilizando herramientas de desarrollo asistido por IA (Cursor, Claude Code, Copilot) para multiplicar la productividad del equipo. Combino experiencia s\u00f3lida en DevOps y backend con una mentalidad AI-first orientada al futuro.",
+        "about.text": "Soy un <strong>CTO e ingeniero l\u00edder hands-on</strong> con m\u00e1s de 15 a\u00f1os construyendo plataformas de misi\u00f3n cr\u00edtica. He llevado empresas desde sistemas monol\u00edticos legacy hasta <strong>arquitecturas cloud-native de microservicios en AWS</strong>, siempre como due\u00f1o del stack completo: desde infraestructura con Terraform hasta orquestaci\u00f3n con Kubernetes y pipelines CI/CD.<br><br>Estoy inmerso en la <strong>revoluci\u00f3n de IA y LLMs</strong> \u2014 dise\u00f1ando sistemas de agentes aut\u00f3nomos, construyendo pipelines RAG e integrando modelos de lenguaje en flujos de trabajo en producci\u00f3n. Combino experiencia s\u00f3lida en DevOps y backend con una mentalidad AI-first orientada al futuro.",
         "about.location_label": "Ubicaci\u00f3n",
         "about.location": "Madrid, Espa\u00f1a",
         "exp.label": "Trayectoria",
         "exp.title": "Experiencia",
-        "exp.sharetech_cto": "Definiendo la visi\u00f3n tecnol\u00f3gica completa y la hoja de ruta de la empresa. Responsable de las decisiones de arquitectura cloud, orquestando squads de ingenier\u00eda multifuncionales y estableciendo mejores pr\u00e1cticas para la fiabilidad de la plataforma y la experiencia de desarrollo. Liderazgo hands-on en automatizaci\u00f3n de infraestructura, gobernanza de microservicios y optimizaci\u00f3n de costes en AWS.",
+        "exp.sharetech_cto": "Defin\u00ed la visi\u00f3n tecnol\u00f3gica completa y la hoja de ruta de la empresa. Responsable de las decisiones de arquitectura cloud, orquestando squads de ingenier\u00eda multifuncionales y estableciendo mejores pr\u00e1cticas para la fiabilidad de la plataforma y la experiencia de desarrollo. Liderazgo hands-on en automatizaci\u00f3n de infraestructura, gobernanza de microservicios y optimizaci\u00f3n de costes en AWS.",
         "exp.rideon_cto": "Promoci\u00f3n de Arquitecto a CTO para liderar toda la estrategia tecnol\u00f3gica de la plataforma de movilidad eSharing. Escal\u00e9 la organizaci\u00f3n de ingenier\u00eda, implement\u00e9 OKRs para el departamento t\u00e9cnico, impuls\u00e9 la adopci\u00f3n de arquitectura event-driven con AWS Kinesis y reduje costes de infraestructura optimizando la orquestaci\u00f3n de contenedores con EKS. Responsable directo del uptime de la plataforma, seguridad y due diligence t\u00e9cnica con inversores.",
         "exp.rideon_arch": "Lider\u00e9 la re-arquitectura completa de la plataforma: descomposici\u00f3n de un monolito PHP legacy en m\u00e1s de 20 microservicios containerizados en AWS ECS. Autor de toda la capa de Infraestructura como C\u00f3digo con Terraform, construcci\u00f3n de pipelines CI/CD automatizados con Jenkins, y establecimiento de observabilidad con Sentry y PagerDuty. Esta transformaci\u00f3n elimin\u00f3 cuellos de botella cr\u00edticos y permiti\u00f3 escalar la plataforma a operaciones a nivel de ciudad.",
         "exp.kimia": "Dise\u00f1o y entrega de servicios backend de alto rendimiento en Go, implementando pipelines de monitorizaci\u00f3n y alertas en tiempo real que mejoraron los tiempos de respuesta a incidentes y la fiabilidad del sistema.",
@@ -1008,6 +1229,8 @@ const translations = {
         "edu.degree": "Ingenier\u00eda T\u00e9cnica en Inform\u00e1tica de Sistemas",
         "awards.label": "Reconocimientos",
         "awards.title": "Premios",
+        "cta.title": "\u00bfListo para construir la pr\u00f3xima plataforma generacional?",
+        "cta.button": "Contactar",
         "footer.rights": "Todos los derechos reservados."
     }
 };
