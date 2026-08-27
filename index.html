@@ -34,10 +34,9 @@
 
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236366f1'/%3E%3Cstop offset='1' stop-color='%2306b6d4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='42' font-family='Inter,Arial,sans-serif' font-weight='800' font-size='30' fill='white' text-anchor='middle'%3ECS%3C/text%3E%3C/svg%3E">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Sora:wght@600;700;800&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
 
+    <link rel="preload" href="fonts/Inter-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/Sora-800-latin.woff2" as="font" type="font/woff2" crossorigin>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -61,6 +60,20 @@
     </script>
 
     <style>
+        @font-face { font-family: 'Inter'; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/Inter-400-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+        @font-face { font-family: 'Inter'; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/Inter-400-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+        @font-face { font-family: 'Inter'; font-style: normal; font-weight: 500; font-display: swap; src: url(fonts/Inter-500-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+        @font-face { font-family: 'Inter'; font-style: normal; font-weight: 500; font-display: swap; src: url(fonts/Inter-500-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+        @font-face { font-family: 'Inter'; font-style: normal; font-weight: 600; font-display: swap; src: url(fonts/Inter-600-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+        @font-face { font-family: 'Inter'; font-style: normal; font-weight: 600; font-display: swap; src: url(fonts/Inter-600-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+        @font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/JetBrainsMono-400-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+        @font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url(fonts/JetBrainsMono-400-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+        @font-face { font-family: 'Sora'; font-style: normal; font-weight: 700; font-display: swap; src: url(fonts/Sora-700-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+        @font-face { font-family: 'Sora'; font-style: normal; font-weight: 700; font-display: swap; src: url(fonts/Sora-700-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+        @font-face { font-family: 'Sora'; font-style: normal; font-weight: 800; font-display: swap; src: url(fonts/Sora-800-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+        @font-face { font-family: 'Sora'; font-style: normal; font-weight: 800; font-display: swap; src: url(fonts/Sora-800-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+        @font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 500; font-display: swap; src: url(fonts/SpaceGrotesk-500-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+        @font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 500; font-display: swap; src: url(fonts/SpaceGrotesk-500-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
@@ -204,7 +217,7 @@
             font-weight: 500; cursor: pointer; transition: var(--transition); letter-spacing: 0.05em;
         }
         .lang-btn:hover { color: var(--text-primary); }
-        .lang-btn[aria-pressed="true"] { background: var(--accent); color: #fff; }
+        .lang-btn[aria-pressed="true"] { background: #4f46e5; color: #fff; }
         .theme-btn {
             width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--border-card);
             background: var(--bg-soft); color: var(--text-secondary); cursor: pointer;
@@ -248,7 +261,7 @@
             background: rgba(16, 185, 129, 0.10); border: 1px solid rgba(16, 185, 129, 0.3);
             border-radius: 50px; font-size: 0.8rem; color: var(--accent-tertiary);
             font-family: var(--font-label); font-weight: 500;
-            margin-bottom: 2rem; animation: fadeInUp 0.8s ease-out;
+            margin-bottom: 2rem; animation: fadeInUp 0.5s ease-out;
         }
         .hero-badge .dot { width: 8px; height: 8px; background: var(--accent-tertiary); border-radius: 50%; animation: pulse 2s ease-in-out infinite; box-shadow: 0 0 8px rgba(16, 185, 129, 0.6); }
         @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.85); } }
@@ -256,17 +269,17 @@
         .hero-name {
             font-family: var(--font-label); font-size: 0.95rem; color: var(--text-secondary);
             letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1rem;
-            animation: fadeInUp 0.8s ease-out 0.05s both;
+            animation: fadeInUp 0.5s ease-out 0.03s both;
         }
         .hero h1 {
             font-family: var(--font-headline); font-size: clamp(2.4rem, 6vw, 4.4rem); font-weight: 800;
             letter-spacing: -0.04em; line-height: 1.08; margin-bottom: 1.5rem;
-            animation: fadeInUp 0.8s ease-out 0.1s both;
+            animation: fadeInUp 0.5s ease-out 0.06s both;
         }
         .gradient-text { background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .hero-subtitle { font-size: 1.15rem; color: var(--text-secondary); max-width: 680px; margin: 0 auto 2.5rem; line-height: 1.8; animation: fadeInUp 0.8s ease-out 0.2s both; }
+        .hero-subtitle { font-size: 1.15rem; color: var(--text-secondary); max-width: 680px; margin: 0 auto 2.5rem; line-height: 1.8; animation: fadeInUp 0.5s ease-out 0.1s both; }
         .hero-subtitle strong { color: var(--text-primary); font-weight: 600; }
-        .hero-cta { display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap; animation: fadeInUp 0.8s ease-out 0.3s both; }
+        .hero-cta { display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap; animation: fadeInUp 0.5s ease-out 0.14s both; }
         .btn {
             display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.6rem;
             border-radius: 50px; font-size: 0.9rem; font-weight: 600; text-decoration: none;
@@ -279,11 +292,11 @@
         .btn-outline { background: transparent; color: var(--text-primary); border: 1px solid var(--border-card-hover); }
         .btn-outline:hover { border-color: var(--accent); background: var(--accent-glow); transform: translateY(-2px); }
 
-        .hero-stats { display: flex; justify-content: center; gap: 3rem; margin-top: 4rem; animation: fadeInUp 0.8s ease-out 0.4s both; }
+        .hero-stats { display: flex; justify-content: center; gap: 3rem; margin-top: 4rem; animation: fadeInUp 0.5s ease-out 0.18s both; }
         .hero-stat-value { font-family: var(--font-headline); font-size: 2rem; font-weight: 800; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
         .hero-stat-label { font-family: var(--font-label); font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; }
 
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0.6; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
 
         /* Reveal */
         .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
@@ -607,7 +620,7 @@
 
 <!-- Navbar -->
 <nav class="navbar" id="navbar" aria-label="Main">
-    <a href="#hero" class="nav-logo" aria-label="Cayetano Soriano Gallego — home">CSG</a>
+    <a href="#hero" class="nav-logo" aria-label="CSG — Cayetano Soriano Gallego, home">CSG</a>
     <div class="nav-right">
         <ul class="nav-links" id="navLinks">
             <li><a href="#impact" data-i18n="nav.impact">What I bring</a></li>
@@ -1225,140 +1238,14 @@
 <script>
 const translations = {
     en: {
-        "meta.title": "Cayetano Soriano Gallego — CTO & Software Architect | AWS, Microservices, AI",
-        "meta.description": "CTO and hands-on software architect with 15+ years in tech, 8+ building and scaling cloud platforms on AWS. Monolith-to-microservices migrations, engineering leadership, and production AI/LLM systems. Based in Full remote, based in Madrid.",
-        "a11y.skip": "Skip to content",
-        "a11y.theme": "Toggle light/dark theme",
-        "a11y.menu": "Open menu",
-        "a11y.top": "Scroll to top",
-        "nav.impact": "What I bring",
-        "nav.work": "Selected work",
-        "nav.about": "About",
-        "nav.experience": "Experience",
-        "nav.skills": "Skills",
-        "nav.seeking": "Looking for",
-        "hero.badge": "Fractional CTO · Software Architect · Remote",
-        "hero.badge_hiring": "Open to CTO / VP Engineering / Head of Platform roles",
+        // Base EN strings are captured from the DOM at startup (see captureEN); only JS-only keys live here.
         "meta.description_hiring": "CTO and hands-on software architect with 15+ years in tech, 8+ building and scaling cloud platforms on AWS. Monolith-to-microservices migrations, engineering leadership, and production AI/LLM systems. Full remote, based in Madrid, open to new opportunities.",
-        "hero.headline_top": "I build engineering teams and platforms",
-        "hero.headline_gradient": "that scale without breaking.",
-        "hero.subtitle": "<strong>CTO and hands-on software architect</strong> with 15+ years in tech and 8+ on AWS. I've led two monolith-to-microservices transformations, run engineering organizations as CTO for 7+ years, and now ship LLM agents and RAG pipelines into production.",
-        "hero.contact": "Get in touch",
-        "hero.download": "Download CV (PDF)",
-        "hero.years": "Years in tech",
-        "hero.cto_years": "Years as CTO",
-        "hero.migrations": "Monolith → microservices migrations",
-        "hero.uptime": "Platform uptime",
-        "impact.label": "What I bring",
-        "impact.title": "Three things I do well",
-        "impact.card1_title": "Architecture that scales",
-        "impact.card1_text": "Two legacy monoliths (Clojure, PHP) decomposed into 20+ containerized microservices on AWS ECS, with Terraform-first infrastructure and 99.99% uptime in production.",
-        "impact.card2_title": "Teams that deliver",
-        "impact.card2_text": "Built and scaled engineering organizations as CTO at two companies: OKRs, cross-functional squads, on-call culture, and developer experience as a first-class concern.",
-        "impact.card3_title": "AI in production, not slides",
-        "impact.card3_text": "Designing agent systems, RAG pipelines and LLM orchestration (Claude, OpenAI, MCP) that ship to real users, with the same reliability bar as any other backend service.",
-        "metrics.microservices": "Microservices in production",
-        "metrics.cost": "AWS cost reduction",
-        "metrics.downtime": "Downtime deployments (Packlink)",
-        "metrics.events": "Developers per meetup organized",
-        "work.label": "Selected work",
-        "work.title": "Problems I've solved",
-        "work.intro": "Context → what I did → measurable outcome. The pattern repeats across companies: inherit something fragile, make it boring and reliable, then let the team move fast on top of it.",
-        "work.ctx": "Context", "work.act": "Action", "work.res": "Result",
-        "work.c1_title": "From a Clojure monolith to 20+ microservices on AWS",
-        "work.c1_ctx": "City-scale eSharing mobility platform blocked by a legacy monolith: slow releases, single points of failure.",
-        "work.c1_act": "Designed and led the full re-architecture: 20+ containerized services on ECS, 100% of infrastructure in Terraform, CI/CD with Jenkins, observability with Sentry + PagerDuty.",
-        "work.c1_res": "Critical bottlenecks eliminated; platform able to scale to city-wide operations. Promoted to CTO.",
-        "work.c2_title": "Cutting infrastructure cost while raising reliability",
-        "work.c2_ctx": "Growing fleet and traffic; AWS bill scaling faster than revenue; investors requiring technical due diligence.",
-        "work.c2_act": "Optimized container orchestration on ECS, introduced event-driven architecture on Kinesis, set OKRs for the tech org, owned security and uptime end to end.",
-        "work.c2_res": "~30% lower AWS spend, 99.99% uptime, and due diligence passed with investors.",
-        "work.c3_title": "Zero-downtime migration to a polyglot architecture",
-        "work.c3_ctx": "High-traffic e-commerce shipping platform (Packlink Pro, eBay integration) on a monolithic PHP codebase.",
-        "work.c3_act": "Drove the migration to Java/Scala/Python microservices with RabbitMQ event patterns and Cassandra/Redis storage.",
-        "work.c3_res": "Zero-downtime deployments across peak e-commerce operations.",
-        "work.c4_title": "App load time from 10 s to under 1 s",
-        "work.c4_ctx": "Consumer app growing fast with a small team: 10-second loads, scalability pain, slow releases, dependency drift and no clear security baseline.",
-        "work.c4_act": "Resource loading optimization, lazy vs eager data loading, DB indexes, Redis caching and rate limiting; CI/CD with AI agents, automated dependency updates and a test harness; security best practices; Terraform for all infrastructure; Sentry, monitoring, analytics and per-call metrics.",
-        "work.c4_res": "App load time cut from ~10 s to under 1 s; predictable releases; infrastructure reproducible and fully monitored.",
-        "about.label": "About me",
-        "about.title": "Who I am",
-        "about.text": "<p>I'm a <strong>CTO who still reads pull requests</strong>. Over 15+ years I've gone from web developer to architect to running technology for two companies, and I've kept one rule: own the whole stack, from the Terraform module to the on-call rotation to the roadmap conversation with the board.</p><p>I've taken companies from <strong>legacy monoliths to cloud-native microservices on AWS</strong>, and I've done the unglamorous work that makes that stick: CI/CD, observability, cost control, security, and technical due diligence with investors.</p><p>Today I'm focused on <strong>AI systems in production</strong>: autonomous agents, RAG pipelines, LLM orchestration and MCP tooling, built with the same discipline as any other backend service. I speak Spanish and English and work equally well in either.</p>",
-        "about.copy": "Copy",
+        "hero.badge_hiring": "Open to CTO / VP Engineering / Head of Platform roles",
         "about.copied": "Email copied to clipboard",
-        "about.location_label": "Location",
-        "about.location": "Full remote · based in Madrid, Spain (CET)",
-        "about.langs_label": "Languages",
-        "about.langs": "Spanish (native) · English (professional)",
-        "exp.label": "Career path",
-        "exp.title": "Experience",
-        "exp.indep_company": "Independent",
-        "exp.indep_date": "Apr 2026 — Present",
-        "exp.role_fractional": "Fractional CTO & Software Architect",
-        "exp.loc_remote": "Remote",
-        "exp.indep": "<li><strong>Fractional CTO</strong> and hands-on architect/developer for early-stage companies: technical strategy, architecture reviews, cloud and delivery setup.</li><li><strong>enolovers.app</strong> (client): cut app load time from <strong>~10 s to under 1 s</strong> (resource loading, lazy vs eager data, DB indexes, Redis caching, rate limiting); CI/CD with <strong>AI agents</strong>, automated dependency updates and a test harness; security best practices; infrastructure in <strong>Terraform</strong>; Sentry, monitoring, analytics and per-call metrics.</li><li>Deep-dive training in <strong>security, AI/LLM systems, software architecture and blockchain</strong>, applied directly to client work.</li>",
-        "tag.fractional": "Fractional CTO", "tag.ai": "AI / LLMs", "tag.security": "Security",
-        "exp.role_cto": "Chief Technology Officer",
-        "exp.role_arch": "Software Architect",
-        "exp.role_dev": "Backend Engineer",
-        "exp.role_backend": "Backend Engineer",
-        "exp.role_web": "Web Developer",
-        "exp.role_lead": "Team Lead",
-        "exp.loc_madrid": "Madrid, Spain",
-        "exp.loc_bcn": "Barcelona, Spain",
-        "exp.loc_spain": "Spain",
-        "exp.sharetech_cto": "<li>Owned the <strong>technology vision and roadmap</strong>; final say on cloud architecture, build-vs-buy and platform investments.</li><li>Led cross-functional engineering squads; set standards for <strong>microservices governance, reliability and developer experience</strong>.</li><li>Hands-on across <strong>infrastructure automation (Terraform, ECS)</strong>, AWS cost optimization and on-call/observability with Sentry + PagerDuty.</li><li><strong>Vendor and partner contracts</strong> (M2M and cybersecurity integrations with Telefónica); technical counterpart for Pamplona City Council.</li><li>Operations &amp; logistics tooling: <strong>metrics, SLAs, reporting dashboards</strong> and cost optimization.</li><li><strong>End-to-end observability</strong>: OpenTelemetry instrumentation, Datadog/New Relic, CloudWatch, Kibana, Sentry and PagerDuty on-call.</li><li>Hands-on backend development; introduced <strong>LLM-assisted workflows</strong> into the engineering process.</li>",
-        "exp.rideon_cto": "<li><strong>Promoted from Architect to CTO</strong> to own the full technology strategy of the eSharing mobility platform (remote since 2020).</li><li>Scaled the engineering organization and introduced <strong>OKRs</strong> for the tech department.</li><li>Drove <strong>event-driven architecture on AWS Kinesis</strong>; optimized container orchestration on <strong>ECS</strong>, cutting infrastructure cost ~30%.</li><li>Directly accountable for <strong>uptime (99.99%), security and technical due diligence</strong> with investors.</li><li><strong>Vendor and partner contracts</strong> (M2M and cybersecurity with Telefónica); technical counterpart for city councils in <strong>Miami, Dundee, Leicester and Pamplona</strong>.</li><li>Operations &amp; logistics: internal tooling, metrics, SLAs and reporting dashboards.</li><li><strong>End-to-end observability</strong>: instrumented every service with <strong>OpenTracing / OpenTelemetry</strong> (distributed tracing), structured metrics and alerting (New Relic, Datadog, CloudWatch, Kibana, Sentry, PagerDuty) — from request to database.</li>",
-        "exp.rideon_arch": "<li>Led the complete platform re-architecture: <strong>legacy Clojure monolith → 20+ containerized microservices on AWS ECS</strong>.</li><li>Authored the entire <strong>Infrastructure-as-Code layer in Terraform</strong>; automated CI/CD with Jenkins, images with Ansible + Packer.</li><li>Established observability with Sentry and PagerDuty; removed the bottlenecks blocking <strong>city-wide scale</strong>.</li>",
-        "exp.kimia": "<li>Designed and delivered <strong>high-throughput backend services in Go</strong>, backed by Redis and Elasticsearch.</li><li>Built real-time monitoring and alerting pipelines that improved incident response times and reliability.</li>",
-        "exp.packlink": "<li>Key contributor to the <strong>Packlink Pro and eBay shipping integration</strong> backend.</li><li>Drove the migration from a PHP monolith to <strong>polyglot microservices (Java, Scala, Python)</strong> with RabbitMQ, Cassandra and Redis.</li><li><strong>Zero-downtime deployments</strong> across high-traffic e-commerce operations.</li><li>Platform <strong>monitoring and on-call</strong>: Kibana/Elasticsearch dashboards, CloudWatch, Sentry and PagerDuty for a high-availability product.</li>",
-        "exp.betabeers_role": "Community Organizer & Speaker",
-        "exp.betabeers_loc": "Barcelona & Cádiz, Spain",
-        "exp.betabeers": "<li>Co-founded and led the Betabeers chapters in Cádiz and Barcelona: <strong>monthly meetups for 50–100+ developers</strong> and founders.</li><li>Built a local tech community connecting startups, engineers and investors.</li>",
-        "exp.softonic": "<li>Backend for the Softonic Downloader, serving <strong>millions of daily downloads</strong>.</li><li>Data pipelines on the Hadoop ecosystem (Hive, Oozie); TDD with PHPUnit.</li>",
-        "exp.crononauta": "<li>Built and maintained content-driven web applications with PHP and Drupal 7, from requirements to production.</li>",
-        "exp.dtv": "<li>First leadership role: managed a development team shipping a <strong>social networking platform from scratch</strong>, from technical design to launch.</li>",
         "exp.more": "Show earlier roles (2011–2015)",
         "exp.less": "Hide earlier roles",
-        "tag.monitoring": "Monitoring", "tag.alerting": "Alerting", "tag.ha": "High availability",
-        "tag.community": "Community leadership", "tag.speaking": "Public speaking",
-        "tag.teamlead": "Team leadership", "tag.product": "Product development",
-        "skills.label": "Tech stack",
-        "skills.title": "Skills & technologies",
-        "skills.ai_desc": "Agents, RAG and LLM orchestration shipped to real users; MCP tooling and AI-assisted engineering workflows.",
-        "skills.ai": "AI, agents & LLMs",
-        "skills.cloud_desc": "8+ years designing and running AWS platforms: containers on ECS, Terraform-first infrastructure, event streaming.",
-        "skills.cloud": "Cloud & infrastructure",
-        "skills.backend_desc": "15+ years across PHP, Java/Spring Boot, Python, Scala and Go; from monoliths to polyglot microservices.",
-        "skills.backend": "Backend",
-        "skills.data_desc": "Choosing and operating the right store per workload: key-value, search, cache, wide-column and relational.",
-        "skills.data": "Data & storage",
-        "skills.devops_desc": "CI/CD pipelines, immutable images, on-call and observability; reliability as an engineering practice, not a team.",
-        "skills.devops": "DevOps, CI/CD & observability",
-        "skills.leadership_desc": "7+ years as CTO: roadmap, hiring, OKRs, vendor contracts, due diligence, budgets and city-council stakeholders.",
-        "skills.leadership": "Leadership",
-        "skills.leadership_tags": "<li class=\"skill-tag\">Tech strategy &amp; roadmap</li><li class=\"skill-tag\">OKRs</li><li class=\"skill-tag\">Hiring &amp; team scaling</li><li class=\"skill-tag\">Technical due diligence</li><li class=\"skill-tag\">Cost management</li><li class=\"skill-tag\">Security &amp; incident response</li>",
-        "certs.label": "Credentials",
-        "certs.title": "Education & certifications",
-        "edu.degree": "Computer Systems Engineering",
-        "awards.megathon": "Hackathon award",
-        "seek.label": "Next step",
-        "seek.title": "What I'm looking for",
-        "seek.intro": "To save us both time: this is where I add the most value, and the kind of company where I've done it before.",
-        "seek.roles_title": "Roles",
-        "seek.roles": "<li>CTO / VP of Engineering</li><li>Head of Platform / Infrastructure</li><li>Principal / Staff Engineer (hands-on architecture)</li><li>Fractional CTO or technical advisor</li>",
-        "seek.company_title": "Company",
-        "seek.company": "<li>Scale-ups moving from \"it works\" to \"it scales\"</li><li>Product companies with real traffic and real infra bills</li><li>Teams shipping AI/LLM features to production</li><li>Mobility, logistics, marketplaces, SaaS</li>",
-        "seek.setup_title": "Setup",
-        "seek.setup": "<li>Full remote (CET ±3h); occasional travel is fine</li><li>Spanish or English working language</li><li>Full-time or fractional engagements</li><li>Available on short notice</li>",
-        "cta.title": "Want to talk architecture, teams or AI in production?",
-        "cta.text": "Drop me a line. I reply to every serious message within 48 hours.",
         "cta.title_hiring": "Hiring a CTO or platform lead?",
         "cta.text_hiring": "Send me the problem you're trying to solve. I reply to every serious message within 48 hours.",
-        "cta.button": "Email me",
-        "cta.linkedin": "Connect on LinkedIn",
-        "footer.source": "Source of this site",
-        "footer.rights": "Madrid, Spain."
     },
     es: {
         "meta.title": "Cayetano Soriano Gallego — CTO y Arquitecto de Software | AWS, Microservicios, IA",
@@ -1499,6 +1386,13 @@ const translations = {
 };
 
 const SUPPORTED_LANGS = Object.keys(translations);
+(function captureEN(){
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n'); if (translations.en[key] !== undefined) return;
+        const attr = el.getAttribute('data-i18n-attr');
+        translations.en[key] = attr ? el.getAttribute(attr) : (el.tagName === 'TITLE' ? el.textContent : el.innerHTML.trim());
+    });
+})();
 
 // ── Job-search mode ─────────────────────────────────────────────────────────
 // false: neutral public profile (default). true: shows "open to roles" badge,
