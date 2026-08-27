@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="meta.title">Cayetano Soriano Gallego — CTO & Software Architect | AWS, Microservices, AI</title>
     <meta name="description" data-i18n-attr="content" data-i18n="meta.description" content="CTO and hands-on software architect with 15+ years in tech, 8+ building and scaling cloud platforms on AWS. Monolith-to-microservices migrations, engineering leadership, and production AI/LLM systems. Full remote, based in Madrid.">
-    <meta name="keywords" content="CTO, VP Engineering, Software Architect, Backend Engineer, DevOps, AWS, Terraform, Kubernetes, EKS, Microservices, AI, LLM, Agents, Madrid">
+    <meta name="keywords" content="CTO, VP Engineering, Software Architect, Backend Engineer, DevOps, AWS, Terraform, ECS, Microservices, AI, LLM, Agents, Madrid">
     <meta name="author" content="Cayetano Soriano Gallego">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#0a0f1a" media="(prefers-color-scheme: dark)">
@@ -52,7 +52,7 @@
       "address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES" },
       "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universidad de Cádiz" },
       "knowsLanguage": ["es", "en"],
-      "knowsAbout": ["Cloud Architecture", "Security", "Blockchain", "AWS", "Kubernetes", "Terraform", "Microservices", "Engineering Leadership", "LLM", "AI Agents", "DevOps"],
+      "knowsAbout": ["Cloud Architecture", "Security", "Blockchain", "AWS", "Amazon ECS", "Terraform", "Microservices", "Engineering Leadership", "LLM", "AI Agents", "DevOps"],
       "sameAs": [
         "https://www.linkedin.com/in/csorianogallego",
         "https://github.com/neoshadybeat"
@@ -696,7 +696,7 @@
         <article class="card impact-card reveal">
             <div class="card-icon" style="background:rgba(99,102,241,0.14)" aria-hidden="true">&#9881;</div>
             <h3 data-i18n="impact.card1_title">Architecture that scales</h3>
-            <p data-i18n="impact.card1_text">Two legacy PHP monoliths decomposed into 20+ containerized microservices on AWS (ECS → EKS), with Terraform-first infrastructure and 99.99% uptime in production.</p>
+            <p data-i18n="impact.card1_text">Two legacy PHP monoliths decomposed into 20+ containerized microservices on AWS ECS, with Terraform-first infrastructure and 99.99% uptime in production.</p>
         </article>
         <article class="card impact-card reveal">
             <div class="card-icon" style="background:rgba(6,182,212,0.14)" aria-hidden="true">&#128101;</div>
@@ -756,10 +756,10 @@
             <h3 data-i18n="work.c2_title">Cutting infrastructure cost while raising reliability</h3>
             <dl class="case-block">
                 <dt data-i18n="work.ctx">Context</dt><dd data-i18n="work.c2_ctx">Growing fleet and traffic; AWS bill scaling faster than revenue; investors requiring technical due diligence.</dd>
-                <dt data-i18n="work.act">Action</dt><dd data-i18n="work.c2_act">Moved orchestration to EKS, introduced event-driven architecture on Kinesis, set OKRs for the tech org, owned security and uptime end to end.</dd>
+                <dt data-i18n="work.act">Action</dt><dd data-i18n="work.c2_act">Optimized container orchestration on ECS, introduced event-driven architecture on Kinesis, set OKRs for the tech org, owned security and uptime end to end.</dd>
                 <dt data-i18n="work.res">Result</dt><dd class="result" data-i18n="work.c2_res">~30% lower AWS spend, 99.99% uptime, and due diligence passed with investors.</dd>
             </dl>
-            <div class="case-tags"><span class="tag tag-cloud">EKS</span><span class="tag tag-cloud">Kinesis</span></div>
+            <div class="case-tags"><span class="tag tag-cloud">ECS</span><span class="tag tag-cloud">Kinesis</span></div>
         </article>
         <article class="card case-card reveal">
             <div class="case-meta">Packlink · 2015–2017</div>
@@ -866,11 +866,11 @@
                 <ul class="timeline-bullets" data-i18n="exp.sharetech_cto">
                     <li>Owned the <strong>technology vision and roadmap</strong>; final say on cloud architecture, build-vs-buy and platform investments.</li>
                     <li>Led cross-functional engineering squads; set standards for <strong>microservices governance, reliability and developer experience</strong>.</li>
-                    <li>Hands-on across <strong>infrastructure automation (Terraform, EKS)</strong>, AWS cost optimization and on-call/observability with Sentry + PagerDuty.</li>
+                    <li>Hands-on across <strong>infrastructure automation (Terraform, ECS)</strong>, AWS cost optimization and on-call/observability with Sentry + PagerDuty.</li>
                     <li>Hands-on backend development; introduced <strong>LLM-assisted workflows</strong> into the engineering process.</li>
                 </ul>
                 <div class="timeline-tags">
-                    <span class="tag tag-cloud">AWS</span><span class="tag tag-cloud">Terraform</span><span class="tag tag-cloud">EKS</span>
+                    <span class="tag tag-cloud">AWS</span><span class="tag tag-cloud">Terraform</span>
                     <span class="tag tag-devops">Docker</span><span class="tag tag-backend">Spring Boot</span><span class="tag tag-other">Sentry</span><span class="tag tag-other">PagerDuty</span>
                 </div>
             </div>
@@ -887,11 +887,11 @@
                 <ul class="timeline-bullets" data-i18n="exp.rideon_cto">
                     <li><strong>Promoted from Architect to CTO</strong> to own the full technology strategy of the eSharing mobility platform.</li>
                     <li>Scaled the engineering organization and introduced <strong>OKRs</strong> for the tech department.</li>
-                    <li>Drove <strong>event-driven architecture on AWS Kinesis</strong>; migrated orchestration to <strong>EKS</strong>, cutting infrastructure cost ~30%.</li>
+                    <li>Drove <strong>event-driven architecture on AWS Kinesis</strong>; optimized container orchestration on <strong>ECS</strong>, cutting infrastructure cost ~30%.</li>
                     <li>Directly accountable for <strong>uptime (99.99%), security and technical due diligence</strong> with investors.</li>
                 </ul>
                 <div class="timeline-tags">
-                    <span class="tag tag-cloud">AWS</span><span class="tag tag-cloud">Terraform</span><span class="tag tag-cloud">EKS</span><span class="tag tag-cloud">Kinesis</span>
+                    <span class="tag tag-cloud">AWS</span><span class="tag tag-cloud">Terraform</span><span class="tag tag-cloud">Kinesis</span>
                     <span class="tag tag-devops">Docker</span><span class="tag tag-other">PagerDuty</span>
                 </div>
             </div>
@@ -1053,7 +1053,7 @@
                 <h3 class="skill-cat-name" data-i18n="skills.cloud">Cloud &amp; infrastructure</h3>
             </div>
             <ul class="skill-tags">
-                <li class="skill-tag">AWS</li><li class="skill-tag">Terraform</li><li class="skill-tag">EKS / Kubernetes</li><li class="skill-tag">ECS</li>
+                <li class="skill-tag">AWS</li><li class="skill-tag">Terraform</li><li class="skill-tag">ECS</li>
                 <li class="skill-tag">Serverless</li><li class="skill-tag">Kong</li><li class="skill-tag">Kinesis</li><li class="skill-tag">SNS / SQS</li>
             </ul>
         </div>
@@ -1249,7 +1249,7 @@ const translations = {
         "impact.label": "What I bring",
         "impact.title": "Three things I do well",
         "impact.card1_title": "Architecture that scales",
-        "impact.card1_text": "Two legacy PHP monoliths decomposed into 20+ containerized microservices on AWS (ECS → EKS), with Terraform-first infrastructure and 99.99% uptime in production.",
+        "impact.card1_text": "Two legacy PHP monoliths decomposed into 20+ containerized microservices on AWS ECS, with Terraform-first infrastructure and 99.99% uptime in production.",
         "impact.card2_title": "Teams that deliver",
         "impact.card2_text": "Built and scaled engineering organizations as CTO at two companies: OKRs, cross-functional squads, on-call culture, and developer experience as a first-class concern.",
         "impact.card3_title": "AI in production, not slides",
@@ -1268,7 +1268,7 @@ const translations = {
         "work.c1_res": "Critical bottlenecks eliminated; platform able to scale to city-wide operations. Promoted to CTO.",
         "work.c2_title": "Cutting infrastructure cost while raising reliability",
         "work.c2_ctx": "Growing fleet and traffic; AWS bill scaling faster than revenue; investors requiring technical due diligence.",
-        "work.c2_act": "Moved orchestration to EKS, introduced event-driven architecture on Kinesis, set OKRs for the tech org, owned security and uptime end to end.",
+        "work.c2_act": "Optimized container orchestration on ECS, introduced event-driven architecture on Kinesis, set OKRs for the tech org, owned security and uptime end to end.",
         "work.c2_res": "~30% lower AWS spend, 99.99% uptime, and due diligence passed with investors.",
         "work.c3_title": "Zero-downtime migration to a polyglot architecture",
         "work.c3_ctx": "High-traffic e-commerce shipping platform (Packlink Pro, eBay integration) on a monolithic PHP codebase.",
@@ -1300,8 +1300,8 @@ const translations = {
         "exp.loc_madrid": "Madrid, Spain",
         "exp.loc_bcn": "Barcelona, Spain",
         "exp.loc_spain": "Spain",
-        "exp.sharetech_cto": "<li>Owned the <strong>technology vision and roadmap</strong>; final say on cloud architecture, build-vs-buy and platform investments.</li><li>Led cross-functional engineering squads; set standards for <strong>microservices governance, reliability and developer experience</strong>.</li><li>Hands-on across <strong>infrastructure automation (Terraform, EKS)</strong>, AWS cost optimization and on-call/observability with Sentry + PagerDuty.</li><li>Hands-on backend development; introduced <strong>LLM-assisted workflows</strong> into the engineering process.</li>",
-        "exp.rideon_cto": "<li><strong>Promoted from Architect to CTO</strong> to own the full technology strategy of the eSharing mobility platform.</li><li>Scaled the engineering organization and introduced <strong>OKRs</strong> for the tech department.</li><li>Drove <strong>event-driven architecture on AWS Kinesis</strong>; migrated orchestration to <strong>EKS</strong>, cutting infrastructure cost ~30%.</li><li>Directly accountable for <strong>uptime (99.99%), security and technical due diligence</strong> with investors.</li>",
+        "exp.sharetech_cto": "<li>Owned the <strong>technology vision and roadmap</strong>; final say on cloud architecture, build-vs-buy and platform investments.</li><li>Led cross-functional engineering squads; set standards for <strong>microservices governance, reliability and developer experience</strong>.</li><li>Hands-on across <strong>infrastructure automation (Terraform, ECS)</strong>, AWS cost optimization and on-call/observability with Sentry + PagerDuty.</li><li>Hands-on backend development; introduced <strong>LLM-assisted workflows</strong> into the engineering process.</li>",
+        "exp.rideon_cto": "<li><strong>Promoted from Architect to CTO</strong> to own the full technology strategy of the eSharing mobility platform.</li><li>Scaled the engineering organization and introduced <strong>OKRs</strong> for the tech department.</li><li>Drove <strong>event-driven architecture on AWS Kinesis</strong>; optimized container orchestration on <strong>ECS</strong>, cutting infrastructure cost ~30%.</li><li>Directly accountable for <strong>uptime (99.99%), security and technical due diligence</strong> with investors.</li>",
         "exp.rideon_arch": "<li>Led the complete platform re-architecture: <strong>legacy PHP monolith → 20+ containerized microservices on AWS ECS</strong>.</li><li>Authored the entire <strong>Infrastructure-as-Code layer in Terraform</strong>; automated CI/CD with Jenkins, images with Ansible + Packer.</li><li>Established observability with Sentry and PagerDuty; removed the bottlenecks blocking <strong>city-wide scale</strong>.</li>",
         "exp.kimia": "<li>Designed and delivered <strong>high-throughput backend services in Go</strong>, backed by Redis and Elasticsearch.</li><li>Built real-time monitoring and alerting pipelines that improved incident response times and reliability.</li>",
         "exp.packlink": "<li>Key contributor to the <strong>Packlink Pro and eBay shipping integration</strong> backend.</li><li>Drove the migration from a PHP monolith to <strong>polyglot microservices (Java, Scala, Python)</strong> with RabbitMQ, Cassandra and Redis.</li><li><strong>Zero-downtime deployments</strong> across high-traffic e-commerce operations.</li>",
@@ -1375,7 +1375,7 @@ const translations = {
         "impact.label": "Lo que aporto",
         "impact.title": "Tres cosas que hago bien",
         "impact.card1_title": "Arquitectura que escala",
-        "impact.card1_text": "Dos monolitos PHP legacy descompuestos en más de 20 microservicios containerizados en AWS (ECS → EKS), con infraestructura Terraform-first y 99,99% de uptime en producción.",
+        "impact.card1_text": "Dos monolitos PHP legacy descompuestos en más de 20 microservicios containerizados en AWS ECS, con infraestructura Terraform-first y 99,99% de uptime en producción.",
         "impact.card2_title": "Equipos que entregan",
         "impact.card2_text": "Construí y escalé organizaciones de ingeniería como CTO en dos empresas: OKRs, squads multifuncionales, cultura de guardias y developer experience como prioridad.",
         "impact.card3_title": "IA en producción, no en slides",
@@ -1394,7 +1394,7 @@ const translations = {
         "work.c1_res": "Cuellos de botella críticos eliminados; plataforma capaz de operar a nivel de ciudad. Promoción a CTO.",
         "work.c2_title": "Bajar el coste de infraestructura subiendo la fiabilidad",
         "work.c2_ctx": "Flota y tráfico creciendo; factura AWS escalando más rápido que los ingresos; inversores exigiendo due diligence técnica.",
-        "work.c2_act": "Migré la orquestación a EKS, introduje arquitectura event-driven sobre Kinesis, fijé OKRs para el área técnica y asumí seguridad y uptime de extremo a extremo.",
+        "work.c2_act": "Optimicé la orquestación de contenedores en ECS, introduje arquitectura event-driven sobre Kinesis, fijé OKRs para el área técnica y asumí seguridad y uptime de extremo a extremo.",
         "work.c2_res": "~30% menos gasto en AWS, 99,99% de uptime y due diligence superada con inversores.",
         "work.c3_title": "Migración sin downtime a una arquitectura políglota",
         "work.c3_ctx": "Plataforma de envíos e-commerce de alto tráfico (Packlink Pro, integración eBay) sobre un monolito PHP.",
@@ -1426,8 +1426,8 @@ const translations = {
         "exp.loc_madrid": "Madrid, España",
         "exp.loc_bcn": "Barcelona, España",
         "exp.loc_spain": "España",
-        "exp.sharetech_cto": "<li>Responsable de la <strong>visión tecnológica y el roadmap</strong>; última palabra en arquitectura cloud, build-vs-buy e inversiones de plataforma.</li><li>Lideré squads de ingeniería multifuncionales; definí estándares de <strong>gobernanza de microservicios, fiabilidad y developer experience</strong>.</li><li>Hands-on en <strong>automatización de infraestructura (Terraform, EKS)</strong>, optimización de costes AWS y guardias/observabilidad con Sentry + PagerDuty.</li><li>Desarrollo backend hands-on; introduje <strong>flujos asistidos por LLM</strong> en el proceso de ingeniería.</li>",
-        "exp.rideon_cto": "<li><strong>Promoción de Arquitecto a CTO</strong> para liderar toda la estrategia tecnológica de la plataforma de movilidad eSharing.</li><li>Escalé la organización de ingeniería e introduje <strong>OKRs</strong> en el departamento técnico.</li><li>Impulsé <strong>arquitectura event-driven sobre AWS Kinesis</strong>; migré la orquestación a <strong>EKS</strong>, reduciendo el coste de infraestructura ~30%.</li><li>Responsable directo de <strong>uptime (99,99%), seguridad y due diligence técnica</strong> con inversores.</li>",
+        "exp.sharetech_cto": "<li>Responsable de la <strong>visión tecnológica y el roadmap</strong>; última palabra en arquitectura cloud, build-vs-buy e inversiones de plataforma.</li><li>Lideré squads de ingeniería multifuncionales; definí estándares de <strong>gobernanza de microservicios, fiabilidad y developer experience</strong>.</li><li>Hands-on en <strong>automatización de infraestructura (Terraform, ECS)</strong>, optimización de costes AWS y guardias/observabilidad con Sentry + PagerDuty.</li><li>Desarrollo backend hands-on; introduje <strong>flujos asistidos por LLM</strong> en el proceso de ingeniería.</li>",
+        "exp.rideon_cto": "<li><strong>Promoción de Arquitecto a CTO</strong> para liderar toda la estrategia tecnológica de la plataforma de movilidad eSharing.</li><li>Escalé la organización de ingeniería e introduje <strong>OKRs</strong> en el departamento técnico.</li><li>Impulsé <strong>arquitectura event-driven sobre AWS Kinesis</strong>; optimicé la orquestación de contenedores en <strong>ECS</strong>, reduciendo el coste de infraestructura ~30%.</li><li>Responsable directo de <strong>uptime (99,99%), seguridad y due diligence técnica</strong> con inversores.</li>",
         "exp.rideon_arch": "<li>Lideré la re-arquitectura completa: <strong>monolito PHP legacy → 20+ microservicios containerizados en AWS ECS</strong>.</li><li>Autor de toda la capa de <strong>Infraestructura como Código en Terraform</strong>; CI/CD automatizado con Jenkins, imágenes con Ansible + Packer.</li><li>Observabilidad con Sentry y PagerDuty; eliminé los cuellos de botella que impedían la <strong>escala a nivel de ciudad</strong>.</li>",
         "exp.kimia": "<li>Diseño y entrega de <strong>servicios backend de alto rendimiento en Go</strong>, sobre Redis y Elasticsearch.</li><li>Pipelines de monitorización y alertas en tiempo real que mejoraron los tiempos de respuesta a incidentes y la fiabilidad.</li>",
         "exp.packlink": "<li>Contribuidor clave en el backend de <strong>Packlink Pro y la integración de envíos de eBay</strong>.</li><li>Impulsé la migración de un monolito PHP a <strong>microservicios políglotas (Java, Scala, Python)</strong> con RabbitMQ, Cassandra y Redis.</li><li><strong>Despliegues zero-downtime</strong> en operaciones e-commerce de alto tráfico.</li>",
