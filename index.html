@@ -411,6 +411,7 @@
         .skill-cat-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
         .skill-cat-icon { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 10px; font-size: 1.1rem; }
         .skill-cat-name { font-family: var(--font-headline); font-weight: 700; font-size: 1rem; }
+        .skill-cat-desc { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; margin: -0.5rem 0 1rem; }
         .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; }
         .skill-tag {
             padding: 0.4rem 0.85rem; font-size: 0.8rem; font-family: var(--font-mono); font-weight: 500;
@@ -1026,6 +1027,7 @@
                 <div class="skill-cat-icon" style="background:rgba(168,85,247,0.15)" aria-hidden="true">&#129302;</div>
                 <h3 class="skill-cat-name" data-i18n="skills.ai">AI, agents &amp; LLMs</h3>
             </div>
+            <p class="skill-cat-desc" data-i18n="skills.ai_desc">Agents, RAG and LLM orchestration shipped to real users; MCP tooling and AI-assisted engineering workflows.</p>
             <ul class="skill-tags">
                 <li class="skill-tag">LLM orchestration</li><li class="skill-tag">AI agents</li><li class="skill-tag">RAG pipelines</li>
                 <li class="skill-tag">Prompt engineering</li><li class="skill-tag">Claude / Anthropic API</li><li class="skill-tag">OpenAI API</li>
@@ -1038,6 +1040,7 @@
                 <div class="skill-cat-icon" style="background:rgba(99,102,241,0.14)" aria-hidden="true">&#9729;</div>
                 <h3 class="skill-cat-name" data-i18n="skills.cloud">Cloud &amp; infrastructure</h3>
             </div>
+            <p class="skill-cat-desc" data-i18n="skills.cloud_desc">8+ years designing and running AWS platforms: containers on ECS, Terraform-first infrastructure, event streaming.</p>
             <ul class="skill-tags">
                 <li class="skill-tag">AWS</li><li class="skill-tag">Terraform</li><li class="skill-tag">ECS</li>
                 <li class="skill-tag">Serverless</li><li class="skill-tag">Kong</li><li class="skill-tag">Kinesis</li><li class="skill-tag">SNS / SQS</li>
@@ -1048,6 +1051,7 @@
                 <div class="skill-cat-icon" style="background:rgba(6,182,212,0.14)" aria-hidden="true">&#10094;/&#10095;</div>
                 <h3 class="skill-cat-name" data-i18n="skills.backend">Backend</h3>
             </div>
+            <p class="skill-cat-desc" data-i18n="skills.backend_desc">15+ years across PHP, Java/Spring Boot, Python, Scala and Go; from monoliths to polyglot microservices.</p>
             <ul class="skill-tags">
                 <li class="skill-tag">Java / Spring Boot</li><li class="skill-tag">Go</li>
                 <li class="skill-tag">Python</li><li class="skill-tag">Scala</li><li class="skill-tag">PHP</li>
@@ -1058,6 +1062,7 @@
                 <div class="skill-cat-icon" style="background:rgba(251,191,36,0.14)" aria-hidden="true">&#128450;</div>
                 <h3 class="skill-cat-name" data-i18n="skills.data">Data &amp; storage</h3>
             </div>
+            <p class="skill-cat-desc" data-i18n="skills.data_desc">Choosing and operating the right store per workload: key-value, search, cache, wide-column and relational.</p>
             <ul class="skill-tags">
                 <li class="skill-tag">DynamoDB</li><li class="skill-tag">Elasticsearch</li><li class="skill-tag">MongoDB</li><li class="skill-tag">MySQL</li>
                 <li class="skill-tag">Redis / ElastiCache</li><li class="skill-tag">Cassandra</li><li class="skill-tag">Hadoop / Hive</li>
@@ -1068,6 +1073,7 @@
                 <div class="skill-cat-icon" style="background:rgba(16,185,129,0.14)" aria-hidden="true">&#9881;</div>
                 <h3 class="skill-cat-name" data-i18n="skills.devops">DevOps, CI/CD &amp; observability</h3>
             </div>
+            <p class="skill-cat-desc" data-i18n="skills.devops_desc">CI/CD pipelines, immutable images, on-call and observability; reliability as an engineering practice, not a team.</p>
             <ul class="skill-tags">
                 <li class="skill-tag">Docker</li><li class="skill-tag">Jenkins</li><li class="skill-tag">Ansible</li><li class="skill-tag">Packer</li>
                 <li class="skill-tag">Consul</li><li class="skill-tag">Sentry</li><li class="skill-tag">PagerDuty</li><li class="skill-tag">RabbitMQ</li><li class="skill-tag">Security hardening</li>
@@ -1078,6 +1084,7 @@
                 <div class="skill-cat-icon" style="background:rgba(244,114,182,0.14)" aria-hidden="true">&#127919;</div>
                 <h3 class="skill-cat-name" data-i18n="skills.leadership">Leadership</h3>
             </div>
+            <p class="skill-cat-desc" data-i18n="skills.leadership_desc">7+ years as CTO: roadmap, hiring, OKRs, vendor contracts, due diligence, budgets and city-council stakeholders.</p>
             <ul class="skill-tags" data-i18n="skills.leadership_tags">
                 <li class="skill-tag">Tech strategy &amp; roadmap</li><li class="skill-tag">OKRs</li><li class="skill-tag">Hiring &amp; team scaling</li>
                 <li class="skill-tag">Technical due diligence</li><li class="skill-tag">Cost management</li><li class="skill-tag">Security &amp; incident response</li>
@@ -1304,11 +1311,17 @@ const translations = {
         "tag.teamlead": "Team leadership", "tag.product": "Product development",
         "skills.label": "Tech stack",
         "skills.title": "Skills & technologies",
+        "skills.ai_desc": "Agents, RAG and LLM orchestration shipped to real users; MCP tooling and AI-assisted engineering workflows.",
         "skills.ai": "AI, agents & LLMs",
+        "skills.cloud_desc": "8+ years designing and running AWS platforms: containers on ECS, Terraform-first infrastructure, event streaming.",
         "skills.cloud": "Cloud & infrastructure",
+        "skills.backend_desc": "15+ years across PHP, Java/Spring Boot, Python, Scala and Go; from monoliths to polyglot microservices.",
         "skills.backend": "Backend",
+        "skills.data_desc": "Choosing and operating the right store per workload: key-value, search, cache, wide-column and relational.",
         "skills.data": "Data & storage",
+        "skills.devops_desc": "CI/CD pipelines, immutable images, on-call and observability; reliability as an engineering practice, not a team.",
         "skills.devops": "DevOps, CI/CD & observability",
+        "skills.leadership_desc": "7+ years as CTO: roadmap, hiring, OKRs, vendor contracts, due diligence, budgets and city-council stakeholders.",
         "skills.leadership": "Leadership",
         "skills.leadership_tags": "<li class=\"skill-tag\">Tech strategy &amp; roadmap</li><li class=\"skill-tag\">OKRs</li><li class=\"skill-tag\">Hiring &amp; team scaling</li><li class=\"skill-tag\">Technical due diligence</li><li class=\"skill-tag\">Cost management</li><li class=\"skill-tag\">Security &amp; incident response</li>",
         "certs.label": "Credentials",
@@ -1430,11 +1443,17 @@ const translations = {
         "tag.teamlead": "Liderazgo de equipo", "tag.product": "Desarrollo de producto",
         "skills.label": "Stack tecnológico",
         "skills.title": "Tecnologías y habilidades",
+        "skills.ai_desc": "Agentes, RAG y orquestación de LLMs en producción con usuarios reales; tooling MCP y flujos de ingeniería asistidos por IA.",
         "skills.ai": "IA, agentes y LLMs",
+        "skills.cloud_desc": "8+ años diseñando y operando plataformas AWS: contenedores en ECS, infraestructura Terraform-first, streaming de eventos.",
         "skills.cloud": "Cloud e infraestructura",
+        "skills.backend_desc": "15+ años en PHP, Java/Spring Boot, Python, Scala y Go; de monolitos a microservicios políglotas.",
         "skills.backend": "Backend",
+        "skills.data_desc": "Elegir y operar el almacén adecuado por carga: clave-valor, búsqueda, caché, wide-column y relacional.",
         "skills.data": "Datos y almacenamiento",
+        "skills.devops_desc": "Pipelines CI/CD, imágenes inmutables, guardias y observabilidad; la fiabilidad como práctica de ingeniería, no como equipo.",
         "skills.devops": "DevOps, CI/CD y observabilidad",
+        "skills.leadership_desc": "7+ años como CTO: roadmap, contratación, OKRs, contratos con proveedores, due diligence, presupuestos y ayuntamientos como stakeholders.",
         "skills.leadership": "Liderazgo",
         "skills.leadership_tags": "<li class=\"skill-tag\">Estrategia tecnológica y roadmap</li><li class=\"skill-tag\">OKRs</li><li class=\"skill-tag\">Contratación y escalado de equipos</li><li class=\"skill-tag\">Due diligence técnica</li><li class=\"skill-tag\">Gestión de costes</li><li class=\"skill-tag\">Seguridad y respuesta a incidentes</li>",
         "certs.label": "Credenciales",
