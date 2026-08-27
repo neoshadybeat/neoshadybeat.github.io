@@ -774,13 +774,13 @@
         </article>
         <article class="card case-card reveal">
             <div class="case-meta">enolovers.app · 2026 · Freelance</div>
-            <h3 data-i18n="work.c4_title">Making a growing product boring to operate</h3>
+            <h3 data-i18n="work.c4_title">App load time from 10 s to under 1 s</h3>
             <dl class="case-block">
-                <dt data-i18n="work.ctx">Context</dt><dd data-i18n="work.c4_ctx">Consumer app growing fast with a small team: scalability pain, slow releases, dependency drift and no clear security baseline.</dd>
-                <dt data-i18n="work.act">Action</dt><dd data-i18n="work.c4_act">CI/CD with AI agents in the pipeline, automated dependency updates and a test harness; DB optimization, Redis caching and rate limiting; security best practices; Terraform for all infrastructure; observability end to end.</dd>
-                <dt data-i18n="work.res">Result</dt><dd class="result" data-i18n="work.c4_res">Predictable releases, scalability bottlenecks removed, infrastructure reproducible and monitored.</dd>
+                <dt data-i18n="work.ctx">Context</dt><dd data-i18n="work.c4_ctx">Consumer app growing fast with a small team: 10-second loads, scalability pain, slow releases, dependency drift and no clear security baseline.</dd>
+                <dt data-i18n="work.act">Action</dt><dd data-i18n="work.c4_act">Resource loading optimization, lazy vs eager data loading, DB indexes, Redis caching and rate limiting; CI/CD with AI agents, automated dependency updates and a test harness; security best practices; Terraform for all infrastructure; Sentry, monitoring, analytics and per-call metrics.</dd>
+                <dt data-i18n="work.res">Result</dt><dd class="result" data-i18n="work.c4_res">App load time cut from ~10 s to under 1 s; predictable releases; infrastructure reproducible and fully monitored.</dd>
             </dl>
-            <div class="case-tags"><span class="tag tag-devops">CI/CD</span><span class="tag tag-other">AI agents</span><span class="tag tag-data">Redis</span><span class="tag tag-cloud">Terraform</span></div>
+            <div class="case-tags"><span class="tag tag-other">Performance</span><span class="tag tag-devops">CI/CD</span><span class="tag tag-other">AI agents</span><span class="tag tag-data">Redis</span><span class="tag tag-cloud">Terraform</span><span class="tag tag-other">Sentry</span></div>
         </article>
     </div>
 </section>
@@ -857,7 +857,7 @@
                 <div class="timeline-role" data-i18n="exp.role_fractional">Fractional CTO &amp; Software Architect</div>
                 <div class="timeline-location" data-i18n="exp.loc_remote">Remote</div>
                 <ul class="timeline-bullets" data-i18n="exp.indep">
-                    <li><strong>Fractional CTO</strong> and hands-on architect/developer for early-stage companies: technical strategy, architecture reviews, cloud and delivery setup.</li><li><strong>enolovers.app</strong> (client): CI/CD with <strong>AI agents</strong> in the pipeline, automated dependency updates and a test harness; fixed scalability bottlenecks with <strong>DB optimization, Redis caching and rate limiting</strong>; security hardening; infrastructure automated with <strong>Terraform</strong>; end-to-end observability.</li><li>Deep-dive training in <strong>security, AI/LLM systems, software architecture and blockchain</strong>, applied directly to client work.</li>
+                    <li><strong>Fractional CTO</strong> and hands-on architect/developer for early-stage companies: technical strategy, architecture reviews, cloud and delivery setup.</li><li><strong>enolovers.app</strong> (client): cut app load time from <strong>~10 s to under 1 s</strong> (resource loading, lazy vs eager data, DB indexes, Redis caching, rate limiting); CI/CD with <strong>AI agents</strong>, automated dependency updates and a test harness; security best practices; infrastructure in <strong>Terraform</strong>; Sentry, monitoring, analytics and per-call metrics.</li><li>Deep-dive training in <strong>security, AI/LLM systems, software architecture and blockchain</strong>, applied directly to client work.</li>
                 </ul>
                 <div class="timeline-tags">
                     <span class="tag tag-other" data-i18n="tag.fractional">Fractional CTO</span><span class="tag tag-cloud">AWS</span><span class="tag tag-cloud">Terraform</span><span class="tag tag-data">Redis</span><span class="tag tag-devops">CI/CD</span><span class="tag tag-other" data-i18n="tag.ai">AI / LLMs</span><span class="tag tag-devops" data-i18n="tag.security">Security</span><span class="tag tag-data">Blockchain</span>
@@ -1277,10 +1277,10 @@ const translations = {
         "work.c3_ctx": "High-traffic e-commerce shipping platform (Packlink Pro, eBay integration) on a monolithic PHP codebase.",
         "work.c3_act": "Drove the migration to Java/Scala/Python microservices with RabbitMQ event patterns and Cassandra/Redis storage.",
         "work.c3_res": "Zero-downtime deployments across peak e-commerce operations.",
-        "work.c4_title": "Making a growing product boring to operate",
-        "work.c4_ctx": "Consumer app growing fast with a small team: scalability pain, slow releases, dependency drift and no clear security baseline.",
-        "work.c4_act": "CI/CD with AI agents in the pipeline, automated dependency updates and a test harness; DB optimization, Redis caching and rate limiting; security best practices; Terraform for all infrastructure; observability end to end.",
-        "work.c4_res": "Predictable releases, scalability bottlenecks removed, infrastructure reproducible and monitored.",
+        "work.c4_title": "App load time from 10 s to under 1 s",
+        "work.c4_ctx": "Consumer app growing fast with a small team: 10-second loads, scalability pain, slow releases, dependency drift and no clear security baseline.",
+        "work.c4_act": "Resource loading optimization, lazy vs eager data loading, DB indexes, Redis caching and rate limiting; CI/CD with AI agents, automated dependency updates and a test harness; security best practices; Terraform for all infrastructure; Sentry, monitoring, analytics and per-call metrics.",
+        "work.c4_res": "App load time cut from ~10 s to under 1 s; predictable releases; infrastructure reproducible and fully monitored.",
         "about.label": "About me",
         "about.title": "Who I am",
         "about.text": "<p>I'm a <strong>CTO who still reads pull requests</strong>. Over 15+ years I've gone from web developer to architect to running technology for two companies, and I've kept one rule: own the whole stack, from the Terraform module to the on-call rotation to the roadmap conversation with the board.</p><p>I've taken companies from <strong>legacy monoliths to cloud-native microservices on AWS</strong>, and I've done the unglamorous work that makes that stick: CI/CD, observability, cost control, security, and technical due diligence with investors.</p><p>Today I'm focused on <strong>AI systems in production</strong>: autonomous agents, RAG pipelines, LLM orchestration and MCP tooling, built with the same discipline as any other backend service. I speak Spanish and English and work equally well in either.</p>",
@@ -1296,7 +1296,7 @@ const translations = {
         "exp.indep_date": "Apr 2026 — Present",
         "exp.role_fractional": "Fractional CTO & Software Architect",
         "exp.loc_remote": "Remote",
-        "exp.indep": "<li><strong>Fractional CTO</strong> and hands-on architect/developer for early-stage companies: technical strategy, architecture reviews, cloud and delivery setup.</li><li><strong>enolovers.app</strong> (client): CI/CD with <strong>AI agents</strong> in the pipeline, automated dependency updates and a test harness; fixed scalability bottlenecks with <strong>DB optimization, Redis caching and rate limiting</strong>; security hardening; infrastructure automated with <strong>Terraform</strong>; end-to-end observability.</li><li>Deep-dive training in <strong>security, AI/LLM systems, software architecture and blockchain</strong>, applied directly to client work.</li>",
+        "exp.indep": "<li><strong>Fractional CTO</strong> and hands-on architect/developer for early-stage companies: technical strategy, architecture reviews, cloud and delivery setup.</li><li><strong>enolovers.app</strong> (client): cut app load time from <strong>~10 s to under 1 s</strong> (resource loading, lazy vs eager data, DB indexes, Redis caching, rate limiting); CI/CD with <strong>AI agents</strong>, automated dependency updates and a test harness; security best practices; infrastructure in <strong>Terraform</strong>; Sentry, monitoring, analytics and per-call metrics.</li><li>Deep-dive training in <strong>security, AI/LLM systems, software architecture and blockchain</strong>, applied directly to client work.</li>",
         "tag.fractional": "Fractional CTO", "tag.ai": "AI / LLMs", "tag.security": "Security",
         "exp.role_cto": "Chief Technology Officer",
         "exp.role_arch": "Software Architect",
@@ -1413,10 +1413,10 @@ const translations = {
         "work.c3_ctx": "Plataforma de envíos e-commerce de alto tráfico (Packlink Pro, integración eBay) sobre un monolito PHP.",
         "work.c3_act": "Impulsé la migración a microservicios Java/Scala/Python con patrones event-driven en RabbitMQ y almacenamiento en Cassandra/Redis.",
         "work.c3_res": "Despliegues zero-downtime en picos de operación e-commerce.",
-        "work.c4_title": "Hacer que un producto en crecimiento sea aburrido de operar",
-        "work.c4_ctx": "App de consumo creciendo rápido con equipo pequeño: dolor de escalabilidad, releases lentas, dependencias desactualizadas y sin baseline de seguridad.",
-        "work.c4_act": "CI/CD con agentes de IA en el pipeline, actualización automática de dependencias y test harness; optimización de BD, caché Redis y rate limiting; buenas prácticas de seguridad; Terraform para toda la infraestructura; observabilidad end-to-end.",
-        "work.c4_res": "Releases predecibles, cuellos de botella de escalabilidad eliminados, infraestructura reproducible y monitorizada.",
+        "work.c4_title": "Carga de la app de 10 s a menos de 1 s",
+        "work.c4_ctx": "App de consumo creciendo rápido con equipo pequeño: cargas de 10 segundos, dolor de escalabilidad, releases lentas, dependencias desactualizadas y sin baseline de seguridad.",
+        "work.c4_act": "Optimización de carga de recursos, carga de datos lazy vs eager, índices en BD, caché Redis y rate limiting; CI/CD con agentes de IA, actualización automática de dependencias y test harness; buenas prácticas de seguridad; Terraform para toda la infraestructura; Sentry, monitorización, analíticas y métricas por llamada.",
+        "work.c4_res": "Tiempo de carga de ~10 s a menos de 1 s; releases predecibles; infraestructura reproducible y totalmente monitorizada.",
         "about.label": "Sobre mí",
         "about.title": "Quién soy",
         "about.text": "<p>Soy un <strong>CTO que sigue leyendo pull requests</strong>. En más de 15 años he pasado de desarrollador web a arquitecto y a dirigir la tecnología de dos empresas, manteniendo una regla: ser dueño de todo el stack, desde el módulo de Terraform hasta la rotación de guardias y la conversación de roadmap con el consejo.</p><p>He llevado empresas de <strong>monolitos legacy a microservicios cloud-native en AWS</strong>, y he hecho el trabajo poco glamuroso que hace que eso perdure: CI/CD, observabilidad, control de costes, seguridad y due diligence técnica con inversores.</p><p>Hoy estoy centrado en <strong>sistemas de IA en producción</strong>: agentes autónomos, pipelines RAG, orquestación de LLMs y tooling MCP, construidos con la misma disciplina que cualquier otro servicio backend. Trabajo indistintamente en español e inglés.</p>",
@@ -1432,7 +1432,7 @@ const translations = {
         "exp.indep_date": "Abr 2026 — Actualidad",
         "exp.role_fractional": "CTO fraccional y Arquitecto de Software",
         "exp.loc_remote": "Remoto",
-        "exp.indep": "<li><strong>CTO fraccional</strong> y arquitecto/desarrollador hands-on para empresas en fase temprana: estrategia técnica, revisiones de arquitectura, setup cloud y de delivery.</li><li><strong>enolovers.app</strong> (cliente): CI/CD con <strong>agentes de IA</strong> en el pipeline, actualización automática de dependencias y test harness; resueltos cuellos de botella de escalabilidad con <strong>optimización de BD, caché Redis y rate limiting</strong>; buenas prácticas de seguridad; infraestructura automatizada con <strong>Terraform</strong>; observabilidad end-to-end.</li><li>Formación intensiva en <strong>seguridad, sistemas de IA/LLM, arquitectura de software y blockchain</strong>, aplicada directamente en proyectos de clientes.</li>",
+        "exp.indep": "<li><strong>CTO fraccional</strong> y arquitecto/desarrollador hands-on para empresas en fase temprana: estrategia técnica, revisiones de arquitectura, setup cloud y de delivery.</li><li><strong>enolovers.app</strong> (cliente): carga de la app de <strong>~10 s a menos de 1 s</strong> (carga de recursos, datos lazy vs eager, índices en BD, caché Redis, rate limiting); CI/CD con <strong>agentes de IA</strong>, actualización automática de dependencias y test harness; buenas prácticas de seguridad; infraestructura en <strong>Terraform</strong>; Sentry, monitorización, analíticas y métricas por llamada.</li><li>Formación intensiva en <strong>seguridad, sistemas de IA/LLM, arquitectura de software y blockchain</strong>, aplicada directamente en proyectos de clientes.</li>",
         "tag.fractional": "CTO fraccional", "tag.ai": "IA / LLMs", "tag.security": "Seguridad",
         "exp.role_cto": "Chief Technology Officer",
         "exp.role_arch": "Arquitecto de Software",
