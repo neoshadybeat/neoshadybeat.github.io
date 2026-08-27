@@ -697,7 +697,7 @@
         <article class="card impact-card reveal">
             <div class="card-icon" style="background:rgba(99,102,241,0.14)" aria-hidden="true">&#9881;</div>
             <h3 data-i18n="impact.card1_title">Architecture that scales</h3>
-            <p data-i18n="impact.card1_text">Two legacy PHP monoliths decomposed into 20+ containerized microservices on AWS ECS, with Terraform-first infrastructure and 99.99% uptime in production.</p>
+            <p data-i18n="impact.card1_text">Two legacy monoliths (Clojure, PHP) decomposed into 20+ containerized microservices on AWS ECS, with Terraform-first infrastructure and 99.99% uptime in production.</p>
         </article>
         <article class="card impact-card reveal">
             <div class="card-icon" style="background:rgba(6,182,212,0.14)" aria-hidden="true">&#128101;</div>
@@ -744,7 +744,7 @@
     <div class="cases-grid grid">
         <article class="card case-card reveal">
             <div class="case-meta">Ride On · 2018–2019</div>
-            <h3 data-i18n="work.c1_title">From a PHP monolith to 20+ microservices on AWS</h3>
+            <h3 data-i18n="work.c1_title">From a Clojure monolith to 20+ microservices on AWS</h3>
             <dl class="case-block">
                 <dt data-i18n="work.ctx">Context</dt><dd data-i18n="work.c1_ctx">City-scale eSharing mobility platform blocked by a legacy monolith: slow releases, single points of failure.</dd>
                 <dt data-i18n="work.act">Action</dt><dd data-i18n="work.c1_act">Designed and led the full re-architecture: 20+ containerized services on ECS, 100% of infrastructure in Terraform, CI/CD with Jenkins, observability with Sentry + PagerDuty.</dd>
@@ -900,11 +900,11 @@
                 <div class="timeline-role" data-i18n="exp.role_arch">Software Architect</div>
                 <div class="timeline-location" data-i18n="exp.loc_madrid">Madrid, Spain</div>
                 <ul class="timeline-bullets" data-i18n="exp.rideon_arch">
-                    <li>Led the complete platform re-architecture: <strong>legacy PHP monolith → 20+ containerized microservices on AWS ECS</strong>.</li><li>Authored the entire <strong>Infrastructure-as-Code layer in Terraform</strong>; automated CI/CD with Jenkins, images with Ansible + Packer.</li><li>Established observability with Sentry and PagerDuty; removed the bottlenecks blocking <strong>city-wide scale</strong>.</li>
+                    <li>Led the complete platform re-architecture: <strong>legacy Clojure monolith → 20+ containerized microservices on AWS ECS</strong>.</li><li>Authored the entire <strong>Infrastructure-as-Code layer in Terraform</strong>; automated CI/CD with Jenkins, images with Ansible + Packer.</li><li>Established observability with Sentry and PagerDuty; removed the bottlenecks blocking <strong>city-wide scale</strong>.</li>
                 </ul>
                 <div class="timeline-tags">
                     <span class="tag tag-cloud">ECS</span><span class="tag tag-cloud">Terraform</span><span class="tag tag-data">DynamoDB</span><span class="tag tag-data">Elasticsearch</span>
-                    <span class="tag tag-devops">Jenkins</span><span class="tag tag-devops">Ansible</span><span class="tag tag-devops">Packer</span><span class="tag tag-other">Sentry</span>
+                    <span class="tag tag-devops">Jenkins</span><span class="tag tag-devops">Ansible</span><span class="tag tag-devops">Packer</span><span class="tag tag-backend">Clojure</span><span class="tag tag-other">Sentry</span>
                 </div>
             </div>
         </article>
@@ -1242,7 +1242,7 @@ const translations = {
         "impact.label": "What I bring",
         "impact.title": "Three things I do well",
         "impact.card1_title": "Architecture that scales",
-        "impact.card1_text": "Two legacy PHP monoliths decomposed into 20+ containerized microservices on AWS ECS, with Terraform-first infrastructure and 99.99% uptime in production.",
+        "impact.card1_text": "Two legacy monoliths (Clojure, PHP) decomposed into 20+ containerized microservices on AWS ECS, with Terraform-first infrastructure and 99.99% uptime in production.",
         "impact.card2_title": "Teams that deliver",
         "impact.card2_text": "Built and scaled engineering organizations as CTO at two companies: OKRs, cross-functional squads, on-call culture, and developer experience as a first-class concern.",
         "impact.card3_title": "AI in production, not slides",
@@ -1255,7 +1255,7 @@ const translations = {
         "work.title": "Problems I've solved",
         "work.intro": "Context → what I did → measurable outcome. The pattern repeats across companies: inherit something fragile, make it boring and reliable, then let the team move fast on top of it.",
         "work.ctx": "Context", "work.act": "Action", "work.res": "Result",
-        "work.c1_title": "From a PHP monolith to 20+ microservices on AWS",
+        "work.c1_title": "From a Clojure monolith to 20+ microservices on AWS",
         "work.c1_ctx": "City-scale eSharing mobility platform blocked by a legacy monolith: slow releases, single points of failure.",
         "work.c1_act": "Designed and led the full re-architecture: 20+ containerized services on ECS, 100% of infrastructure in Terraform, CI/CD with Jenkins, observability with Sentry + PagerDuty.",
         "work.c1_res": "Critical bottlenecks eliminated; platform able to scale to city-wide operations. Promoted to CTO.",
@@ -1295,7 +1295,7 @@ const translations = {
         "exp.loc_spain": "Spain",
         "exp.sharetech_cto": "<li>Owned the <strong>technology vision and roadmap</strong>; final say on cloud architecture, build-vs-buy and platform investments.</li><li>Led cross-functional engineering squads; set standards for <strong>microservices governance, reliability and developer experience</strong>.</li><li>Hands-on across <strong>infrastructure automation (Terraform, ECS)</strong>, AWS cost optimization and on-call/observability with Sentry + PagerDuty.</li><li><strong>Vendor and partner contracts</strong> (M2M and cybersecurity integrations with Telefónica); technical counterpart for Pamplona City Council.</li><li>Operations &amp; logistics tooling: <strong>metrics, SLAs, reporting dashboards</strong> and cost optimization.</li><li>Hands-on backend development; introduced <strong>LLM-assisted workflows</strong> into the engineering process.</li>",
         "exp.rideon_cto": "<li><strong>Promoted from Architect to CTO</strong> to own the full technology strategy of the eSharing mobility platform (remote since 2020).</li><li>Scaled the engineering organization and introduced <strong>OKRs</strong> for the tech department.</li><li>Drove <strong>event-driven architecture on AWS Kinesis</strong>; optimized container orchestration on <strong>ECS</strong>, cutting infrastructure cost ~30%.</li><li>Directly accountable for <strong>uptime (99.99%), security and technical due diligence</strong> with investors.</li><li><strong>Vendor and partner contracts</strong> (M2M and cybersecurity with Telefónica); technical counterpart for city councils in <strong>Miami, Dundee, Leicester and Pamplona</strong>.</li><li>Operations &amp; logistics: internal tooling, metrics, SLAs and reporting dashboards.</li>",
-        "exp.rideon_arch": "<li>Led the complete platform re-architecture: <strong>legacy PHP monolith → 20+ containerized microservices on AWS ECS</strong>.</li><li>Authored the entire <strong>Infrastructure-as-Code layer in Terraform</strong>; automated CI/CD with Jenkins, images with Ansible + Packer.</li><li>Established observability with Sentry and PagerDuty; removed the bottlenecks blocking <strong>city-wide scale</strong>.</li>",
+        "exp.rideon_arch": "<li>Led the complete platform re-architecture: <strong>legacy Clojure monolith → 20+ containerized microservices on AWS ECS</strong>.</li><li>Authored the entire <strong>Infrastructure-as-Code layer in Terraform</strong>; automated CI/CD with Jenkins, images with Ansible + Packer.</li><li>Established observability with Sentry and PagerDuty; removed the bottlenecks blocking <strong>city-wide scale</strong>.</li>",
         "exp.kimia": "<li>Designed and delivered <strong>high-throughput backend services in Go</strong>, backed by Redis and Elasticsearch.</li><li>Built real-time monitoring and alerting pipelines that improved incident response times and reliability.</li>",
         "exp.packlink": "<li>Key contributor to the <strong>Packlink Pro and eBay shipping integration</strong> backend.</li><li>Drove the migration from a PHP monolith to <strong>polyglot microservices (Java, Scala, Python)</strong> with RabbitMQ, Cassandra and Redis.</li><li><strong>Zero-downtime deployments</strong> across high-traffic e-commerce operations.</li>",
         "exp.betabeers_role": "Community Organizer & Speaker",
@@ -1374,7 +1374,7 @@ const translations = {
         "impact.label": "Lo que aporto",
         "impact.title": "Tres cosas que hago bien",
         "impact.card1_title": "Arquitectura que escala",
-        "impact.card1_text": "Dos monolitos PHP legacy descompuestos en más de 20 microservicios containerizados en AWS ECS, con infraestructura Terraform-first y 99,99% de uptime en producción.",
+        "impact.card1_text": "Dos monolitos legacy (Clojure, PHP) descompuestos en más de 20 microservicios containerizados en AWS ECS, con infraestructura Terraform-first y 99,99% de uptime en producción.",
         "impact.card2_title": "Equipos que entregan",
         "impact.card2_text": "Construí y escalé organizaciones de ingeniería como CTO en dos empresas: OKRs, squads multifuncionales, cultura de guardias y developer experience como prioridad.",
         "impact.card3_title": "IA en producción, no en slides",
@@ -1387,7 +1387,7 @@ const translations = {
         "work.title": "Problemas que he resuelto",
         "work.intro": "Contexto → qué hice → resultado medible. El patrón se repite: heredar algo frágil, hacerlo aburrido y fiable, y dejar que el equipo vaya rápido encima.",
         "work.ctx": "Contexto", "work.act": "Acción", "work.res": "Resultado",
-        "work.c1_title": "De un monolito PHP a más de 20 microservicios en AWS",
+        "work.c1_title": "De un monolito Clojure a más de 20 microservicios en AWS",
         "work.c1_ctx": "Plataforma de movilidad eSharing a escala de ciudad bloqueada por un monolito legacy: releases lentas, puntos únicos de fallo.",
         "work.c1_act": "Diseñé y lideré la re-arquitectura completa: 20+ servicios containerizados en ECS, 100% de la infraestructura en Terraform, CI/CD con Jenkins, observabilidad con Sentry + PagerDuty.",
         "work.c1_res": "Cuellos de botella críticos eliminados; plataforma capaz de operar a nivel de ciudad. Promoción a CTO.",
@@ -1427,7 +1427,7 @@ const translations = {
         "exp.loc_spain": "España",
         "exp.sharetech_cto": "<li>Responsable de la <strong>visión tecnológica y el roadmap</strong>; última palabra en arquitectura cloud, build-vs-buy e inversiones de plataforma.</li><li>Lideré squads de ingeniería multifuncionales; definí estándares de <strong>gobernanza de microservicios, fiabilidad y developer experience</strong>.</li><li>Hands-on en <strong>automatización de infraestructura (Terraform, ECS)</strong>, optimización de costes AWS y guardias/observabilidad con Sentry + PagerDuty.</li><li><strong>Contratos con proveedores y partners</strong> (integraciones M2M y ciberseguridad con Telefónica); interlocutor técnico con el Ayuntamiento de Pamplona.</li><li>Herramientas de operaciones y logística: <strong>métricas, SLAs, dashboards de reporting</strong> y optimización de costes.</li><li>Desarrollo backend hands-on; introduje <strong>flujos asistidos por LLM</strong> en el proceso de ingeniería.</li>",
         "exp.rideon_cto": "<li><strong>Promoción de Arquitecto a CTO</strong> para liderar toda la estrategia tecnológica de la plataforma de movilidad eSharing (en remoto desde 2020).</li><li>Escalé la organización de ingeniería e introduje <strong>OKRs</strong> en el departamento técnico.</li><li>Impulsé <strong>arquitectura event-driven sobre AWS Kinesis</strong>; optimicé la orquestación de contenedores en <strong>ECS</strong>, reduciendo el coste de infraestructura ~30%.</li><li>Responsable directo de <strong>uptime (99,99%), seguridad y due diligence técnica</strong> con inversores.</li><li><strong>Contratos con proveedores y partners</strong> (M2M y ciberseguridad con Telefónica); interlocutor técnico con los ayuntamientos de <strong>Miami, Dundee, Leicester y Pamplona</strong>.</li><li>Operaciones y logística: herramientas internas, métricas, SLAs y dashboards de reporting.</li>",
-        "exp.rideon_arch": "<li>Lideré la re-arquitectura completa: <strong>monolito PHP legacy → 20+ microservicios containerizados en AWS ECS</strong>.</li><li>Autor de toda la capa de <strong>Infraestructura como Código en Terraform</strong>; CI/CD automatizado con Jenkins, imágenes con Ansible + Packer.</li><li>Observabilidad con Sentry y PagerDuty; eliminé los cuellos de botella que impedían la <strong>escala a nivel de ciudad</strong>.</li>",
+        "exp.rideon_arch": "<li>Lideré la re-arquitectura completa: <strong>monolito Clojure legacy → 20+ microservicios containerizados en AWS ECS</strong>.</li><li>Autor de toda la capa de <strong>Infraestructura como Código en Terraform</strong>; CI/CD automatizado con Jenkins, imágenes con Ansible + Packer.</li><li>Observabilidad con Sentry y PagerDuty; eliminé los cuellos de botella que impedían la <strong>escala a nivel de ciudad</strong>.</li>",
         "exp.kimia": "<li>Diseño y entrega de <strong>servicios backend de alto rendimiento en Go</strong>, sobre Redis y Elasticsearch.</li><li>Pipelines de monitorización y alertas en tiempo real que mejoraron los tiempos de respuesta a incidentes y la fiabilidad.</li>",
         "exp.packlink": "<li>Contribuidor clave en el backend de <strong>Packlink Pro y la integración de envíos de eBay</strong>.</li><li>Impulsé la migración de un monolito PHP a <strong>microservicios políglotas (Java, Scala, Python)</strong> con RabbitMQ, Cassandra y Redis.</li><li><strong>Despliegues zero-downtime</strong> en operaciones e-commerce de alto tráfico.</li>",
         "exp.betabeers_role": "Organizador de comunidad y ponente",
