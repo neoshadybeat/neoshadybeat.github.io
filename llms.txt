@@ -1,0 +1,32 @@
+# Cayetano Soriano Gallego
+
+> Fractional CTO and AI engineering lead based in Madrid, Spain, working fully remote. 15+ years in tech, 7+ as CTO, 8+ on AWS. Builds LLM features, MCP servers and agentic engineering workflows that run in production, on cloud platforms built to last.
+
+## Profile
+
+- [Website (English)](https://cayetano.dev/): case studies, experience, skills
+- [Sitio web (español)](https://cayetano.dev/es/)
+- [CV (PDF, English)](https://cayetano.dev/cv/Cayetano-Soriano-Gallego-CV-EN.pdf)
+- [CV (PDF, español)](https://cayetano.dev/cv/Cayetano-Soriano-Gallego-CV-ES.pdf)
+- [LinkedIn](https://www.linkedin.com/in/csorianogallego)
+- [GitHub](https://github.com/neoshadybeat)
+- Contact: hello@cayetano.dev
+
+## Experience
+
+- 2026–present: Fractional CTO & AI engineering lead (independent). Claude-powered bilingual content generation and an MCP admin server for enolovers.app; app load time cut from ~10 s to under 1 s. Own digital-health product in development: LLM symptom triage with personal-data stripping, voice companion with speech-to-text, MCP server with 7 tool modules.
+- 2023–2026: CTO, ShareTech. Technology vision and roadmap, AWS (ECS, Terraform), observability, vendor contracts (Telefónica M2M and cybersecurity), LLM-assisted engineering workflows.
+- 2019–2023: CTO, Ride On. Event-driven architecture on AWS Kinesis, ~30% lower AWS cost at 99.99% uptime, OKRs, technical due diligence with investors, city councils in Miami, Dundee, Leicester and Pamplona.
+- 2018–2019: Software Architect, Ride On. Clojure monolith to 20+ containerized microservices on AWS ECS, 100% Terraform.
+- Earlier: Kimia (Software Architect), Packlink (Backend Engineer; zero-downtime migration from PHP to Java/Scala/Python microservices), Softonic (Backend Engineer).
+
+## Skills
+
+- AI: Claude / Anthropic API, OpenAI API, Gemini API, Model Context Protocol (MCP), Claude Agent SDK, tool calling, structured outputs, speech-to-text, PII redaction / GDPR, Claude Code
+- Platform: AWS (ECS, Kinesis, DynamoDB, SNS/SQS), Terraform, TypeScript/Node.js, Python, Java/Spring Boot, Scala, PHP, Redis, Elasticsearch, OpenTelemetry, Sentry, PagerDuty
+- Leadership: technology strategy, OKRs, hiring and team scaling, vendor contracts, technical due diligence, cost management
+
+## Credentials
+
+- Claude Code in Action — Anthropic, 2026 (https://verify.skilljar.com/c/vzaipbkt6vwa)
+- Computer Systems Engineering — Universidad de Cádiz
