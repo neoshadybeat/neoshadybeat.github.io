@@ -36,7 +36,7 @@
 
 
     <link rel="preload" href="fonts/Inter-400-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="fonts/Sora-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/Newsreader-400-500-latin.woff2" as="font" type="font/woff2" crossorigin>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -74,6 +74,8 @@
         @font-face { font-family: 'Sora'; font-style: normal; font-weight: 800; font-display: swap; src: url(fonts/Sora-800-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
         @font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 500; font-display: swap; src: url(fonts/SpaceGrotesk-500-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
         @font-face { font-family: 'Space Grotesk'; font-style: normal; font-weight: 500; font-display: swap; src: url(fonts/SpaceGrotesk-500-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+        @font-face { font-family: 'Newsreader'; font-style: normal; font-weight: 400 500; font-display: swap; src: url(fonts/Newsreader-400-500-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+        @font-face { font-family: 'Newsreader'; font-style: normal; font-weight: 400 500; font-display: swap; src: url(fonts/Newsreader-400-500-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
@@ -85,7 +87,7 @@
             --bg-card-hover: rgba(23, 33, 54, 0.85);
             --bg-soft: rgba(99, 102, 241, 0.05);
             --bg-soft-hover: rgba(99, 102, 241, 0.09);
-            --border-card: rgba(99, 102, 241, 0.14);
+            --border-card: rgba(255, 255, 255, 0.08);
             --border-card-hover: rgba(99, 102, 241, 0.34);
             --accent: #6366f1;
             --accent-glow: rgba(99, 102, 241, 0.15);
@@ -102,9 +104,12 @@
             --gradient-2: linear-gradient(135deg, #6366f1, #c084fc);
             --gradient-3: linear-gradient(135deg, #10b981, #06b6d4);
             --font-headline: 'Sora', 'Inter', system-ui, sans-serif;
+            --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
             --font-label: 'Space Grotesk', 'Inter', system-ui, sans-serif;
             --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+            --chip-bg: rgba(148, 163, 184, 0.08);
+            --chip-border: rgba(148, 163, 184, 0.14);
             --radius: 14px;
             --radius-sm: 8px;
             --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -119,7 +124,7 @@
             --bg-card-hover: rgba(255, 255, 255, 1);
             --bg-soft: rgba(99, 102, 241, 0.06);
             --bg-soft-hover: rgba(99, 102, 241, 0.11);
-            --border-card: rgba(79, 70, 229, 0.16);
+            --border-card: rgba(15, 23, 42, 0.10);
             --border-card-hover: rgba(79, 70, 229, 0.4);
             --accent: #4f46e5;
             --accent-glow: rgba(79, 70, 229, 0.12);
@@ -135,6 +140,8 @@
             --gradient-1: linear-gradient(135deg, #4f46e5, #0891b2);
             --gradient-2: linear-gradient(135deg, #4f46e5, #a855f7);
             --gradient-3: linear-gradient(135deg, #059669, #0891b2);
+            --chip-bg: rgba(15, 23, 42, 0.04);
+            --chip-border: rgba(15, 23, 42, 0.10);
             color-scheme: light;
         }
 
@@ -272,7 +279,7 @@
             animation: fadeInUp 0.5s ease-out 0.03s both;
         }
         .hero h1 {
-            font-family: var(--font-headline); font-size: clamp(2.4rem, 6vw, 4.4rem); font-weight: 800;
+            font-family: var(--font-headline); font-size: clamp(2.3rem, 5.6vw, 4.1rem); font-weight: 800; text-wrap: balance;
             letter-spacing: -0.04em; line-height: 1.08; margin-bottom: 1.5rem;
             animation: fadeInUp 0.5s ease-out 0.06s both;
         }
@@ -282,7 +289,7 @@
         .hero-cta { display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap; animation: fadeInUp 0.5s ease-out 0.14s both; }
         .btn {
             display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.6rem;
-            border-radius: 50px; font-size: 0.9rem; font-weight: 600; text-decoration: none;
+            border-radius: 10px; font-size: 0.9rem; font-weight: 600; text-decoration: none;
             transition: var(--transition); cursor: pointer; border: none; font-family: var(--font-sans);
             line-height: 1.2;
         }
@@ -581,7 +588,7 @@
             .footer-links { display: none; }
             .reveal { opacity: 1 !important; transform: none !important; }
             a[href]::after { content: none !important; }
-            #impact, .metrics-section, .section-intro, .hero-name { display: none !important; }
+            #impact, .metrics-section, .section-intro { display: none !important; }
             .impact-grid, .cases-grid, .seek-grid { grid-template-columns: repeat(3, 1fr) !important; }
             .about-grid { grid-template-columns: 1.4fr 1fr !important; }
             .skills-grid { grid-template-columns: 1fr 1fr !important; }
@@ -603,6 +610,102 @@
             .case-card .case-meta { grid-column: 1 / -1; }
             .case-card dl { grid-column: 2; grid-row: 2 / span 2; }
             .case-card .case-tags { grid-column: 1; margin-top: 0.3rem; }
+        }
+
+        .hero-proof { margin-top: 3rem; padding-top: 1.75rem; border-top: 1px solid var(--border-card); animation: fadeInUp 0.5s ease-out 0.24s both; }
+        .hero-proof-label { display: block; font-family: var(--font-label); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-muted); margin-bottom: 0.9rem; }
+        .hero-proof-list { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 2.25rem; }
+        .hero-proof-list li { font-family: var(--font-headline); font-weight: 700; font-size: 1.05rem; letter-spacing: -0.01em; color: var(--text-secondary); opacity: 0.75; }
+        .metrics-inner { max-width: calc(1100px - 4rem) !important; }
+        @media print { .hero-proof { display: none; } }
+        h1 span, h2, h3, .section-title { text-wrap: balance; }
+        p, dd, li { text-wrap: pretty; }
+        /* Design pass: one accent, neutral chips, line icons */
+        .tag, .tag-cloud, .tag-backend, .tag-devops, .tag-data, .tag-other { background: var(--chip-bg); color: var(--text-secondary); border: 1px solid var(--chip-border); }
+        .card-icon, .about-info-icon, .skill-cat-icon, .cert-icon, .edu-icon { background: var(--bg-soft) !important; color: var(--accent); border: 1px solid var(--border-card); }
+        .card-icon svg { width: 22px; height: 22px; }
+        .about-info-icon svg, .skill-cat-icon svg { width: 18px; height: 18px; }
+        .cert-icon svg { width: 22px; height: 22px; }
+        .edu-icon svg { width: 26px; height: 26px; }
+        .seek-icon { display: inline-flex; vertical-align: -3px; color: var(--accent); }
+        .seek-icon svg { width: 18px; height: 18px; }
+        .metric-item .metric-value, .metric-item:nth-child(n) .metric-value { background: var(--gradient-1); -webkit-background-clip: text; background-clip: text; }
+
+        /* Editorial layer: serif display, solid CTA, no gradient text, hairline tiles */
+        .hero { text-align: left; }
+        .hero-content { max-width: calc(1100px - 4rem); width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 2rem 4rem; align-items: center; }
+        .hero-stats, .hero-proof { grid-column: 1 / -1; }
+        .hero h1 { font-family: var(--font-display); font-weight: 500; letter-spacing: -0.025em; line-height: 1.04; font-size: clamp(2.5rem, 5.4vw, 4.4rem); }
+        .hero h1 .gradient-text, .gradient-text { background: none; -webkit-text-fill-color: currentColor; color: var(--text-muted); }
+        .hero-subtitle { margin: 0 0 2rem; max-width: 620px; font-size: 1.1rem; line-height: 1.75; }
+        .hero-cta { justify-content: flex-start; gap: 0.6rem; }
+        .hero-cta .btn { padding: 0.72rem 1.1rem; }
+        .hero-badge { padding: 0.35rem 0.9rem; font-size: 0.75rem; margin-bottom: 1.5rem; }
+        .hero-name { font-size: 0.8rem; letter-spacing: 0.14em; color: var(--text-muted); }
+        .btn-primary { background: var(--text-primary); color: var(--bg-primary); box-shadow: none; }
+        .btn-primary:hover { box-shadow: none; opacity: 0.88; }
+        .btn-outline { border-color: var(--border-card); }
+        .btn-outline:hover { border-color: var(--text-muted); background: var(--bg-soft); }
+
+        .hero-card { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: 16px; padding: 1.5rem; font-size: 0.86rem; animation: fadeInUp 0.5s ease-out 0.12s both; }
+        .hero-card-head { display: flex; align-items: center; gap: 0.85rem; padding-bottom: 1.1rem; margin-bottom: 1.1rem; border-bottom: 1px solid var(--border-card); }
+        .hero-card-mono { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-display); font-size: 1.1rem; font-weight: 500; color: var(--text-primary); border: 1px solid var(--border-card); background: var(--bg-soft); flex-shrink: 0; }
+        .hero-card-name { font-weight: 600; color: var(--text-primary); line-height: 1.3; }
+        .hero-card-sub { color: var(--text-muted); font-size: 0.8rem; }
+        .hero-card-list { display: grid; grid-template-columns: 92px 1fr; gap: 0.7rem 0.75rem; }
+        .hero-card-list dt { font-family: var(--font-label); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); padding-top: 0.15rem; }
+        .hero-card-list dd { color: var(--text-secondary); line-height: 1.45; }
+        .hero-card-list a { color: var(--text-primary); text-decoration: none; border-bottom: 1px solid var(--border-card-hover); }
+        .hero-card-status { display: flex; align-items: center; gap: 0.5rem; color: var(--accent-tertiary) !important; font-weight: 500; }
+        html[data-hiring="true"] .hero-card-status.hiring-only { display: flex !important; }
+        .hero-card-status .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-tertiary); animation: pulse 2s ease-in-out infinite; }
+
+        .hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin-top: 2.5rem; }
+        .hero-stats > div { border: 1px solid var(--border-card); border-radius: 12px; padding: 1.1rem 1.25rem; background: var(--bg-card); }
+        .hero-stat-value, .metric-value, .metric-item:nth-child(n) .metric-value { font-family: var(--font-display); font-weight: 500; background: none; -webkit-text-fill-color: currentColor; color: var(--text-primary); letter-spacing: -0.02em; }
+        .hero-stat-value { font-size: 2rem; }
+        .hero-stat-label { font-size: 0.68rem; margin-top: 0.15rem; }
+        .hero-proof { display: flex; align-items: center; justify-content: space-between; gap: 1rem 2rem; flex-wrap: wrap; margin-top: 1.5rem; padding: 1.1rem 0; border-top: 1px solid var(--border-card); border-bottom: 1px solid var(--border-card); }
+        .hero-proof-label { margin: 0; }
+        .hero-proof-list { justify-content: flex-end; gap: 0.4rem 2rem; }
+        .hero-proof-list li { font-family: var(--font-sans); font-weight: 500; font-size: 0.95rem; opacity: 0.8; }
+
+        .section-title, .cta-banner h2 { font-family: var(--font-display); font-weight: 500; letter-spacing: -0.02em; }
+        .section-title { font-size: clamp(2rem, 4vw, 2.6rem); line-height: 1.1; }
+        .cta-banner h2 { line-height: 1.15; }
+        .impact-card::before, .metrics-inner::before, .cta-banner-inner::before, .cta-banner-inner::after { display: none; }
+        .metrics-inner { border-radius: 16px; }
+        .metric-value { font-size: 2.6rem; }
+        .timeline::before { background: var(--border-card-hover); width: 1px; left: 7.5px; }
+        .timeline-bullets li::before { content: '–'; color: var(--text-muted); }
+        .bg-glow { opacity: 0.55; }
+        .bg-glow-3 { display: none; }
+        .card:hover, .case-card:hover, .impact-card:hover { transform: none; }
+
+        @media (max-width: 960px) {
+            .hero-content { grid-template-columns: 1fr; }
+            .hero-card { max-width: 520px; }
+            .hero-stats { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 480px) {
+            .hero-cta .btn { flex: 1 1 auto; justify-content: center; }
+            .hero-proof { justify-content: flex-start; }
+            .hero-proof-list { justify-content: flex-start; gap: 0.35rem 1.25rem; }
+            .hero-stat-value { font-size: 1.6rem; }
+        }
+        @media print {
+            .hero-content { display: block; }
+            .hero-card, .hero-proof { display: none !important; }
+            #ai .cases-grid { display: grid !important; grid-template-columns: 1fr 1fr !important; }
+            #ai .card-icon, #ai .section-intro, #seeking { display: none !important; }
+            #ai .impact-card h3 { font-size: 0.95rem; margin-bottom: 0.3rem; }
+            .hero-name { display: block !important; font-family: var(--font-display); font-size: 1.9rem; font-weight: 500; letter-spacing: -0.02em; text-transform: none; color: #0f172a !important; margin-bottom: 0.2rem; }
+            .hero h1 { font-size: 1.15rem !important; line-height: 1.3 !important; margin-bottom: 0.5rem !important; }
+            .hero h1 br { display: none; }
+            .hero h1 .gradient-text::before { content: " "; }
+            .hero-stats > div { border: 0; padding: 0; background: none; }
+            .hero-stat-value, .metric-value { color: #4f46e5 !important; -webkit-text-fill-color: #4f46e5 !important; }
+            .hero h1 .gradient-text { color: #475569 !important; -webkit-text-fill-color: #475569 !important; }
         }
         .print-contact { display: none; }
         .hiring-only { display: none !important; }
@@ -653,34 +756,52 @@
 <!-- Hero -->
 <section class="hero" id="hero">
     <div class="hero-content">
-        <div class="hero-badge">
-            <span class="dot" aria-hidden="true"></span>
-            <span data-i18n="hero.badge">Fractional CTO · AI Engineering · Remote</span>
+        <div class="hero-main">
+            <div class="hero-badge">
+                <span class="dot" aria-hidden="true"></span>
+                <span data-i18n="hero.badge">Fractional CTO · AI Engineering · Remote</span>
+            </div>
+            <p class="hero-name">Cayetano Soriano Gallego</p>
+            <h1><span data-i18n="hero.headline_top">AI in production,</span><br><span class="gradient-text" data-i18n="hero.headline_gradient">on platforms that don't break.</span></h1>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">
+                <strong>CTO and hands-on architect</strong> with 15+ years in tech, 8+ on AWS and 7+ as CTO. I've led two monolith-to-microservices transformations, and today I build LLM features, MCP servers and agentic engineering workflows that run in production.
+            </p>
+            <div class="hero-cta">
+                <a href="mailto:hello@cayetano.dev" class="btn btn-primary" data-track="hero-email">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    <span data-i18n="hero.contact">Get in touch</span>
+                </a>
+                <button onclick="window.print()" class="btn btn-outline print-hide">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+                    <span data-i18n="hero.download">Download CV (PDF)</span>
+                </button>
+                <a href="https://www.linkedin.com/in/csorianogallego" target="_blank" rel="noopener" class="btn btn-outline">
+                    <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+                    LinkedIn
+                </a>
+                <a href="https://github.com/neoshadybeat" target="_blank" rel="noopener" class="btn btn-outline">
+                    <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                    GitHub
+                </a>
+            </div>
+            <p class="print-contact">hello@cayetano.dev · linkedin.com/in/csorianogallego · github.com/neoshadybeat · cayetano.dev · Madrid, Spain</p>
         </div>
-        <p class="hero-name">Cayetano Soriano Gallego</p>
-        <h1><span data-i18n="hero.headline_top">AI in production,</span><br><span class="gradient-text" data-i18n="hero.headline_gradient">on platforms that don't break.</span></h1>
-        <p class="hero-subtitle" data-i18n="hero.subtitle">
-            <strong>CTO and hands-on architect</strong> with 15+ years in tech, 8+ on AWS and 7+ as CTO. I've led two monolith-to-microservices transformations, and today I build LLM features, MCP servers and agentic engineering workflows that run in production.
-        </p>
-        <div class="hero-cta">
-            <a href="mailto:hello@cayetano.dev" class="btn btn-primary" data-track="hero-email">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                <span data-i18n="hero.contact">Get in touch</span>
-            </a>
-            <button onclick="window.print()" class="btn btn-outline print-hide">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-                <span data-i18n="hero.download">Download CV (PDF)</span>
-            </button>
-            <a href="https://www.linkedin.com/in/csorianogallego" target="_blank" rel="noopener" class="btn btn-outline">
-                <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-                LinkedIn
-            </a>
-            <a href="https://github.com/neoshadybeat" target="_blank" rel="noopener" class="btn btn-outline">
-                <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                GitHub
-            </a>
-        </div>
-        <p class="print-contact">hello@cayetano.dev · linkedin.com/in/csorianogallego · github.com/neoshadybeat · cayetano.dev · Madrid, Spain</p>
+        <aside class="hero-card" aria-label="Profile summary">
+            <div class="hero-card-head">
+                <div class="hero-card-mono" aria-hidden="true">CS</div>
+                <div>
+                    <div class="hero-card-name">Cayetano Soriano Gallego</div>
+                    <div class="hero-card-sub" data-i18n="card.sub">Madrid · Full remote</div>
+                </div>
+            </div>
+            <dl class="hero-card-list">
+                <dt data-i18n="card.focus_l">Focus</dt><dd data-i18n="card.focus">CTO · Head of AI Engineering · Fractional CTO</dd>
+                <dt data-i18n="card.tz_l">Time zone</dt><dd data-i18n="card.tz">CET · teams within ±3h</dd>
+                <dt data-i18n="card.lang_l">Languages</dt><dd data-i18n="card.lang">Spanish · English</dd>
+                <dt>Email</dt><dd><a href="mailto:hello@cayetano.dev">hello@cayetano.dev</a></dd>
+                <dt class="hiring-only" data-i18n="card.status_l">Status</dt><dd class="hiring-only hero-card-status"><span class="dot" aria-hidden="true"></span><span data-i18n="card.status">Available now</span></dd>
+            </dl>
+        </aside>
         <div class="hero-stats">
             <div>
                 <div class="hero-stat-value">15+</div>
@@ -699,6 +820,10 @@
                 <div class="hero-stat-label" data-i18n="hero.uptime">Platform uptime</div>
             </div>
         </div>
+        <div class="hero-proof">
+            <span class="hero-proof-label" data-i18n="hero.proof">Built and led engineering at</span>
+            <ul class="hero-proof-list"><li>ShareTech</li><li>Ride On</li><li>enolovers.app</li><li>Packlink</li><li>Softonic</li><li>Kimia</li></ul>
+        </div>
     </div>
 </section>
 
@@ -711,25 +836,25 @@
     </div>
     <div class="cases-grid grid">
         <article class="card impact-card reveal">
-            <div class="card-icon" style="background:rgba(168,85,247,0.15)" aria-hidden="true">&#129302;</div>
+            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></div>
             <h3 data-i18n="ai.c1_title">LLM features in real products</h3>
             <p data-i18n="ai.c1_text">Claude generating bilingual listings and SEO copy for a marketplace; LLM symptom triage in a digital-health product; OpenAI and Gemini for chat and speech-to-text in a voice assistant. Tool calling and structured outputs, not free-form chat.</p>
             <div class="case-tags"><span class="tag tag-other">Claude API</span><span class="tag tag-other">OpenAI</span><span class="tag tag-other">Gemini</span><span class="tag tag-backend" data-i18n="ai.tag_tools">Tool calling</span><span class="tag tag-backend" data-i18n="ai.tag_stt">Speech-to-text</span></div>
         </article>
         <article class="card impact-card reveal">
-            <div class="card-icon" style="background:rgba(99,102,241,0.14)" aria-hidden="true">&#128268;</div>
+            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/></svg></div>
             <h3 data-i18n="ai.c2_title">MCP servers &amp; agent tooling</h3>
             <p data-i18n="ai.c2_text">MCP servers that let agents read and act on product data safely, from a back-office admin server to a 7-module domain server (medication, schedule, calls, timeline…). Internal tools built on the Claude Agent SDK.</p>
             <div class="case-tags"><span class="tag tag-other">MCP</span><span class="tag tag-other">Claude Agent SDK</span><span class="tag tag-backend">TypeScript</span><span class="tag tag-backend">Python</span></div>
         </article>
         <article class="card impact-card reveal">
-            <div class="card-icon" style="background:rgba(16,185,129,0.14)" aria-hidden="true">&#128274;</div>
+            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
             <h3 data-i18n="ai.c3_title">Privacy, tests &amp; cost as defaults</h3>
             <p data-i18n="ai.c3_text">Personal data stripped before any prompt, feature-flag kill switches and switchable EU endpoints for GDPR; LLM calls covered by tests with a fake model transport; the right model per task to keep cost in check; Sentry monitoring like any other service.</p>
             <div class="case-tags"><span class="tag tag-devops">GDPR</span><span class="tag tag-devops" data-i18n="ai.tag_pii">PII redaction</span><span class="tag tag-devops">Feature flags</span><span class="tag tag-devops" data-i18n="ai.tag_tests">Testing</span><span class="tag tag-other">Sentry</span></div>
         </article>
         <article class="card impact-card reveal">
-            <div class="card-icon" style="background:rgba(6,182,212,0.14)" aria-hidden="true">&#9881;</div>
+            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg></div>
             <h3 data-i18n="ai.c4_title">Agentic engineering for teams</h3>
             <p data-i18n="ai.c4_text">Claude Code across a dozen repos with project rules (CLAUDE.md) enforced in CI, AI agents in CI/CD and automated dependency updates. As CTO, I introduced LLM-assisted workflows into the engineering process.</p>
             <div class="case-tags"><span class="tag tag-other">Claude Code</span><span class="tag tag-devops">CI/CD</span><span class="tag tag-devops">Dependabot</span><span class="tag tag-other">Cursor</span></div>
@@ -745,19 +870,19 @@
     </div>
     <div class="impact-grid grid">
         <article class="card impact-card reveal">
-            <div class="card-icon" style="background:rgba(99,102,241,0.14)" aria-hidden="true">&#9881;</div>
+            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></div>
             <h3 data-i18n="impact.card1_title">Architecture that scales</h3>
             <p data-i18n="impact.card1_text">Two legacy monoliths (Clojure, PHP) decomposed into 20+ containerized microservices on AWS ECS, with Terraform-first infrastructure and 99.99% uptime in production.</p>
         </article>
         <article class="card impact-card reveal">
-            <div class="card-icon" style="background:rgba(6,182,212,0.14)" aria-hidden="true">&#128101;</div>
+            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
             <h3 data-i18n="impact.card2_title">Teams that deliver</h3>
             <p data-i18n="impact.card2_text">Built and scaled engineering organizations as CTO at two companies: OKRs, cross-functional squads, on-call culture, and developer experience as a first-class concern.</p>
         </article>
         <article class="card impact-card reveal">
-            <div class="card-icon" style="background:rgba(16,185,129,0.14)" aria-hidden="true">&#129302;</div>
-            <h3 data-i18n="impact.card3_title">AI in production, not slides</h3>
-            <p data-i18n="impact.card3_text">LLM features on Claude, OpenAI and Gemini, MCP servers and agentic engineering workflows that reach real users, with the same reliability, privacy and cost bar as any other backend service.</p>
+            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg></div>
+            <h3 data-i18n="impact.card3_title">The business side of tech</h3>
+            <p data-i18n="impact.card3_text">Vendor and partner contracts (Telefónica), technical due diligence with investors, city-council stakeholders in four cities, budgets and SLAs. I speak engineering and board.</p>
         </article>
     </div>
 </section>
@@ -778,8 +903,8 @@
             <div class="metric-label" data-i18n="metrics.downtime">Downtime deployments (Packlink)</div>
         </div>
         <div class="metric-item">
-            <div class="metric-value">50–100+</div>
-            <div class="metric-label" data-i18n="metrics.events">Developers per meetup organized</div>
+            <div class="metric-value">10s → &lt;1s</div>
+            <div class="metric-label" data-i18n="metrics.load">App load time (enolovers.app)</div>
         </div>
     </div>
 </div>
@@ -871,7 +996,7 @@
         </div>
         <div class="about-info-grid reveal">
             <div class="about-info-item">
-                <div class="about-info-icon icon-email" aria-hidden="true">&#9993;</div>
+                <div class="about-info-icon icon-email" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
                 <div class="about-info-text">
                     <span class="about-info-label">Email</span>
                     <a href="mailto:hello@cayetano.dev">hello@cayetano.dev</a>
@@ -879,28 +1004,28 @@
                 <button class="copy-btn" onclick="copyEmail()" data-i18n="about.copy">Copy</button>
             </div>
             <div class="about-info-item">
-                <div class="about-info-icon icon-linkedin" aria-hidden="true">&#128279;</div>
+                <div class="about-info-icon icon-linkedin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
                 <div class="about-info-text">
                     <span class="about-info-label">LinkedIn</span>
                     <a href="https://www.linkedin.com/in/csorianogallego" target="_blank" rel="noopener">linkedin.com/in/csorianogallego</a>
                 </div>
             </div>
             <div class="about-info-item">
-                <div class="about-info-icon icon-github" aria-hidden="true">&#128187;</div>
+                <div class="about-info-icon icon-github" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg></div>
                 <div class="about-info-text">
                     <span class="about-info-label">GitHub</span>
                     <a href="https://github.com/neoshadybeat" target="_blank" rel="noopener">github.com/neoshadybeat</a>
                 </div>
             </div>
             <div class="about-info-item">
-                <div class="about-info-icon icon-location" aria-hidden="true">&#128205;</div>
+                <div class="about-info-icon icon-location" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></div>
                 <div class="about-info-text">
                     <span class="about-info-label" data-i18n="about.location_label">Location</span>
                     <span data-i18n="about.location">Full remote · based in Madrid, Spain (CET)</span>
                 </div>
             </div>
             <div class="about-info-item">
-                <div class="about-info-icon icon-lang" aria-hidden="true">&#127760;</div>
+                <div class="about-info-icon icon-lang" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div>
                 <div class="about-info-text">
                     <span class="about-info-label" data-i18n="about.langs_label">Languages</span>
                     <span data-i18n="about.langs">Spanish (native) · English (professional)</span>
@@ -1001,7 +1126,7 @@
                     <li>Designed and delivered <strong>high-throughput backend services in Go</strong>, backed by Redis and Elasticsearch.</li><li>Built real-time monitoring and alerting pipelines that improved incident response times and reliability.</li>
                 </ul>
                 <div class="timeline-tags">
-                    <span class="tag tag-backend">Golang</span><span class="tag tag-data">Redis</span><span class="tag tag-data">Elasticsearch</span><span class="tag tag-other" data-i18n="tag.monitoring">Monitoring</span><span class="tag tag-other" data-i18n="tag.alerting">Alerting</span><span class="tag tag-other" data-i18n="tag.ha">High availability</span>
+                    <span class="tag tag-data">Redis</span><span class="tag tag-data">Elasticsearch</span><span class="tag tag-other" data-i18n="tag.monitoring">Monitoring</span><span class="tag tag-other" data-i18n="tag.alerting">Alerting</span><span class="tag tag-other" data-i18n="tag.ha">High availability</span>
                 </div>
             </div>
         </article>
@@ -1104,7 +1229,7 @@
     <div class="skills-grid grid">
         <div class="card skill-category reveal" style="border-color: rgba(168,85,247,0.35); grid-column: 1 / -1;">
             <div class="skill-cat-header">
-                <div class="skill-cat-icon" style="background:rgba(168,85,247,0.15)" aria-hidden="true">&#129302;</div>
+                <div class="skill-cat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></div>
                 <h3 class="skill-cat-name" data-i18n="skills.ai">AI, agents &amp; LLMs</h3>
             </div>
             <p class="skill-cat-desc" data-i18n="skills.ai_desc">LLM features, MCP servers and agentic workflows shipped in real products, with privacy, tests and observability built in.</p>
@@ -1118,7 +1243,7 @@
         </div>
         <div class="card skill-category reveal">
             <div class="skill-cat-header">
-                <div class="skill-cat-icon" style="background:rgba(99,102,241,0.14)" aria-hidden="true">&#9729;</div>
+                <div class="skill-cat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></div>
                 <h3 class="skill-cat-name" data-i18n="skills.cloud">Cloud &amp; infrastructure</h3>
             </div>
             <p class="skill-cat-desc" data-i18n="skills.cloud_desc">8+ years designing and running AWS platforms: containers on ECS, Terraform-first infrastructure, event streaming.</p>
@@ -1129,18 +1254,18 @@
         </div>
         <div class="card skill-category reveal">
             <div class="skill-cat-header">
-                <div class="skill-cat-icon" style="background:rgba(6,182,212,0.14)" aria-hidden="true">&#10094;/&#10095;</div>
+                <div class="skill-cat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
                 <h3 class="skill-cat-name" data-i18n="skills.backend">Backend</h3>
             </div>
-            <p class="skill-cat-desc" data-i18n="skills.backend_desc">15+ years across PHP, Java/Spring Boot, Python, Scala and Go; from monoliths to polyglot microservices.</p>
+            <p class="skill-cat-desc" data-i18n="skills.backend_desc">15+ years across PHP, Java/Spring Boot, Python, Scala and TypeScript; from monoliths to polyglot microservices.</p>
             <ul class="skill-tags">
-                <li class="skill-tag">Java / Spring Boot</li><li class="skill-tag">Go</li>
-                <li class="skill-tag">Python</li><li class="skill-tag">Scala</li><li class="skill-tag">PHP</li>
+                <li class="skill-tag">Java / Spring Boot</li>
+                <li class="skill-tag">TypeScript / Node.js</li><li class="skill-tag">Python</li><li class="skill-tag">Scala</li><li class="skill-tag">PHP</li>
             </ul>
         </div>
         <div class="card skill-category reveal">
             <div class="skill-cat-header">
-                <div class="skill-cat-icon" style="background:rgba(251,191,36,0.14)" aria-hidden="true">&#128450;</div>
+                <div class="skill-cat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg></div>
                 <h3 class="skill-cat-name" data-i18n="skills.data">Data &amp; storage</h3>
             </div>
             <p class="skill-cat-desc" data-i18n="skills.data_desc">Choosing and operating the right store per workload: key-value, search, cache, wide-column and relational.</p>
@@ -1151,7 +1276,7 @@
         </div>
         <div class="card skill-category reveal">
             <div class="skill-cat-header">
-                <div class="skill-cat-icon" style="background:rgba(16,185,129,0.14)" aria-hidden="true">&#9881;</div>
+                <div class="skill-cat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg></div>
                 <h3 class="skill-cat-name" data-i18n="skills.devops">DevOps, CI/CD &amp; observability</h3>
             </div>
             <p class="skill-cat-desc" data-i18n="skills.devops_desc">CI/CD pipelines, immutable images, on-call and observability; reliability as an engineering practice, not a team.</p>
@@ -1162,7 +1287,7 @@
         </div>
         <div class="card skill-category reveal">
             <div class="skill-cat-header">
-                <div class="skill-cat-icon" style="background:rgba(244,114,182,0.14)" aria-hidden="true">&#127919;</div>
+                <div class="skill-cat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
                 <h3 class="skill-cat-name" data-i18n="skills.leadership">Leadership</h3>
             </div>
             <p class="skill-cat-desc" data-i18n="skills.leadership_desc">7+ years as CTO: roadmap, hiring, OKRs, vendor contracts, due diligence, budgets and city-council stakeholders.</p>
@@ -1182,7 +1307,7 @@
     </div>
     <div class="edu-grid grid">
         <div class="card edu-card reveal">
-            <div class="edu-icon" aria-hidden="true">&#127891;</div>
+            <div class="edu-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></div>
             <div class="edu-info">
                 <h3>Universidad de C&aacute;diz</h3>
                 <p data-i18n="edu.degree">Computer Systems Engineering</p>
@@ -1190,7 +1315,7 @@
             </div>
         </div>
         <div class="card edu-card reveal">
-            <div class="edu-icon" style="background:rgba(251,191,36,0.14)" aria-hidden="true">&#127942;</div>
+            <div class="edu-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div>
             <div class="edu-info">
                 <h3>Megathon W8 C&aacute;diz</h3>
                 <p data-i18n="awards.megathon">Hackathon award</p>
@@ -1199,22 +1324,22 @@
     </div>
     <div class="certs-grid grid" style="margin-top:1.25rem;">
         <div class="card cert-card reveal">
-            <div class="cert-icon" style="background:rgba(99,102,241,0.12)" aria-hidden="true">&#128220;</div>
+            <div class="cert-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
             <div class="cert-name">Zend Certified PHP Engineer</div>
             <div class="cert-sub">Zend</div>
         </div>
         <div class="card cert-card reveal">
-            <div class="cert-icon" style="background:rgba(16,185,129,0.12)" aria-hidden="true">&#128220;</div>
+            <div class="cert-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
             <div class="cert-name">MongoDB Certified DBA</div>
             <div class="cert-sub">MongoDB Inc.</div>
         </div>
         <div class="card cert-card reveal">
-            <div class="cert-icon" style="background:rgba(6,182,212,0.12)" aria-hidden="true">&#128220;</div>
+            <div class="cert-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
             <div class="cert-name">MongoDB Certified Developer</div>
             <div class="cert-sub">MongoDB Inc.</div>
         </div>
         <div class="card cert-card reveal">
-            <div class="cert-icon" style="background:rgba(251,191,36,0.12)" aria-hidden="true">&#128220;</div>
+            <div class="cert-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
             <div class="cert-name">MySQL 5.6 Developer</div>
             <div class="cert-sub">Oracle</div>
         </div>
@@ -1230,7 +1355,7 @@
     </div>
     <div class="seek-grid grid">
         <div class="card seek-card reveal">
-            <h3><span aria-hidden="true">&#127919;</span> <span data-i18n="seek.roles_title">Roles</span></h3>
+            <h3><span class="seek-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span> <span data-i18n="seek.roles_title">Roles</span></h3>
             <ul data-i18n="seek.roles">
                 <li>CTO / VP of Engineering</li>
                 <li>Head of AI Engineering / AI platform lead</li>
@@ -1240,7 +1365,7 @@
             </ul>
         </div>
         <div class="card seek-card reveal">
-            <h3><span aria-hidden="true">&#127970;</span> <span data-i18n="seek.company_title">Company</span></h3>
+            <h3><span class="seek-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg></span> <span data-i18n="seek.company_title">Company</span></h3>
             <ul data-i18n="seek.company">
                 <li>Scale-ups moving from "it works" to "it scales"</li>
                 <li>Product companies with real traffic and real infra bills</li>
@@ -1249,7 +1374,7 @@
             </ul>
         </div>
         <div class="card seek-card reveal">
-            <h3><span aria-hidden="true">&#128205;</span> <span data-i18n="seek.setup_title">Setup</span></h3>
+            <h3><span class="seek-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></span> <span data-i18n="seek.setup_title">Setup</span></h3>
             <ul data-i18n="seek.setup">
                 <li>Full remote (CET ±3h); occasional travel is fine</li>
                 <li>Spanish or English working language</li>
@@ -1331,6 +1456,12 @@ const translations = {
         "hero.years": "Años en tech",
         "hero.cto_years": "Años como CTO",
         "hero.migrations": "Migraciones monolito → microservicios",
+        "card.sub": "Madrid · 100% remoto",
+        "card.focus_l": "Enfoque", "card.focus": "CTO · Head of AI Engineering · CTO fraccional",
+        "card.tz_l": "Zona horaria", "card.tz": "CET · equipos en ±3h",
+        "card.lang_l": "Idiomas", "card.lang": "Español · Inglés",
+        "card.status_l": "Estado", "card.status": "Disponible ya",
+        "hero.proof": "He construido y liderado ingeniería en",
         "hero.uptime": "Uptime de plataforma",
         "impact.label": "Lo que aporto",
         "impact.title": "Tres cosas que hago bien",
@@ -1338,12 +1469,12 @@ const translations = {
         "impact.card1_text": "Dos monolitos legacy (Clojure, PHP) descompuestos en más de 20 microservicios containerizados en AWS ECS, con infraestructura Terraform-first y 99,99% de uptime en producción.",
         "impact.card2_title": "Equipos que entregan",
         "impact.card2_text": "Construí y escalé organizaciones de ingeniería como CTO en dos empresas: OKRs, squads multifuncionales, cultura de guardias y developer experience como prioridad.",
-        "impact.card3_title": "IA en producción, no en slides",
-        "impact.card3_text": "Funcionalidades con LLMs sobre Claude, OpenAI y Gemini, servidores MCP y flujos de ingeniería agéntica que llegan a usuarios reales, con el mismo listón de fiabilidad, privacidad y coste que cualquier otro servicio backend.",
+        "impact.card3_title": "El lado de negocio de la tecnología",
+        "impact.card3_text": "Contratos con proveedores y partners (Telefónica), due diligence técnica con inversores, ayuntamientos de cuatro ciudades, presupuestos y SLAs. Hablo el idioma de ingeniería y el del consejo.",
         "metrics.microservices": "Microservicios en producción",
         "metrics.cost": "Reducción de coste AWS",
         "metrics.downtime": "Despliegues con downtime (Packlink)",
-        "metrics.events": "Developers por meetup organizado",
+        "metrics.load": "Tiempo de carga de la app (enolovers.app)",
         "ai.label": "IA en producción",
         "ai.title": "Lo que construyo con IA",
         "ai.intro": "Nada de slides: código funcionando en productos. Todo lo de abajo lo he construido yo en el último año, en proyectos de clientes y en productos propios.",
@@ -1433,7 +1564,7 @@ const translations = {
         "skills.ai": "IA, agentes y LLMs",
         "skills.cloud_desc": "8+ años diseñando y operando plataformas AWS: contenedores en ECS, infraestructura Terraform-first, streaming de eventos.",
         "skills.cloud": "Cloud e infraestructura",
-        "skills.backend_desc": "15+ años en PHP, Java/Spring Boot, Python, Scala y Go; de monolitos a microservicios políglotas.",
+        "skills.backend_desc": "15+ años en PHP, Java/Spring Boot, Python, Scala y TypeScript; de monolitos a microservicios políglotas.",
         "skills.backend": "Backend",
         "skills.data_desc": "Elegir y operar el almacén adecuado por carga: clave-valor, búsqueda, caché, wide-column y relacional.",
         "skills.data": "Datos y almacenamiento",
