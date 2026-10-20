@@ -47,6 +47,7 @@
       "jobTitle": "Fractional CTO & AI Engineering Lead",
       "description": "CTO and hands-on software architect with 15+ years in tech, 8+ building and scaling cloud platforms on AWS, leading engineering teams and shipping LLM features, MCP servers and agentic engineering workflows to production.",
       "url": "https://cayetano.dev/",
+      "image": "https://cayetano.dev/me.webp",
       "email": "mailto:hello@cayetano.dev",
       "address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES" },
       "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universidad de Cádiz" },
@@ -631,6 +632,40 @@
         .seek-icon svg { width: 18px; height: 18px; }
         .metric-item .metric-value, .metric-item:nth-child(n) .metric-value { background: var(--gradient-1); -webkit-background-clip: text; background-clip: text; }
 
+        .hero-card-photo { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border-card); flex-shrink: 0; }
+        .certs-grid:has(> :only-child) { grid-template-columns: minmax(0, 340px); }
+        .cert-link { text-decoration: none; color: inherit; display: block; }
+        .cert-link:hover { border-color: var(--border-card-hover); }
+        .certs-older { margin-top: 1rem; font-size: 0.82rem; color: var(--text-muted); }
+        .more-cases { margin-top: 1.5rem; }
+        .more-cases > summary { cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.1rem; border: 1px solid var(--border-card); border-radius: 10px; font-weight: 600; font-size: 0.9rem; color: var(--text-primary); }
+        .more-cases > summary::-webkit-details-marker { display: none; }
+        .more-cases > summary::after { content: '+'; color: var(--text-muted); }
+        .more-cases[open] > summary::after { content: '–'; }
+        .more-cases[open] > summary { margin-bottom: 1.5rem; }
+        @media print {
+            .more-cases, .certs-older, #work, #about, .timeline-collapsed, .timeline-tags, .skill-cat-desc, .timeline-location { display: none !important; }
+            .skills-grid { grid-template-columns: 1fr 1fr 1fr !important; gap: 0.5rem !important; }
+            .skills-grid .skill-category[style*="grid-column"] { grid-column: 1 / -1 !important; }
+            .timeline-bullets li { margin-bottom: 0.1rem !important; }
+            .about-grid { grid-template-columns: 1fr !important; }
+            .section { padding-top: 0.6rem !important; padding-bottom: 0.4rem !important; }
+            .timeline-item, .about-grid, .skill-category, .timeline-card { break-inside: auto !important; }
+            .timeline-header, .timeline-role, h2, h3 { break-after: avoid; }
+            .glass-card, .timeline-card { break-inside: auto !important; }
+            #ai .impact-card p { font-size: 0.8em; }
+            @page { margin: 10mm 11mm; }
+            .section-title { font-size: 1.15rem !important; }
+            .section-label { display: none !important; }
+            .edu-grid { grid-template-columns: 2fr 1fr !important; }
+            .edu-card, .cert-card { padding: 0.5rem 0.8rem !important; }
+            .certs-grid { margin-top: 0.4rem !important; }
+            .cert-card { text-align: left; }
+            .footer { display: none !important; }
+            #certs { display: grid !important; grid-template-columns: 3fr 1fr; gap: 0 0.6rem; align-items: start; }
+            #certs > .reveal:first-child { grid-column: 1 / -1; }
+            #certs .certs-grid { margin-top: 0 !important; grid-template-columns: 1fr !important; }
+        }
         /* Editorial layer: serif display, solid CTA, no gradient text, hairline tiles */
         .hero { text-align: left; }
         .hero-content { max-width: calc(1100px - 4rem); width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 2rem 4rem; align-items: center; }
@@ -771,10 +806,10 @@
                     <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                     <span data-i18n="hero.contact">Get in touch</span>
                 </a>
-                <button onclick="window.print()" class="btn btn-outline print-hide">
+                <a href="cv/Cayetano-Soriano-Gallego-CV-EN.pdf" download class="btn btn-outline print-hide" data-i18n="hero.cv_href" data-i18n-attr="href" data-track="hero-cv">
                     <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
                     <span data-i18n="hero.download">Download CV (PDF)</span>
-                </button>
+                </a>
                 <a href="https://www.linkedin.com/in/csorianogallego" target="_blank" rel="noopener" class="btn btn-outline">
                     <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
                     LinkedIn
@@ -788,7 +823,7 @@
         </div>
         <aside class="hero-card" aria-label="Profile summary">
             <div class="hero-card-head">
-                <div class="hero-card-mono" aria-hidden="true">CS</div>
+                <img class="hero-card-photo" src="me.webp" width="56" height="56" alt="Cayetano Soriano Gallego" decoding="async">
                 <div>
                     <div class="hero-card-name">Cayetano Soriano Gallego</div>
                     <div class="hero-card-sub" data-i18n="card.sub">Madrid · Full remote</div>
@@ -948,6 +983,20 @@
             <div class="case-tags"><span class="tag tag-cloud">ECS</span><span class="tag tag-cloud">Terraform</span><span class="tag tag-devops">Jenkins</span><span class="tag tag-other">Sentry</span></div>
         </article>
         <article class="card case-card reveal">
+            <div class="case-meta">enolovers.app · 2026 · Freelance</div>
+            <h3 data-i18n="work.c4_title">App load time from 10 s to under 1 s</h3>
+            <dl class="case-block">
+                <dt data-i18n="work.ctx">Context</dt><dd data-i18n="work.c4_ctx">Consumer app growing fast with a small team: 10-second loads, scalability pain, slow releases, dependency drift and no clear security baseline.</dd>
+                <dt data-i18n="work.act">Action</dt><dd data-i18n="work.c4_act">Resource loading optimization, lazy vs eager data loading, DB indexes, Redis caching and rate limiting; CI/CD with AI agents, automated dependency updates and a test harness; security best practices; Terraform for all infrastructure; Sentry, monitoring, analytics and per-call metrics.</dd>
+                <dt data-i18n="work.res">Result</dt><dd class="result" data-i18n="work.c4_res">App load time cut from ~10 s to under 1 s; predictable releases; infrastructure reproducible and fully monitored.</dd>
+            </dl>
+            <div class="case-tags"><span class="tag tag-other">Performance</span><span class="tag tag-devops">CI/CD</span><span class="tag tag-other">AI agents</span><span class="tag tag-data">Redis</span><span class="tag tag-cloud">Terraform</span><span class="tag tag-other">Sentry</span></div>
+        </article>
+    </div>
+    <details class="more-cases">
+        <summary data-i18n="work.more">More case studies</summary>
+        <div class="cases-grid grid">
+        <article class="card case-card reveal">
             <div class="case-meta">Ride On · 2019–2023</div>
             <h3 data-i18n="work.c2_title">Cutting infrastructure cost while raising reliability</h3>
             <dl class="case-block">
@@ -967,17 +1016,8 @@
             </dl>
             <div class="case-tags"><span class="tag tag-backend">Java</span><span class="tag tag-backend">Scala</span><span class="tag tag-other">RabbitMQ</span><span class="tag tag-data">Cassandra</span></div>
         </article>
-        <article class="card case-card reveal">
-            <div class="case-meta">enolovers.app · 2026 · Freelance</div>
-            <h3 data-i18n="work.c4_title">App load time from 10 s to under 1 s</h3>
-            <dl class="case-block">
-                <dt data-i18n="work.ctx">Context</dt><dd data-i18n="work.c4_ctx">Consumer app growing fast with a small team: 10-second loads, scalability pain, slow releases, dependency drift and no clear security baseline.</dd>
-                <dt data-i18n="work.act">Action</dt><dd data-i18n="work.c4_act">Resource loading optimization, lazy vs eager data loading, DB indexes, Redis caching and rate limiting; CI/CD with AI agents, automated dependency updates and a test harness; security best practices; Terraform for all infrastructure; Sentry, monitoring, analytics and per-call metrics.</dd>
-                <dt data-i18n="work.res">Result</dt><dd class="result" data-i18n="work.c4_res">App load time cut from ~10 s to under 1 s; predictable releases; infrastructure reproducible and fully monitored.</dd>
-            </dl>
-            <div class="case-tags"><span class="tag tag-other">Performance</span><span class="tag tag-devops">CI/CD</span><span class="tag tag-other">AI agents</span><span class="tag tag-data">Redis</span><span class="tag tag-cloud">Terraform</span><span class="tag tag-other">Sentry</span></div>
-        </article>
-    </div>
+        </div>
+    </details>
 </section>
 
 <!-- About -->
@@ -1323,27 +1363,13 @@
         </div>
     </div>
     <div class="certs-grid grid" style="margin-top:1.25rem;">
-        <div class="card cert-card reveal">
+        <a class="card cert-card cert-link reveal" href="https://verify.skilljar.com/c/vzaipbkt6vwa" target="_blank" rel="noopener">
             <div class="cert-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
-            <div class="cert-name">Zend Certified PHP Engineer</div>
-            <div class="cert-sub">Zend</div>
-        </div>
-        <div class="card cert-card reveal">
-            <div class="cert-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
-            <div class="cert-name">MongoDB Certified DBA</div>
-            <div class="cert-sub">MongoDB Inc.</div>
-        </div>
-        <div class="card cert-card reveal">
-            <div class="cert-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
-            <div class="cert-name">MongoDB Certified Developer</div>
-            <div class="cert-sub">MongoDB Inc.</div>
-        </div>
-        <div class="card cert-card reveal">
-            <div class="cert-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></div>
-            <div class="cert-name">MySQL 5.6 Developer</div>
-            <div class="cert-sub">Oracle</div>
-        </div>
+            <div class="cert-name">Claude Code in Action</div>
+            <div class="cert-sub">Anthropic · 2026 · <span data-i18n="certs.verify">Verify</span> ↗</div>
+        </a>
     </div>
+    <p class="certs-older" data-i18n="certs.older">Earlier: Zend Certified PHP Engineer, MongoDB Certified DBA &amp; Developer, Oracle MySQL Developer.</p>
 </section>
 
 <!-- Looking for -->
@@ -1453,6 +1479,7 @@ const translations = {
         "hero.headline_gradient": "sobre plataformas que no se rompen.",
         "hero.subtitle": "<strong>CTO y arquitecto hands-on</strong> con más de 15 años en tech, 8+ en AWS y 7+ como CTO. He liderado dos transformaciones de monolito a microservicios, y hoy construyo funcionalidades con LLMs, servidores MCP y flujos de ingeniería agéntica que funcionan en producción.",
         "hero.contact": "Contactar",
+        "hero.cv_href": "cv/Cayetano-Soriano-Gallego-CV-ES.pdf",
         "hero.download": "Descargar CV (PDF)",
         "hero.years": "Años en tech",
         "hero.cto_years": "Años como CTO",
@@ -1576,6 +1603,9 @@ const translations = {
         "skills.leadership_tags": "<li class=\"skill-tag\">Estrategia tecnológica y roadmap</li><li class=\"skill-tag\">OKRs</li><li class=\"skill-tag\">Contratación y escalado de equipos</li><li class=\"skill-tag\">Due diligence técnica</li><li class=\"skill-tag\">Gestión de costes</li><li class=\"skill-tag\">Seguridad y respuesta a incidentes</li>",
         "certs.label": "Credenciales",
         "certs.title": "Formación y certificaciones",
+        "certs.verify": "Verificar",
+        "certs.older": "Anteriores: Zend Certified PHP Engineer, MongoDB Certified DBA y Developer, Oracle MySQL Developer.",
+        "work.more": "Más casos",
         "edu.degree": "Ingeniería Técnica en Informática de Sistemas",
         "awards.megathon": "Premio hackathon",
         "seek.label": "Siguiente paso",
