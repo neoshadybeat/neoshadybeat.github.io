@@ -19,7 +19,7 @@
     <meta property="og:url" content="https://cayetano.dev/">
     <meta property="og:title" content="Cayetano Soriano Gallego — CTO & AI Engineering Lead">
     <meta property="og:description" content="15+ years in tech, 7+ as CTO. LLM features, MCP servers and agentic engineering in production, on AWS platforms with 99.99% uptime. Full remote · Madrid.">
-    <meta property="og:image" content="https://cayetano.dev/og.png?v=2">
+    <meta property="og:image" content="https://cayetano.dev/og.png?v=3">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Cayetano Soriano Gallego — CTO & AI Engineering Lead: AI in production, on platforms that don't break.">
@@ -28,7 +28,7 @@
     <meta property="profile:first_name" content="Cayetano">
     <meta property="profile:last_name" content="Soriano Gallego">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://cayetano.dev/og.png?v=2">
+    <meta name="twitter:image" content="https://cayetano.dev/og.png?v=3">
     <meta name="twitter:title" content="Cayetano Soriano Gallego — CTO & AI Engineering Lead">
     <meta name="twitter:description" content="15+ years in tech, 7+ as CTO. LLM features, MCP servers and agentic engineering in production, on AWS platforms that don't break.">
 
@@ -795,7 +795,7 @@
                 </div>
             </div>
             <dl class="hero-card-list">
-                <dt data-i18n="card.focus_l">Focus</dt><dd data-i18n="card.focus">CTO · Head of AI Engineering · Fractional CTO</dd>
+                <dt data-i18n="card.focus_l">Focus</dt><dd data-i18n="card.focus">AI in production · Cloud platforms · Engineering leadership</dd>
                 <dt data-i18n="card.tz_l">Time zone</dt><dd data-i18n="card.tz">CET · teams within ±3h</dd>
                 <dt data-i18n="card.lang_l">Languages</dt><dd data-i18n="card.lang">Spanish · English</dd>
                 <dt>Email</dt><dd><a href="mailto:hello@cayetano.dev">hello@cayetano.dev</a></dd>
@@ -1429,6 +1429,7 @@ const translations = {
         "exp.more": "Show earlier roles (2011–2015)",
         "exp.less": "Hide earlier roles",
         "cta.title_hiring": "Building with AI and need someone who has shipped it?",
+        "card.focus_hiring": "CTO · Head of AI Engineering · Fractional CTO",
         "cta.text_hiring": "Send me the problem you're trying to solve. I reply to every serious message within 48 hours.",
     },
     es: {
@@ -1457,7 +1458,7 @@ const translations = {
         "hero.cto_years": "Años como CTO",
         "hero.migrations": "Migraciones monolito → microservicios",
         "card.sub": "Madrid · 100% remoto",
-        "card.focus_l": "Enfoque", "card.focus": "CTO · Head of AI Engineering · CTO fraccional",
+        "card.focus_l": "Enfoque", "card.focus": "IA en producción · Plataformas cloud · Liderazgo de ingeniería", "card.focus_hiring": "CTO · Head of AI Engineering · CTO fraccional",
         "card.tz_l": "Zona horaria", "card.tz": "CET · equipos en ±3h",
         "card.lang_l": "Idiomas", "card.lang": "Español · Inglés",
         "card.status_l": "Estado", "card.status": "Disponible ya",
@@ -1610,7 +1611,7 @@ const SUPPORTED_LANGS = Object.keys(translations);
 // false: neutral public profile (default). true: shows "open to roles" badge,
 // the "What I'm looking for" section and hiring-oriented CTA copy.
 // Preview without flipping the flag: append ?hiring=1 to the URL.
-const JOB_SEARCH_MODE = true;
+const JOB_SEARCH_MODE = false;
 const HIRING = JOB_SEARCH_MODE || new URLSearchParams(window.location.search).get('hiring') === '1';
 document.documentElement.setAttribute('data-hiring', String(HIRING));
 
