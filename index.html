@@ -874,6 +874,7 @@
             .card-icon, .about-info-icon, .skill-cat-icon, .cert-icon, .edu-icon { border-radius: var(--radius-sm); }
             .impact-card h3, .case-card h3, .seek-card h3, .skill-cat-name, .edu-info h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.3rem; letter-spacing: -0.01em; }
             .case-meta { font-family: var(--font-sans); font-weight: 600; color: var(--accent); }
+            .case-block a { color: var(--accent); text-underline-offset: 3px; }
             .tag, .skill-tag { border-radius: var(--radius-sm); font-family: var(--font-sans); }
             .metrics-inner { border-radius: var(--radius); }
             .timeline::before { background: var(--border-card-hover); }
@@ -1288,6 +1289,16 @@
             <div class="case-tags"><span class="tag tag-other">Performance</span><span class="tag tag-devops">CI/CD</span><span class="tag tag-other">AI agents</span><span class="tag tag-data">Redis</span><span class="tag tag-cloud">Terraform</span><span class="tag tag-other">Sentry</span></div>
         </article>
     </div>
+    <article class="card case-card print-hide reveal" style="margin-top:1.5rem">
+        <div class="case-meta" data-i18n="work.demo_meta">Open source · 2026 · Demo</div>
+        <h3 data-i18n="work.demo_title">An AI back-office agent for a small business</h3>
+        <dl class="case-block">
+            <dt data-i18n="work.ctx">Context</dt><dd data-i18n="work.demo_ctx">SMEs lose hours on quotes, overdue invoices and payment reminders, and don't trust an AI that can do maths wrong or send things on its own.</dd>
+            <dt data-i18n="work.act">Action</dt><dd data-i18n="work.demo_act">An MCP server that owns the business rules (totals, VAT, discount limits), a Claude agent that uses it, a human approval gate for anything that changes state, unit and protocol tests, and behavioural evals.</dd>
+            <dt data-i18n="work.res">Result</dt><dd class="result"><span data-i18n="work.demo_res">A pattern ready to plug into a real ERP or CRM.</span> <a href="https://github.com/neoshadybeat/agente-pyme-mcp" target="_blank" rel="noopener" data-track="demo-repo"><span data-i18n="work.demo_link">See the code on GitHub</span> ↗</a></dd>
+        </dl>
+        <div class="case-tags"><span class="tag tag-other">MCP</span><span class="tag tag-other">Claude API</span><span class="tag tag-backend">TypeScript</span><span class="tag tag-devops" data-i18n="ai.tag_tests">Testing</span><span class="tag tag-devops">Evals</span></div>
+    </article>
     <details class="more-cases">
         <summary data-i18n="work.more">More case studies</summary>
         <div class="cases-grid grid">
@@ -2003,6 +2014,12 @@ const translations = {
         "certs.verify": "Verificar",
         "certs.older": "Anteriores: Zend Certified PHP Engineer, MongoDB Certified DBA y Developer, Oracle MySQL Developer.",
         "work.more": "Más casos",
+        "work.demo_meta": "Código abierto · 2026 · Demo",
+        "work.demo_title": "Un agente de IA para el back office de una pyme",
+        "work.demo_ctx": "Las pymes pierden horas en presupuestos, facturas vencidas y recordatorios de pago, y no se fían de una IA que pueda equivocarse en las cuentas o enviar cosas por su cuenta.",
+        "work.demo_act": "Un servidor MCP que contiene las reglas de negocio (totales, IVA, límites de descuento), un agente con Claude que lo usa, aprobación humana para todo lo que cambia datos, tests unitarios y de protocolo, y evals de comportamiento.",
+        "work.demo_res": "Un patrón listo para conectar a un ERP o CRM real.",
+        "work.demo_link": "Ver el código en GitHub",
         "edu.degree": "Ingeniería Técnica en Informática de Sistemas",
         "awards.megathon": "Premio hackathon",
         "seek.label": "Siguiente paso",

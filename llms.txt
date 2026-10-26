@@ -24,6 +24,7 @@
 - LLMOps: evals, OpenTelemetry tracing and token cost control: from €4,500
 - Private AI & compliance (EU-hosted or self-hosted models, EU AI Act readiness, OWASP LLM Top 10 testing): from €4,500
 - Fractional CTO: from €3,500/month, 2–8 days a month, 3-month minimum
+- Open-source demo: AI back-office agent for an SME (MCP server, Claude agent, human approval, tests, evals): https://github.com/neoshadybeat/agente-pyme-mcp
 - Also: IoT & connected hardware (from €12,000), AI project rescue (from €2,900), custom projects (quote within 24 h)
 - Remote, or on-site in Madrid. Spanish or English.
 - First 30-minute call free. Details: https://cayetano.dev/#services
