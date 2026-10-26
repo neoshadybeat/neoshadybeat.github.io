@@ -954,6 +954,44 @@
                 .hero-stats > div:nth-child(n+3) { border-top: 1px solid var(--border-card); }
                 .section { padding: 4rem 1.25rem; }
             }
+
+            /* Live agent demo */
+            .demo-band { padding: 5rem 2rem; border-top: 1px solid var(--border-card); border-bottom: 1px solid var(--border-card); background: var(--bg-card); }
+            .demo-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 3rem; align-items: center; }
+            .demo-copy p { color: var(--text-secondary); line-height: 1.65; margin: 1rem 0 1.25rem; }
+            .demo-link { color: var(--accent); font-weight: 600; text-decoration: none; display: inline-block; padding: 0.4rem 0; }
+            .demo-link:hover { text-decoration: underline; }
+            .term { --term-bg: #1d1b1a; --term-ink: #ece6e1; --term-dim: #a39b95; --term-acc: #f0a5b1; --term-ok: #9fd3a8; position: relative; margin: 0; background: var(--term-bg); color: var(--term-ink); border-radius: var(--radius); overflow: hidden; font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.6; box-shadow: 0 24px 60px rgba(29, 27, 26, 0.18); }
+            .term-bar { display: flex; align-items: center; gap: 0.4rem; padding: 0.7rem 1rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+            .term-bar i { width: 10px; height: 10px; border-radius: 50%; background: rgba(255, 255, 255, 0.18); }
+            .term-bar span { margin-left: 0.6rem; color: var(--term-dim); font-size: 0.72rem; }
+            .term-log { list-style: none; padding: 1.1rem 1.25rem 1.4rem; display: flex; flex-direction: column; gap: 0.55rem; }
+            .term-log li { overflow-wrap: anywhere; }
+            .term-log em { font-style: normal; color: var(--term-dim); }
+            .t-user { color: #fff; }
+            .t-user b { color: var(--term-acc); margin-right: 0.3rem; }
+            .t-tool { color: var(--term-acc); padding-left: 1rem; }
+            .t-tool::before { content: '⏺ '; font-size: 0.65em; vertical-align: 0.15em; }
+            .t-tool span { color: var(--term-ok); }
+            .t-gate { color: #f3d29b; padding-left: 1rem; }
+            .t-gate::before { content: '? '; font-weight: 700; }
+            .t-ans { color: #fff; font-weight: 700; }
+            .t-agent { color: var(--term-ink); border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 0.7rem; margin-top: 0.2rem; }
+            .term-log.playing > li:not(.shown), .term-log.playing .t-gate:not(.answered) .t-ans { visibility: hidden; }
+            .term-log.playing > li.shown { animation: termIn 0.25s ease-out; }
+            .term-log .caret::after { content: ''; display: inline-block; width: 0.55em; height: 1.05em; margin-left: 2px; vertical-align: -0.15em; background: var(--term-acc); animation: termBlink 1s steps(1) infinite; }
+            @keyframes termIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+            @keyframes termBlink { 50% { opacity: 0; } }
+            .term-replay { position: absolute; top: 0.4rem; right: 0.6rem; background: none; border: 1px solid rgba(255, 255, 255, 0.18); color: var(--term-dim); font: inherit; font-size: 0.72rem; padding: 0.3rem 0.7rem; border-radius: 6px; cursor: pointer; }
+            .term-replay:hover { color: var(--term-ink); border-color: var(--term-dim); }
+            @media (max-width: 900px) { .demo-inner { grid-template-columns: 1fr; gap: 2rem; } }
+            @media (max-width: 768px) { .demo-band { padding: 3.5rem 1.25rem; } .term { font-size: 0.74rem; } .term-log { padding: 1rem; } }
+
+            /* Service cards: accent rule grows on hover */
+            .svc-card::after { content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 3px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
+            .svc-card:hover::after, .svc-card:focus-within::after { transform: scaleX(1); }
+            .svc-cta { transition: transform 0.25s ease; }
+            .svc-card:hover .svc-cta { transform: translateX(4px); }
         }
     </style>
 </head>
@@ -1074,6 +1112,23 @@
             <span class="hero-proof-label" data-i18n="hero.proof">Built and led engineering at</span>
             <ul class="hero-proof-list"><li>ShareTech</li><li>Ride On</li><li>Enolovers</li><li>Packlink</li><li>Softonic</li><li>Kimia</li></ul>
         </div>
+    </div>
+</section>
+
+<!-- Live agent demo (hidden in the printed CV) -->
+<section class="demo-band print-hide" id="demo" aria-labelledby="demo-title">
+    <div class="demo-inner">
+        <div class="demo-copy reveal">
+            <div class="section-label" data-i18n="demo.label">Live demo</div>
+            <h2 class="section-title" id="demo-title" data-i18n="demo.title">An AI agent that asks before it acts</h2>
+            <p data-i18n="demo.text">The open-source agent I built for a small business back office: it finds the client, builds the quote with totals computed in code, not by the model, and waits for a person before approving anything.</p>
+            <a class="demo-link" href="https://github.com/neoshadybeat/agente-pyme-mcp" target="_blank" rel="noopener" data-track="demo-band-repo"><span data-i18n="work.demo_link">See the code on GitHub</span> ↗</a>
+        </div>
+        <figure class="term reveal" aria-labelledby="demo-title">
+            <div class="term-bar" aria-hidden="true"><i></i><i></i><i></i><span>agente-pyme-mcp</span></div>
+            <ol class="term-log" data-i18n="demo.log"><li class="t-user"><b>›</b> Prepare a quote for Oficinas Castellana: two 3.5 kW splits with installation, and approve it.</li><li class="t-tool">search_clients <em>"Castellana"</em> <span>→ C001 Oficinas Castellana Demo S.L.</span></li><li class="t-tool">get_catalogue <span>→ P-SPLIT-35 · S-INST-SPLIT</span></li><li class="t-tool">create_quote_draft <em>C001 · 2× P-SPLIT-35 · 2× S-INST-SPLIT</em> <span>→ Q-0001 · €3,073.40, computed in code</span></li><li class="t-gate">approve_quote Q-0001 needs human approval. Approve? (y/N) <span class="t-ans">y</span></li><li class="t-tool">approve_quote <em>Q-0001</em> <span>→ approved</span></li><li class="t-agent">Quote Q-0001 approved: €2,540.00 + VAT €533.40 = €3,073.40. Nothing has been sent to the client.</li></ol>
+            <button class="term-replay" type="button" data-i18n="demo.replay" hidden>Replay</button>
+        </figure>
     </div>
 </section>
 
@@ -1972,6 +2027,11 @@ const translations = {
         "work.demo_act": "Un servidor MCP que contiene las reglas de negocio (totales, IVA, límites de descuento), un agente con Claude que lo usa, aprobación humana para todo lo que cambia datos, tests unitarios y de protocolo, y evals de comportamiento.",
         "work.demo_res": "Un patrón listo para conectar a un ERP o CRM real.",
         "work.demo_link": "Ver el código en GitHub",
+        "demo.label": "Demo en vivo",
+        "demo.title": "Un agente de IA que pregunta antes de actuar",
+        "demo.text": "El agente de código abierto que he construido para el back office de una pyme: busca el cliente, monta el presupuesto con los totales calculados en código, no por el modelo, y espera a que una persona apruebe antes de hacer nada.",
+        "demo.replay": "Repetir",
+        "demo.log": "<li class=\"t-user\"><b>›</b> Prepara un presupuesto para Oficinas Castellana: 2 splits de 3,5 kW con instalación, y apruébalo.</li><li class=\"t-tool\">search_clients <em>\"Castellana\"</em> <span>→ C001 Oficinas Castellana Demo S.L.</span></li><li class=\"t-tool\">get_catalogue <span>→ P-SPLIT-35 · S-INST-SPLIT</span></li><li class=\"t-tool\">create_quote_draft <em>C001 · 2× P-SPLIT-35 · 2× S-INST-SPLIT</em> <span>→ Q-0001 · 3.073,40 €, calculado en código</span></li><li class=\"t-gate\">approve_quote Q-0001 requiere aprobación humana. ¿Aprobar? (s/N) <span class=\"t-ans\">s</span></li><li class=\"t-tool\">approve_quote <em>Q-0001</em> <span>→ aprobado</span></li><li class=\"t-agent\">Presupuesto Q-0001 aprobado: 2.540,00 € + IVA 533,40 € = 3.073,40 €. No se ha enviado nada al cliente.</li>",
         "edu.degree": "Ingeniería Técnica en Informática de Sistemas",
         "awards.megathon": "Premio hackathon",
         "seek.label": "Siguiente paso",
@@ -2145,6 +2205,65 @@ function copyEmail() {
     const done = () => showToast(t(document.documentElement.lang, 'about.copied'));
     if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(email).then(done, () => window.prompt('Email', email));
     else window.prompt('Email', email);
+}
+
+// Motion: skipped for reduced motion, ?nofx=1 and headless builds (the build snapshots the DOM and prints the CV)
+const MOTION = !NO_FX && !navigator.webdriver && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Count-up for simple numeric stats ("15+", "30%"); decimals and ranges stay as written
+const countObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        countObserver.unobserve(entry.target);
+        const el = entry.target, [, num, suffix] = el.textContent.trim().match(/^(\d+)(\+|%)?$/);
+        const target = Number(num), start = performance.now();
+        const step = now => {
+            const k = Math.min((now - start) / 1200, 1);
+            el.textContent = Math.round(target * (1 - Math.pow(1 - k, 3))) + (suffix || '');
+            if (k < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+    });
+}, { threshold: 0.6 });
+if (MOTION) document.querySelectorAll('.hero-stat-value, .metric-value').forEach(el => { if (/^\d+(\+|%)?$/.test(el.textContent.trim())) countObserver.observe(el); });
+
+// Agent demo: replays the transcript line by line; a language switch rewrites the log and stops the run
+const term = document.querySelector('.term');
+const wait = ms => new Promise(r => setTimeout(r, ms));
+async function playTerm() {
+    const log = term.querySelector('.term-log'), replay = term.querySelector('.term-replay');
+    const items = Array.from(log.children), alive = () => items.every((li, i) => log.children[i] === li);
+    replay.hidden = true;
+    log.style.minHeight = log.offsetHeight + 'px';
+    items.forEach(li => li.classList.remove('shown', 'answered'));
+    log.classList.add('playing');
+    for (const li of items) {
+        if (li.classList.contains('t-user')) {
+            const html = li.innerHTML, text = li.textContent.replace(/^›\s*/, '');
+            li.innerHTML = '<b>›</b> <span class="caret"></span>';
+            li.classList.add('shown');
+            const out = li.querySelector('.caret');
+            for (let i = 1; i <= text.length; i++) { if (!alive()) return; out.textContent = text.slice(0, i); await wait(22); }
+            await wait(400);
+            if (!alive()) return;
+            li.innerHTML = html;
+        } else {
+            await wait(li.classList.contains('t-agent') ? 900 : 650);
+            if (!alive()) return;
+            li.classList.add('shown');
+            if (li.classList.contains('t-gate')) { await wait(1300); if (!alive()) return; li.classList.add('answered'); }
+        }
+    }
+    log.classList.remove('playing');
+    log.style.minHeight = '';
+    replay.hidden = false;
+}
+if (term && MOTION) {
+    const termObserver = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) { termObserver.disconnect(); playTerm(); }
+    }, { threshold: 0.5 });
+    termObserver.observe(term);
+    term.querySelector('.term-replay').addEventListener('click', playTerm);
 }
 
 document.getElementById('year').textContent = new Date().getFullYear();
