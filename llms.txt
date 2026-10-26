@@ -23,7 +23,7 @@ Available now: freelance projects and fractional CTO work, and also open to full
 - Open-source demo: AI back-office agent for an SME (MCP server, Claude agent, human approval, tests, evals): https://github.com/neoshadybeat/agente-pyme-mcp
 - Also on request: voice agents, LLMOps, private AI and EU AI Act, AI project rescue, IoT (quote within 24 h)
 - Remote, or on-site in Madrid. Spanish or English.
-- First 30-minute call free. Details: https://cayetano.dev/#services
+- First 30-minute call free, book it at https://cal.com/cayetano-soriano-gallego-0zlkgd/llamada-gratuita-30-minutos. Details: https://cayetano.dev/#services
 
 ## Experience
 
