@@ -31,7 +31,7 @@
 
 ## Experience
 
-- 2026–present: Fractional CTO & AI engineering lead (independent). Claude-powered bilingual content generation and an MCP admin server for enolovers.app; app load time cut from ~10 s to under 1 s. Own digital-health product in development: LLM symptom triage with personal-data stripping, voice companion with speech-to-text, MCP server with 7 tool modules.
+- 2026–present: Fractional CTO & AI engineering lead (independent). Claude-powered bilingual content generation and an MCP admin server for Enolovers; app load time cut from ~10 s to under 1 s. Own digital-health product in development: LLM symptom triage with personal-data stripping, voice companion with speech-to-text, MCP server with 7 tool modules.
 - 2023–2026: CTO, ShareTech. Technology vision and roadmap, AWS (ECS, Terraform), observability, vendor contracts (Telefónica M2M and cybersecurity), LLM-assisted engineering workflows.
 - 2019–2023: CTO, Ride On. Event-driven architecture on AWS Kinesis, ~30% lower AWS cost at 99.99% uptime, OKRs, technical due diligence with investors, city councils in Miami, Dundee, Leicester and Pamplona.
 - 2018–2019: Software Architect, Ride On. Clojure monolith to 20+ containerized microservices on AWS ECS, 100% Terraform.

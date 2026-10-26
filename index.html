@@ -926,11 +926,35 @@
 
             @media (max-width: 1180px) { .nav-links { gap: 1rem; } .nav-cta { display: none; } }
             @media (max-width: 960px) { .steps { grid-template-columns: 1fr; gap: 1.5rem; } }
+            @media (max-width: 400px) {
+                .hero-stat-value, .metric-value, .metric-item:nth-child(n) .metric-value { font-size: 1.9rem; }
+                .lang-btn { padding: 0.6rem 0.55rem; }
+            }
+            .hero-badge { font-size: 0.72rem; }
+            .hero-stat-label { font-size: 0.72rem; }
+            .svc-badge { font-size: 0.7rem; }
+            .hero-content > * { min-width: 0; }
             @media (max-width: 768px) {
-                .hero { padding-top: 7rem; }
+                .hero { padding: 6.5rem 1.25rem 3rem; }
+                .hero-stats { margin-top: 2rem; }
+                .navbar, .navbar.scrolled { padding: 0.7rem 1rem; }
+                .nav-controls { gap: 0.4rem; }
+                .lang-btn { padding: 0.6rem 0.7rem; }
+                .theme-btn { width: 40px; height: 40px; }
+                .nav-hamburger { padding: 10px; }
+                .nav-links.open { background: var(--bg-primary); gap: 0; padding: 0.75rem 1.25rem 1.25rem; box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12); }
+                .nav-links.open li { width: 100%; }
+                .nav-links.open a { display: block; padding: 0.8rem 0; font-size: 0.85rem; border-bottom: 1px solid var(--border-card); }
+                .nav-links.open a::after { display: none; }
                 .svc-grid { grid-template-columns: 1fr; }
                 .svc-card { padding: 1.5rem; }
-                .svc-badge { top: 1.5rem; right: 1.5rem; }
+                .svc-card h3 { padding-right: 0; }
+                .svc-badge { position: static; align-self: flex-start; margin-bottom: 0.8rem; }
+                .svc-cta { display: inline-block; padding: 0.7rem 0; margin-top: 0.8rem; }
+                .copy-btn { padding: 0.55rem 0.8rem; }
+                .footer-links { gap: 0.25rem 1.25rem; }
+                .footer-links a { display: inline-block; padding: 0.65rem 0.25rem; }
+                .hero-stats > div { min-width: 0; padding: 1.1rem 1rem; }
                 .hero-stats > div + div { border-left: 0; }
                 .hero-stats > div:nth-child(even) { border-left: 1px solid var(--border-card); }
                 .hero-stats > div:nth-child(n+3) { border-top: 1px solid var(--border-card); }
@@ -1054,7 +1078,7 @@
         </div>
         <div class="hero-proof">
             <span class="hero-proof-label" data-i18n="hero.proof">Built and led engineering at</span>
-            <ul class="hero-proof-list"><li>ShareTech</li><li>Ride On</li><li>enolovers.app</li><li>Packlink</li><li>Softonic</li><li>Kimia</li></ul>
+            <ul class="hero-proof-list"><li>ShareTech</li><li>Ride On</li><li>Enolovers</li><li>Packlink</li><li>Softonic</li><li>Kimia</li></ul>
         </div>
     </div>
 </section>
@@ -1235,7 +1259,7 @@
         </div>
         <div class="metric-item">
             <div class="metric-value">10s → &lt;1s</div>
-            <div class="metric-label" data-i18n="metrics.load">App load time (enolovers.app)</div>
+            <div class="metric-label" data-i18n="metrics.load">App load time (Enolovers)</div>
         </div>
     </div>
 </div>
@@ -1249,7 +1273,7 @@
     </div>
     <div class="cases-grid grid">
         <article class="card case-card reveal">
-            <div class="case-meta">enolovers.app · 2026 · Freelance</div>
+            <div class="case-meta">Enolovers · 2026 · Freelance</div>
             <h3 data-i18n="work.c5_title">AI that writes the first draft of every listing</h3>
             <dl class="case-block">
                 <dt data-i18n="work.ctx">Context</dt><dd data-i18n="work.c5_ctx">Wine-experience marketplace: wineries sent rough notes, and turning them into bilingual, SEO-ready listings was slow manual work.</dd>
@@ -1279,7 +1303,7 @@
             <div class="case-tags"><span class="tag tag-cloud">ECS</span><span class="tag tag-cloud">Terraform</span><span class="tag tag-devops">Jenkins</span><span class="tag tag-other">Sentry</span></div>
         </article>
         <article class="card case-card reveal">
-            <div class="case-meta">enolovers.app · 2026 · Freelance</div>
+            <div class="case-meta">Enolovers · 2026 · Freelance</div>
             <h3 data-i18n="work.c4_title">App load time from 10 s to under 1 s</h3>
             <dl class="case-block">
                 <dt data-i18n="work.ctx">Context</dt><dd data-i18n="work.c4_ctx">Consumer app growing fast with a small team: 10-second loads, scalability pain, slow releases, dependency drift and no clear security baseline.</dd>
@@ -1398,7 +1422,7 @@
                 <div class="timeline-role" data-i18n="exp.role_fractional">Fractional CTO, Architect &amp; AI Engineer</div>
                 <div class="timeline-location" data-i18n="exp.loc_remote">Remote</div>
                 <ul class="timeline-bullets" data-i18n="exp.indep">
-                    <li><strong>Fractional CTO</strong> and hands-on architect/developer for early-stage companies: technical strategy, architecture reviews, cloud and delivery setup.</li><li><strong>enolovers.app</strong> (client): cut app load time from <strong>~10 s to under 1 s</strong> (resource loading, lazy vs eager data, DB indexes, Redis caching, rate limiting); <strong>Claude-powered</strong> bilingual content generation and an <strong>MCP</strong> admin server; CI/CD with <strong>AI agents</strong>, automated dependency updates and a test harness; security best practices; infrastructure in <strong>Terraform</strong>; Sentry, monitoring, analytics and per-call metrics.</li><li><strong>Own digital-health product</strong> (in development): LLM symptom triage with personal-data stripping, a voice companion with speech-to-text, and an <strong>MCP server</strong> with 7 tool modules.</li><li>Deep-dive training in <strong>security, AI/LLM systems, software architecture and blockchain</strong>, applied directly to client work.</li>
+                    <li><strong>Fractional CTO</strong> and hands-on architect/developer for early-stage companies: technical strategy, architecture reviews, cloud and delivery setup.</li><li><strong>Enolovers</strong> (client): cut app load time from <strong>~10 s to under 1 s</strong> (resource loading, lazy vs eager data, DB indexes, Redis caching, rate limiting); <strong>Claude-powered</strong> bilingual content generation and an <strong>MCP</strong> admin server; CI/CD with <strong>AI agents</strong>, automated dependency updates and a test harness; security best practices; infrastructure in <strong>Terraform</strong>; Sentry, monitoring, analytics and per-call metrics.</li><li><strong>Own digital-health product</strong> (in development): LLM symptom triage with personal-data stripping, a voice companion with speech-to-text, and an <strong>MCP server</strong> with 7 tool modules.</li><li>Deep-dive training in <strong>security, AI/LLM systems, software architecture and blockchain</strong>, applied directly to client work.</li>
                 </ul>
                 <div class="timeline-tags">
                     <span class="tag tag-other" data-i18n="tag.fractional">Fractional CTO</span><span class="tag tag-cloud">AWS</span><span class="tag tag-cloud">Terraform</span><span class="tag tag-data">Redis</span><span class="tag tag-devops">CI/CD</span><span class="tag tag-other" data-i18n="tag.ai">AI / LLMs</span><span class="tag tag-devops" data-i18n="tag.security">Security</span><span class="tag tag-data">Blockchain</span>
@@ -1910,7 +1934,7 @@ const translations = {
         "metrics.microservices": "Microservicios en producción",
         "metrics.cost": "Reducción de coste AWS",
         "metrics.downtime": "Downtime en despliegues (Packlink)",
-        "metrics.load": "Tiempo de carga de la app (enolovers.app)",
+        "metrics.load": "Tiempo de carga de la app (Enolovers)",
         "ai.label": "IA en producción",
         "ai.title": "Lo que construyo con IA",
         "ai.intro": "Nada de slides: código funcionando en productos. Todo lo de abajo lo he construido yo en el último año, en proyectos de clientes y en productos propios.",
@@ -1967,7 +1991,7 @@ const translations = {
         "exp.indep_date": "Abr 2026 — Actualidad",
         "exp.role_fractional": "CTO fraccional, Arquitecto e Ingeniero de IA",
         "exp.loc_remote": "Remoto",
-        "exp.indep": "<li><strong>CTO fraccional</strong> y arquitecto/desarrollador hands-on para empresas en fase temprana: estrategia técnica, revisiones de arquitectura, setup cloud y de delivery.</li><li><strong>enolovers.app</strong> (cliente): carga de la app de <strong>~10 s a menos de 1 s</strong> (carga de recursos, datos lazy vs eager, índices en BD, caché Redis, rate limiting); generación de contenido bilingüe con <strong>Claude</strong> y un servidor <strong>MCP</strong> de administración; CI/CD con <strong>agentes de IA</strong>, actualización automática de dependencias y test harness; buenas prácticas de seguridad; infraestructura en <strong>Terraform</strong>; Sentry, monitorización, analíticas y métricas por llamada.</li><li><strong>Producto propio de salud digital</strong> (en desarrollo): triaje de síntomas con LLM eliminando datos personales, acompañante de voz con transcripción, y un <strong>servidor MCP</strong> con 7 módulos de herramientas.</li><li>Formación intensiva en <strong>seguridad, sistemas de IA/LLM, arquitectura de software y blockchain</strong>, aplicada directamente en proyectos de clientes.</li>",
+        "exp.indep": "<li><strong>CTO fraccional</strong> y arquitecto/desarrollador hands-on para empresas en fase temprana: estrategia técnica, revisiones de arquitectura, setup cloud y de delivery.</li><li><strong>Enolovers</strong> (cliente): carga de la app de <strong>~10 s a menos de 1 s</strong> (carga de recursos, datos lazy vs eager, índices en BD, caché Redis, rate limiting); generación de contenido bilingüe con <strong>Claude</strong> y un servidor <strong>MCP</strong> de administración; CI/CD con <strong>agentes de IA</strong>, actualización automática de dependencias y test harness; buenas prácticas de seguridad; infraestructura en <strong>Terraform</strong>; Sentry, monitorización, analíticas y métricas por llamada.</li><li><strong>Producto propio de salud digital</strong> (en desarrollo): triaje de síntomas con LLM eliminando datos personales, acompañante de voz con transcripción, y un <strong>servidor MCP</strong> con 7 módulos de herramientas.</li><li>Formación intensiva en <strong>seguridad, sistemas de IA/LLM, arquitectura de software y blockchain</strong>, aplicada directamente en proyectos de clientes.</li>",
         "tag.fractional": "CTO fraccional", "tag.ai": "IA / LLMs", "tag.security": "Seguridad",
         "exp.role_cto": "Chief Technology Officer",
         "exp.role_arch": "Arquitecto de Software",
