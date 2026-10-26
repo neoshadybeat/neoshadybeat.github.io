@@ -1416,7 +1416,7 @@
     <div class="reveal">
         <div class="section-label" data-i18n="svc.label">Work with me</div>
         <h2 class="section-title" id="services-title" data-i18n="svc.title">Freelance services &amp; rates</h2>
-        <p class="section-intro" data-i18n="svc.intro">Fixed scope, published prices, and you work directly with me. Remote from Madrid, in Spanish or English.</p>
+        <p class="section-intro" data-i18n="svc.intro">Fixed scope, published prices, and you work directly with me. Remote, or on-site in Madrid. Spanish or English.</p>
     </div>
     <div class="svc-grid">
         <div class="card svc-card reveal">
@@ -1442,6 +1442,30 @@
             <div class="svc-price" data-i18n="svc.day_price">€750/day</div>
             <div class="svc-unit" data-i18n="svc.day_unit">blocks of 5+ days</div>
             <ul data-i18n="svc.day_list"><li>AWS, Terraform and platform work</li><li>Backend, integrations and payments</li><li>AI engineering with Claude, OpenAI and MCP</li></ul>
+        </div>
+        <div class="card svc-card reveal">
+            <h3 data-i18n="svc.n8n_title">AI automation with n8n</h3>
+            <div class="svc-price" data-i18n="svc.n8n_price">from €4,500</div>
+            <div class="svc-unit" data-i18n="svc.n8n_unit">2–3 weeks · fixed price</div>
+            <ul data-i18n="svc.n8n_list"><li>n8n flows with AI agents across your ERP, CRM, email and WhatsApp</li><li>Self-hosted n8n in the EU, monitored</li><li>Migration from Zapier or Make</li></ul>
+        </div>
+        <div class="card svc-card reveal">
+            <h3 data-i18n="svc.iot_title">IoT &amp; connected hardware</h3>
+            <div class="svc-price" data-i18n="svc.iot_price">from €12,000</div>
+            <div class="svc-unit" data-i18n="svc.iot_unit">6–12 weeks · milestone billing</div>
+            <ul data-i18n="svc.iot_list"><li>Device, connectivity and cloud platform</li><li>Telemetry, fleet management and OTA updates</li><li>Edge AI: on-device voice and predictive models</li></ul>
+        </div>
+        <div class="card svc-card reveal">
+            <h3 data-i18n="svc.train_title">AI training for teams</h3>
+            <div class="svc-price" data-i18n="svc.train_price">from €1,900</div>
+            <div class="svc-unit" data-i18n="svc.train_unit">half day – 2 weeks</div>
+            <ul data-i18n="svc.train_list"><li>ChatGPT, Claude or Copilot for business, set up safely</li><li>Claude Code and Cursor for developers</li><li>EU AI Act literacy and AI usage policy</li></ul>
+        </div>
+        <div class="card svc-card reveal">
+            <h3 data-i18n="svc.rescue_title">AI project rescue</h3>
+            <div class="svc-price" data-i18n="svc.rescue_price">from €2,900</div>
+            <div class="svc-unit" data-i18n="svc.rescue_unit">1 week audit + fixed plan</div>
+            <ul data-i18n="svc.rescue_list"><li>Stalled pilots and vibe-coded prototypes</li><li>Hallucinations, latency and token costs</li><li>Stabilise and ship to production</li></ul>
         </div>
     </div>
     <p class="svc-note" data-i18n="svc.note">Prices exclude VAT. AI model usage is passed through at cost. First 30-minute call is free.</p>
@@ -1561,7 +1585,7 @@ const translations = {
         "nav.services": "Servicios",
         "svc.label": "Trabaja conmigo",
         "svc.title": "Servicios freelance y tarifas",
-        "svc.intro": "Alcance cerrado, precios publicados y trabajas directamente conmigo. En remoto desde Madrid, en español o inglés.",
+        "svc.intro": "Alcance cerrado, precios publicados y trabajas directamente conmigo. En remoto, o presencial en Madrid. En español o inglés.",
         "svc.audit_title": "Auditoría de IA y arquitectura",
         "svc.audit_price": "2.900 €",
         "svc.audit_unit": "1 semana · precio cerrado",
@@ -1578,6 +1602,22 @@ const translations = {
         "svc.day_price": "750 €/día",
         "svc.day_unit": "bloques de 5 días o más",
         "svc.day_list": "<li>AWS, Terraform y plataforma</li><li>Backend, integraciones y pagos</li><li>Ingeniería de IA con Claude, OpenAI y MCP</li>",
+        "svc.n8n_title": "Automatización con IA y n8n",
+        "svc.n8n_price": "desde 4.500 €",
+        "svc.n8n_unit": "2–3 semanas · precio cerrado",
+        "svc.n8n_list": "<li>Flujos de n8n con agentes de IA sobre tu ERP, CRM, correo y WhatsApp</li><li>n8n autoalojado en la UE y monitorizado</li><li>Migración desde Zapier o Make</li>",
+        "svc.iot_title": "IoT y hardware conectado",
+        "svc.iot_price": "desde 12.000 €",
+        "svc.iot_unit": "6–12 semanas · pago por hitos",
+        "svc.iot_list": "<li>Dispositivo, conectividad y plataforma cloud</li><li>Telemetría, gestión de flotas y actualizaciones OTA</li><li>IA en el borde: voz en el dispositivo y modelos predictivos</li>",
+        "svc.train_title": "Formación en IA para equipos",
+        "svc.train_price": "desde 1.900 €",
+        "svc.train_unit": "medio día – 2 semanas",
+        "svc.train_list": "<li>ChatGPT, Claude o Copilot de empresa, configurados con seguridad</li><li>Claude Code y Cursor para desarrolladores</li><li>Alfabetización AI Act y política de uso de IA</li>",
+        "svc.rescue_title": "Rescate de proyectos de IA",
+        "svc.rescue_price": "desde 2.900 €",
+        "svc.rescue_unit": "auditoría de 1 semana + plan cerrado",
+        "svc.rescue_list": "<li>Pilotos atascados y prototipos hechos con IA</li><li>Alucinaciones, latencia y costes de tokens</li><li>Estabilizar y llevar a producción</li>",
         "svc.note": "Precios sin IVA. El uso de modelos de IA se repercute a coste. La primera llamada de 30 minutos es gratuita.",
         "nav.seeking": "Qué busco",
         "hero.badge": "CTO fraccional · Ingeniería de IA · Remoto",

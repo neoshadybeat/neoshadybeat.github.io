@@ -18,6 +18,11 @@
 - AI pilot to production (LLM feature, agent, RAG or MCP server): from €9,500, 3–5 weeks, milestone billing
 - Fractional CTO: from €3,500/month, 2–8 days a month, 3-month minimum
 - Hands-on engineering: €750/day, blocks of 5+ days
+- AI automation with n8n (self-hosted, Zapier/Make migration): from €4,500
+- IoT & connected hardware (devices, telemetry, fleets, edge AI): from €12,000
+- AI training for teams (ChatGPT/Claude/Copilot, Claude Code, EU AI Act literacy): from €1,900
+- AI project rescue: from €2,900
+- Remote, or on-site in Madrid
 - First 30-minute call free. Details: https://cayetano.dev/#services
 
 ## Experience
