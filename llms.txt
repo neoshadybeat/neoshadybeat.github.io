@@ -1,6 +1,6 @@
 # Cayetano Soriano Gallego
 
-> Fractional CTO and AI engineering lead based in Madrid, Spain, working fully remote. 15+ years in tech, 7+ as CTO, 8+ on AWS. Builds LLM features, MCP servers and agentic engineering workflows that run in production, on cloud platforms built to last.
+> Fractional CTO and AI engineering lead based in Madrid, Spain, working as a freelancer: remote, or on-site in Madrid. 15+ years in tech, 7+ as CTO, 8+ on AWS. Builds LLM features, MCP servers and agentic engineering workflows that run in production, on cloud platforms built to last.
 
 ## Profile
 
@@ -17,7 +17,7 @@
 - AI & architecture audit: €2,900, 1 week, fixed price
 - AI pilot to production (LLM feature, agent, RAG or MCP server): from €9,500, 3–5 weeks, milestone billing
 - Fractional CTO: from €3,500/month, 2–8 days a month, 3-month minimum
-- Hands-on engineering: €750/day, blocks of 5+ days
+- Custom engineering projects: quote within 24 h after a free call
 - AI automation with n8n (self-hosted, Zapier/Make migration): from €4,500
 - IoT & connected hardware (devices, telemetry, fleets, edge AI): from €12,000
 - AI training for teams (ChatGPT/Claude/Copilot, Claude Code, EU AI Act literacy): from €1,900

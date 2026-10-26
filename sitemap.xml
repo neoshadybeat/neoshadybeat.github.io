@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://cayetano.dev/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://cayetano.dev/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://cayetano.dev/es/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cayetano.dev/"/>
@@ -10,17 +10,9 @@
   </url>
   <url>
     <loc>https://cayetano.dev/es/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://cayetano.dev/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://cayetano.dev/es/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cayetano.dev/"/>
-  </url>
-  <url>
-    <loc>https://cayetano.dev/cv/Cayetano-Soriano-Gallego-CV-EN.pdf</loc>
-    <lastmod>2026-10-20</lastmod>
-  </url>
-  <url>
-    <loc>https://cayetano.dev/cv/Cayetano-Soriano-Gallego-CV-ES.pdf</loc>
-    <lastmod>2026-10-20</lastmod>
   </url>
 </urlset>
