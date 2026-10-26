@@ -12,6 +12,14 @@
 - [GitHub](https://github.com/neoshadybeat)
 - Contact: hello@cayetano.dev
 
+## Freelance services (prices exclude VAT)
+
+- AI & architecture audit: €2,900, 1 week, fixed price
+- AI pilot to production (LLM feature, agent, RAG or MCP server): from €9,500, 3–5 weeks, milestone billing
+- Fractional CTO: from €3,500/month, 2–8 days a month, 3-month minimum
+- Hands-on engineering: €750/day, blocks of 5+ days
+- First 30-minute call free. Details: https://cayetano.dev/#services
+
 ## Experience
 
 - 2026–present: Fractional CTO & AI engineering lead (independent). Claude-powered bilingual content generation and an MCP admin server for enolovers.app; app load time cut from ~10 s to under 1 s. Own digital-health product in development: LLM symptom triage with personal-data stripping, voice companion with speech-to-text, MCP server with 7 tool modules.

@@ -417,6 +417,17 @@
         .copy-btn:hover { color: var(--accent); border-color: var(--accent); }
 
         /* Looking for */
+        .svc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+        .svc-card { padding: 1.5rem; display: flex; flex-direction: column; }
+        .svc-card h3 { font-family: var(--font-headline); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.35rem; }
+        .svc-price { font-family: var(--font-mono, monospace); font-size: 1.15rem; font-weight: 600; color: var(--accent); margin: 0.5rem 0 0.15rem; }
+        .svc-unit { font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 0.9rem; }
+        .svc-card ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; color: var(--text-secondary); font-size: 0.88rem; flex: 1; }
+        .svc-card li { padding-left: 1.1rem; position: relative; }
+        .svc-card li::before { content: ''; position: absolute; left: 0; top: 0.6em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+        .svc-note { margin-top: 1.25rem; font-size: 0.85rem; color: var(--text-secondary); }
+        @media (max-width: 1024px) { .svc-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 640px) { .svc-grid { grid-template-columns: 1fr; } }
         .seek-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
         .seek-card { padding: 1.75rem; }
         .seek-card h3 { font-family: var(--font-headline); font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.6rem; }
@@ -794,6 +805,7 @@
             <li><a href="#about" data-i18n="nav.about">Sobre mí</a></li>
             <li><a href="#experience" data-i18n="nav.experience">Experiencia</a></li>
             <li><a href="#skills" data-i18n="nav.skills">Tecnologías</a></li>
+            <li><a href="#services" data-i18n="nav.services">Servicios</a></li>
             <template class="hiring-tpl"><li><a href="#seeking" data-i18n="nav.seeking">Looking for</a></li></template>
         </ul>
         <div class="nav-controls">
@@ -1369,6 +1381,42 @@
     <p class="certs-older" data-i18n="certs.older">Anteriores: Zend Certified PHP Engineer, MongoDB Certified DBA y Developer, Oracle MySQL Developer.</p>
 </section>
 
+<!-- Freelance services (hidden in the printed CV) -->
+<section class="section print-hide" id="services" aria-labelledby="services-title">
+    <div class="reveal">
+        <div class="section-label" data-i18n="svc.label">Trabaja conmigo</div>
+        <h2 class="section-title" id="services-title" data-i18n="svc.title">Servicios freelance y tarifas</h2>
+        <p class="section-intro" data-i18n="svc.intro">Alcance cerrado, precios publicados y trabajas directamente conmigo. En remoto desde Madrid, en español o inglés.</p>
+    </div>
+    <div class="svc-grid">
+        <div class="card svc-card reveal">
+            <h3 data-i18n="svc.audit_title">Auditoría de IA y arquitectura</h3>
+            <div class="svc-price" data-i18n="svc.audit_price">2.900 €</div>
+            <div class="svc-unit" data-i18n="svc.audit_unit">1 semana · precio cerrado</div>
+            <ul data-i18n="svc.audit_list"><li>Revisión de tu plataforma, funcionalidades de IA y costes cloud</li><li>Hallazgos priorizados y mejoras rápidas</li><li>Hoja de ruta y presupuesto cerrado de los siguientes pasos</li></ul>
+        </div>
+        <div class="card svc-card reveal">
+            <h3 data-i18n="svc.pilot_title">Piloto de IA a producción</h3>
+            <div class="svc-price" data-i18n="svc.pilot_price">desde 9.500 €</div>
+            <div class="svc-unit" data-i18n="svc.pilot_unit">3–5 semanas · pago por hitos</div>
+            <ul data-i18n="svc.pilot_list"><li>Funcionalidad con LLM, agente, RAG o servidor MCP</li><li>Evals, observabilidad y control de costes</li><li>Código y documentación entregados a tu equipo</li></ul>
+        </div>
+        <div class="card svc-card reveal">
+            <h3 data-i18n="svc.cto_title">CTO fraccional</h3>
+            <div class="svc-price" data-i18n="svc.cto_price">desde 3.500 €/mes</div>
+            <div class="svc-unit" data-i18n="svc.cto_unit">2–8 días al mes · mínimo 3 meses</div>
+            <ul data-i18n="svc.cto_list"><li>Arquitectura, roadmap y revisión de código</li><li>Proveedores, contratación y liderazgo de equipo</li><li>Gobierno de la IA y AI Act</li></ul>
+        </div>
+        <div class="card svc-card reveal">
+            <h3 data-i18n="svc.day_title">Ingeniería hands-on</h3>
+            <div class="svc-price" data-i18n="svc.day_price">750 €/día</div>
+            <div class="svc-unit" data-i18n="svc.day_unit">bloques de 5 días o más</div>
+            <ul data-i18n="svc.day_list"><li>AWS, Terraform y plataforma</li><li>Backend, integraciones y pagos</li><li>Ingeniería de IA con Claude, OpenAI y MCP</li></ul>
+        </div>
+    </div>
+    <p class="svc-note" data-i18n="svc.note">Precios sin IVA. El uso de modelos de IA se repercute a coste. La primera llamada de 30 minutos es gratuita.</p>
+</section>
+
 <!-- Looking for -->
 <template class="hiring-tpl">
 <section class="section" id="seeking" aria-labelledby="seeking-title">
@@ -1480,6 +1528,27 @@ const translations = {
         "nav.about": "Sobre mí",
         "nav.experience": "Experiencia",
         "nav.skills": "Tecnologías",
+        "nav.services": "Servicios",
+        "svc.label": "Trabaja conmigo",
+        "svc.title": "Servicios freelance y tarifas",
+        "svc.intro": "Alcance cerrado, precios publicados y trabajas directamente conmigo. En remoto desde Madrid, en español o inglés.",
+        "svc.audit_title": "Auditoría de IA y arquitectura",
+        "svc.audit_price": "2.900 €",
+        "svc.audit_unit": "1 semana · precio cerrado",
+        "svc.audit_list": "<li>Revisión de tu plataforma, funcionalidades de IA y costes cloud</li><li>Hallazgos priorizados y mejoras rápidas</li><li>Hoja de ruta y presupuesto cerrado de los siguientes pasos</li>",
+        "svc.pilot_title": "Piloto de IA a producción",
+        "svc.pilot_price": "desde 9.500 €",
+        "svc.pilot_unit": "3–5 semanas · pago por hitos",
+        "svc.pilot_list": "<li>Funcionalidad con LLM, agente, RAG o servidor MCP</li><li>Evals, observabilidad y control de costes</li><li>Código y documentación entregados a tu equipo</li>",
+        "svc.cto_title": "CTO fraccional",
+        "svc.cto_price": "desde 3.500 €/mes",
+        "svc.cto_unit": "2–8 días al mes · mínimo 3 meses",
+        "svc.cto_list": "<li>Arquitectura, roadmap y revisión de código</li><li>Proveedores, contratación y liderazgo de equipo</li><li>Gobierno de la IA y AI Act</li>",
+        "svc.day_title": "Ingeniería hands-on",
+        "svc.day_price": "750 €/día",
+        "svc.day_unit": "bloques de 5 días o más",
+        "svc.day_list": "<li>AWS, Terraform y plataforma</li><li>Backend, integraciones y pagos</li><li>Ingeniería de IA con Claude, OpenAI y MCP</li>",
+        "svc.note": "Precios sin IVA. El uso de modelos de IA se repercute a coste. La primera llamada de 30 minutos es gratuita.",
         "nav.seeking": "Qué busco",
         "hero.badge": "CTO fraccional · Ingeniería de IA · Remoto",
         "hero.badge_hiring": "Disponible ya · CTO / Head of AI Engineering / CTO fraccional · 100% remoto",
