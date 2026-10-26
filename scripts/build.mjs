@@ -51,7 +51,8 @@ const browser = await chromium.launch({ executablePath: process.env.CHROME || '/
 
 for (const lang of ['en', 'es']) {
   const p = await browser.newPage();
-  await p.goto(lang === 'es' ? `${base}/es/` : `${base}/`, { waitUntil: 'load' });
+  // Force the language: '/' otherwise follows the browser locale, which made the EN CV come out in Spanish.
+  await p.goto(lang === 'es' ? `${base}/es/` : `${base}/?lang=en`, { waitUntil: 'load' });
   await p.evaluate(() => document.fonts.ready);
   await p.emulateMedia({ media: 'print' });
   const out = path.join(root, 'cv', `Cayetano-Soriano-Gallego-CV-${lang.toUpperCase()}.pdf`);
