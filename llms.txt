@@ -2,6 +2,8 @@
 
 > Fractional CTO and AI engineering lead based in Madrid, Spain, working as a freelancer: remote, or on-site in Madrid. 15+ years in tech, 7+ as CTO, 8+ on AWS. Builds LLM features, MCP servers and agentic engineering workflows that run in production, on cloud platforms built to last.
 
+Available now: freelance projects and fractional CTO work, and also open to full-time CTO, Head of AI Engineering or Head of Platform roles.
+
 ## Profile
 
 - [Website (English)](https://cayetano.dev/): case studies, experience, skills

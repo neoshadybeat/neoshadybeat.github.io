@@ -1718,7 +1718,7 @@
                 <li>Head of AI Engineering / AI platform lead</li>
                 <li>Head of Platform / Infrastructure</li>
                 <li>Principal / Staff Engineer (hands-on architecture)</li>
-                <li>Fractional CTO or AI engineering audit (2–4 weeks)</li>
+                <li>Fractional CTO or freelance AI projects (see services)</li>
             </ul>
         </div>
         <div class="card seek-card reveal">
@@ -1733,7 +1733,7 @@
         <div class="card seek-card reveal">
             <h3><span class="seek-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></span> <span data-i18n="seek.setup_title">Setup</span></h3>
             <ul data-i18n="seek.setup">
-                <li>Full remote (CET ±3h); occasional travel is fine</li>
+                <li>Remote (CET ±3h), or on-site in Madrid; occasional travel is fine</li>
                 <li>Spanish or English working language</li>
                 <li>Full-time or fractional engagements</li>
                 <li>Available now</li>
@@ -1799,7 +1799,7 @@
 // the "What I'm looking for" section and hiring-oriented CTA copy.
 // Preview without flipping the flag: append ?hiring=1 to the URL.
 // Hiring-only markup lives in <template class="hiring-tpl"> so crawlers never index it.
-const JOB_SEARCH_MODE = false;
+const JOB_SEARCH_MODE = true;
 const HIRING = JOB_SEARCH_MODE || new URLSearchParams(window.location.search).get('hiring') === '1';
 document.documentElement.setAttribute('data-hiring', String(HIRING));
 if (HIRING) document.querySelectorAll('template.hiring-tpl').forEach(t => t.replaceWith(t.content));
@@ -1807,8 +1807,8 @@ if (HIRING) document.querySelectorAll('template.hiring-tpl').forEach(t => t.repl
 const translations = {
     en: {
         // Base EN strings are captured from the DOM at startup (see captureEN); only JS-only keys live here.
-        "meta.description_hiring": "CTO and hands-on architect with 15+ years in tech, 8+ on AWS. I ship LLM features, MCP servers and agentic engineering workflows to production, on cloud platforms built to last. Full remote, based in Madrid. Available for CTO, Head of AI Engineering and fractional roles.",
-        "hero.badge_hiring": "Available now · CTO / Head of AI Engineering / Fractional CTO · Full remote",
+        "meta.description_hiring": "Freelance fractional CTO and AI consultant with 15+ years in tech and 7+ as CTO, also open to CTO and Head of AI Engineering roles. AI agents, MCP servers, RAG and automation taken to production, on AWS platforms built to last. Remote, or on-site in Madrid.",
+        "hero.badge_hiring": "Available now · Freelance or full-time · CTO / Head of AI · Madrid & remote",
         "about.copied": "Email copied to clipboard",
         "exp.more": "Show earlier roles (2011–2015)",
         "exp.less": "Hide earlier roles",
@@ -1904,8 +1904,8 @@ const translations = {
         "nav.seeking": "Qué busco",
         "hero.badge": "Freelance · CTO fraccional · Consultoría de IA · Madrid y remoto",
         "hero.services": "Servicios y tarifas",
-        "hero.badge_hiring": "Disponible ya · CTO / Head of AI Engineering / CTO fraccional · 100% remoto",
-        "meta.description_hiring": "CTO y arquitecto hands-on con más de 15 años en tech, 8+ en AWS. Llevo a producción funcionalidades con LLMs, servidores MCP y flujos de ingeniería agéntica, sobre plataformas cloud hechas para durar. Full remote, desde Madrid. Disponible para roles de CTO, Head of AI Engineering y fraccionales.",
+        "hero.badge_hiring": "Disponible ya · Freelance o en plantilla · CTO / Head of AI · Madrid y remoto",
+        "meta.description_hiring": "CTO fraccional y consultor de IA freelance, con más de 15 años en tecnología y 7+ como CTO, abierto también a puestos de CTO y Head of AI Engineering. Agentes de IA, servidores MCP, RAG y automatización llevados a producción, sobre plataformas AWS hechas para durar. En remoto o presencial en Madrid.",
         "hero.headline_top": "IA en producción,",
         "hero.headline_gradient": "sobre plataformas que no se rompen.",
         "hero.subtitle": "<strong>CTO y arquitecto hands-on</strong> con más de 15 años en tech, 8+ en AWS y 7+ como CTO. He liderado dos transformaciones de monolito a microservicios, y hoy construyo funcionalidades con LLMs, servidores MCP y flujos de ingeniería agéntica que funcionan en producción.",
@@ -2050,11 +2050,11 @@ const translations = {
         "seek.title": "Qué busco",
         "seek.intro": "Para ahorrarnos tiempo a ambos: aquí es donde más valor aporto, y el tipo de empresa donde ya lo he hecho.",
         "seek.roles_title": "Roles",
-        "seek.roles": "<li>CTO / VP of Engineering</li><li>Head of AI Engineering / líder de plataforma de IA</li><li>Head of Platform / Infraestructura</li><li>Principal / Staff Engineer (arquitectura hands-on)</li><li>CTO fraccional o auditoría de ingeniería de IA (2–4 semanas)</li>",
+        "seek.roles": "<li>CTO / VP of Engineering</li><li>Head of AI Engineering / líder de plataforma de IA</li><li>Head of Platform / Infraestructura</li><li>Principal / Staff Engineer (arquitectura hands-on)</li><li>CTO fraccional o proyectos de IA freelance (ver servicios)</li>",
         "seek.company_title": "Empresa",
         "seek.company": "<li>Scale-ups pasando de \"funciona\" a \"escala\"</li><li>Empresas de producto con tráfico real y facturas de infra reales</li><li>Equipos llevando funcionalidades de IA/LLM del prototipo a producción</li><li>Movilidad, logística, marketplaces, SaaS</li>",
         "seek.setup_title": "Modalidad",
-        "seek.setup": "<li>100% remoto (CET ±3h); viajes puntuales sin problema</li><li>Español o inglés como idioma de trabajo</li><li>Jornada completa o fraccional</li><li>Disponible ya</li>",
+        "seek.setup": "<li>En remoto (CET ±3h) o presencial en Madrid; viajes puntuales sin problema</li><li>Español o inglés como idioma de trabajo</li><li>Jornada completa o fraccional</li><li>Disponible ya</li>",
         "cta.title": "¿Hablamos de arquitectura, equipos o IA en producción?",
         "cta.text": "Cuéntame qué estás construyendo. La primera llamada de 30 minutos es gratuita, y respondo a todo mensaje serio en menos de 48 horas.",
         "cta.title_hiring": "¿Construyes con IA y necesitas a alguien que ya la ha llevado a producción?",
