@@ -994,6 +994,8 @@
             .svc-card:hover .svc-cta { transform: translateX(4px); }
         }
     </style>
+    <!-- Cookieless analytics (Umami Cloud, EU); data-domains keeps local builds and previews out of the stats -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="e14326d6-765d-4080-afdc-f72cd3f19958" data-domains="cayetano.dev"></script>
 </head>
 <body>
 
@@ -1051,7 +1053,7 @@
                 <strong>CTO and hands-on architect</strong> with 15+ years in tech, 8+ on AWS and 7+ as CTO. I've led two monolith-to-microservices transformations, and today I build LLM features, MCP servers and agentic engineering workflows that run in production.
             </p>
             <div class="hero-cta">
-                <a href="https://cal.com/cayetano-soriano-gallego-0zlkgd/llamada-gratuita-30-minutos" target="_blank" rel="noopener" class="btn btn-primary" data-track="hero-email">
+                <a href="https://cal.com/cayetano-soriano-gallego-0zlkgd/llamada-gratuita-30-minutos" target="_blank" rel="noopener" class="btn btn-primary" data-track="hero-call">
                     <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
                     <span data-i18n="cta.call">Book a free 30-minute call</span>
                 </a>
@@ -1775,7 +1777,7 @@
                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
                 <span data-i18n="cta.call">Book a free 30-minute call</span>
             </a>
-            <a href="mailto:hello@cayetano.dev?subject=Hello%20from%20cayetano.dev" class="btn btn-outline">
+            <a href="mailto:hello@cayetano.dev?subject=Hello%20from%20cayetano.dev" class="btn btn-outline" data-track="cta-email">
                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                 <span data-i18n="cta.button">Email me</span>
             </a>
@@ -2269,6 +2271,12 @@ if (term && MOTION) {
     termObserver.observe(term);
     term.querySelector('.term-replay').addEventListener('click', playTerm);
 }
+
+// Click events for the stats: every [data-track] element reports its name to Umami (no-op if blocked)
+document.addEventListener('click', e => {
+    const el = e.target.closest('[data-track]');
+    if (el && window.umami) window.umami.track(el.dataset.track);
+});
 
 document.getElementById('year').textContent = new Date().getFullYear();
 window.addEventListener('beforeprint', () => document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible')));
